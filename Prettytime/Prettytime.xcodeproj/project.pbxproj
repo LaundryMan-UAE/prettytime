@@ -1,0 +1,513 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BE4CA40419B5D86700C47EA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4CA40319B5D86700C47EA3 /* Foundation.framework */; };
+		BE4CA40619B5D86700C47EA3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4CA40519B5D86700C47EA3 /* CoreGraphics.framework */; };
+		BE4CA40819B5D86700C47EA3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4CA40719B5D86700C47EA3 /* UIKit.framework */; };
+		BE4CA40E19B5D86700C47EA3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE4CA40C19B5D86700C47EA3 /* InfoPlist.strings */; };
+		BE4CA41019B5D86700C47EA3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4CA40F19B5D86700C47EA3 /* main.m */; };
+		BE4CA41419B5D86700C47EA3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4CA41319B5D86700C47EA3 /* AppDelegate.m */; };
+		BE4CA41619B5D86700C47EA3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE4CA41519B5D86700C47EA3 /* Images.xcassets */; };
+		BE4CA41D19B5D86700C47EA3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4CA41C19B5D86700C47EA3 /* XCTest.framework */; };
+		BE4CA41E19B5D86700C47EA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4CA40319B5D86700C47EA3 /* Foundation.framework */; };
+		BE4CA41F19B5D86700C47EA3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4CA40719B5D86700C47EA3 /* UIKit.framework */; };
+		BE4CA42719B5D86700C47EA3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE4CA42519B5D86700C47EA3 /* InfoPlist.strings */; };
+		BE4CA42919B5D86700C47EA3 /* PrettytimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4CA42819B5D86700C47EA3 /* PrettytimeTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BE4CA42019B5D86700C47EA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE4CA3F619B5D82F00C47EA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE4CA3FF19B5D86700C47EA3;
+			remoteInfo = Prettytime;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BE4CA40019B5D86700C47EA3 /* Prettytime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prettytime.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE4CA40319B5D86700C47EA3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BE4CA40519B5D86700C47EA3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BE4CA40719B5D86700C47EA3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		BE4CA40B19B5D86700C47EA3 /* Prettytime-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Prettytime-Info.plist"; sourceTree = "<group>"; };
+		BE4CA40D19B5D86700C47EA3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BE4CA40F19B5D86700C47EA3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BE4CA41119B5D86700C47EA3 /* Prettytime-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Prettytime-Prefix.pch"; sourceTree = "<group>"; };
+		BE4CA41219B5D86700C47EA3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BE4CA41319B5D86700C47EA3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BE4CA41519B5D86700C47EA3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BE4CA41B19B5D86700C47EA3 /* PrettytimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrettytimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE4CA41C19B5D86700C47EA3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		BE4CA42419B5D86700C47EA3 /* PrettytimeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PrettytimeTests-Info.plist"; sourceTree = "<group>"; };
+		BE4CA42619B5D86700C47EA3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BE4CA42819B5D86700C47EA3 /* PrettytimeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrettytimeTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BE4CA3FD19B5D86700C47EA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE4CA40619B5D86700C47EA3 /* CoreGraphics.framework in Frameworks */,
+				BE4CA40819B5D86700C47EA3 /* UIKit.framework in Frameworks */,
+				BE4CA40419B5D86700C47EA3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE4CA41819B5D86700C47EA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE4CA41D19B5D86700C47EA3 /* XCTest.framework in Frameworks */,
+				BE4CA41F19B5D86700C47EA3 /* UIKit.framework in Frameworks */,
+				BE4CA41E19B5D86700C47EA3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BE4CA3F519B5D82F00C47EA3 = {
+			isa = PBXGroup;
+			children = (
+				BE4CA40919B5D86700C47EA3 /* Prettytime */,
+				BE4CA42219B5D86700C47EA3 /* PrettytimeTests */,
+				BE4CA40219B5D86700C47EA3 /* Frameworks */,
+				BE4CA40119B5D86700C47EA3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BE4CA40119B5D86700C47EA3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE4CA40019B5D86700C47EA3 /* Prettytime.app */,
+				BE4CA41B19B5D86700C47EA3 /* PrettytimeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BE4CA40219B5D86700C47EA3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE4CA40319B5D86700C47EA3 /* Foundation.framework */,
+				BE4CA40519B5D86700C47EA3 /* CoreGraphics.framework */,
+				BE4CA40719B5D86700C47EA3 /* UIKit.framework */,
+				BE4CA41C19B5D86700C47EA3 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE4CA40919B5D86700C47EA3 /* Prettytime */ = {
+			isa = PBXGroup;
+			children = (
+				BE4CA41219B5D86700C47EA3 /* AppDelegate.h */,
+				BE4CA41319B5D86700C47EA3 /* AppDelegate.m */,
+				BE4CA41519B5D86700C47EA3 /* Images.xcassets */,
+				BE4CA40A19B5D86700C47EA3 /* Supporting Files */,
+			);
+			path = Prettytime;
+			sourceTree = "<group>";
+		};
+		BE4CA40A19B5D86700C47EA3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BE4CA40B19B5D86700C47EA3 /* Prettytime-Info.plist */,
+				BE4CA40C19B5D86700C47EA3 /* InfoPlist.strings */,
+				BE4CA40F19B5D86700C47EA3 /* main.m */,
+				BE4CA41119B5D86700C47EA3 /* Prettytime-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BE4CA42219B5D86700C47EA3 /* PrettytimeTests */ = {
+			isa = PBXGroup;
+			children = (
+				BE4CA42819B5D86700C47EA3 /* PrettytimeTests.m */,
+				BE4CA42319B5D86700C47EA3 /* Supporting Files */,
+			);
+			path = PrettytimeTests;
+			sourceTree = "<group>";
+		};
+		BE4CA42319B5D86700C47EA3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BE4CA42419B5D86700C47EA3 /* PrettytimeTests-Info.plist */,
+				BE4CA42519B5D86700C47EA3 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BE4CA3FF19B5D86700C47EA3 /* Prettytime */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE4CA42A19B5D86700C47EA3 /* Build configuration list for PBXNativeTarget "Prettytime" */;
+			buildPhases = (
+				BE4CA3FC19B5D86700C47EA3 /* Sources */,
+				BE4CA3FD19B5D86700C47EA3 /* Frameworks */,
+				BE4CA3FE19B5D86700C47EA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Prettytime;
+			productName = Prettytime;
+			productReference = BE4CA40019B5D86700C47EA3 /* Prettytime.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BE4CA41A19B5D86700C47EA3 /* PrettytimeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE4CA42D19B5D86700C47EA3 /* Build configuration list for PBXNativeTarget "PrettytimeTests" */;
+			buildPhases = (
+				BE4CA41719B5D86700C47EA3 /* Sources */,
+				BE4CA41819B5D86700C47EA3 /* Frameworks */,
+				BE4CA41919B5D86700C47EA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE4CA42119B5D86700C47EA3 /* PBXTargetDependency */,
+			);
+			name = PrettytimeTests;
+			productName = PrettytimeTests;
+			productReference = BE4CA41B19B5D86700C47EA3 /* PrettytimeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BE4CA3F619B5D82F00C47EA3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				TargetAttributes = {
+					BE4CA41A19B5D86700C47EA3 = {
+						TestTargetID = BE4CA3FF19B5D86700C47EA3;
+					};
+				};
+			};
+			buildConfigurationList = BE4CA3F919B5D82F00C47EA3 /* Build configuration list for PBXProject "Prettytime" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BE4CA3F519B5D82F00C47EA3;
+			productRefGroup = BE4CA40119B5D86700C47EA3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BE4CA3FF19B5D86700C47EA3 /* Prettytime */,
+				BE4CA41A19B5D86700C47EA3 /* PrettytimeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BE4CA3FE19B5D86700C47EA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE4CA40E19B5D86700C47EA3 /* InfoPlist.strings in Resources */,
+				BE4CA41619B5D86700C47EA3 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE4CA41919B5D86700C47EA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE4CA42719B5D86700C47EA3 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BE4CA3FC19B5D86700C47EA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE4CA41419B5D86700C47EA3 /* AppDelegate.m in Sources */,
+				BE4CA41019B5D86700C47EA3 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE4CA41719B5D86700C47EA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE4CA42919B5D86700C47EA3 /* PrettytimeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BE4CA42119B5D86700C47EA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE4CA3FF19B5D86700C47EA3 /* Prettytime */;
+			targetProxy = BE4CA42019B5D86700C47EA3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BE4CA40C19B5D86700C47EA3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE4CA40D19B5D86700C47EA3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BE4CA42519B5D86700C47EA3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE4CA42619B5D86700C47EA3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BE4CA3FA19B5D82F00C47EA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		BE4CA3FB19B5D82F00C47EA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		BE4CA42B19B5D86700C47EA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Prettytime/Prettytime-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Prettytime/Prettytime-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BE4CA42C19B5D86700C47EA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Prettytime/Prettytime-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Prettytime/Prettytime-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		BE4CA42E19B5D86700C47EA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Prettytime.app/Prettytime";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Prettytime/Prettytime-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "PrettytimeTests/PrettytimeTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		BE4CA42F19B5D86700C47EA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Prettytime.app/Prettytime";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Prettytime/Prettytime-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "PrettytimeTests/PrettytimeTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BE4CA3F919B5D82F00C47EA3 /* Build configuration list for PBXProject "Prettytime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE4CA3FA19B5D82F00C47EA3 /* Debug */,
+				BE4CA3FB19B5D82F00C47EA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE4CA42A19B5D86700C47EA3 /* Build configuration list for PBXNativeTarget "Prettytime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE4CA42B19B5D86700C47EA3 /* Debug */,
+				BE4CA42C19B5D86700C47EA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BE4CA42D19B5D86700C47EA3 /* Build configuration list for PBXNativeTarget "PrettytimeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE4CA42E19B5D86700C47EA3 /* Debug */,
+				BE4CA42F19B5D86700C47EA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BE4CA3F619B5D82F00C47EA3 /* Project object */;
+}
