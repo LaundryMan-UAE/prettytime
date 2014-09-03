@@ -13,14 +13,15 @@ Pod::Spec.new do |s|
   s.homepage         = "http://ocpsoft.org/prettytime/"
   s.license          = { :type => 'Apache License, Version 2.0', :file => 'LICENSE' }
 
-  s.platform     = :ios, '7.0'
+  s.ios.deployment_target = '7.0'
+  s.osx.deployment_target = '10.7'
   s.requires_arc = true
 
-  s.source_files = 'core/src/gen/objc/**/*.{h,m}'
+  s.source_files = 'core/src/gen/objc/*.{h,m}'
   s.resources = 'core/src/main/resources/*'
 
-  s.dependency 'J2ObjC', '~> 0.9.3'
-  s.xcconfig = { 'HEADER_SEARCH_PATHS' => "\"${PODS_ROOT}/J2ObjC/dist/include\"", \
-                 'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/J2ObjC/dist/lib"' }
+  s.public_header_files = 'core/src/gen/objc/*.h'
+
+  s.xcconfig = { 'HEADER_SEARCH_PATHS' => "\"${PODS_ROOT}/J2ObjC/dist/include\"" }
 
 end
