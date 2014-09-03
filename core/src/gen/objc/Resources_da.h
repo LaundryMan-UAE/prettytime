@@ -11,6 +11,9 @@
 #import "JreEmulation.h"
 #include "java/util/ListResourceBundle.h"
 
+/**
+ @author lkmikkel
+ */
 @interface OrgOcpsoftPrettytimeI18nResources_da : JavaUtilListResourceBundle {
 }
 

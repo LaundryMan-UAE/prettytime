@@ -11,6 +11,10 @@
 #import "JreEmulation.h"
 #include "TimeFormat.h"
 
+/**
+ @brief Represents a simple method of formatting a specific Duration of time
+ @author <a href="mailto:lincolnbaxter@@gmail.com">Lincoln Baxter, III</a>
+ */
 @interface OrgOcpsoftPrettytimeFormatSimpleTimeFormat : NSObject < OrgOcpsoftPrettytimeTimeFormat > {
  @public
   NSString *singularName_;
@@ -70,6 +74,11 @@
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setPastSuffixWithNSString:(NSString *)pastSuffix;
 
+/**
+ @brief The percentage of the current TimeUnit .getMillisPerUnit() for which the quantity may be rounded up by one.
+ @param roundingTolerance
+ @return 
+ */
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setRoundingToleranceWithInt:(int)roundingTolerance;
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setSingularNameWithNSString:(NSString *)name;

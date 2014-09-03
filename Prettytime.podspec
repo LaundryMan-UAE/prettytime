@@ -18,6 +18,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'core/src/gen/objc/*.{h,m}'
+  s..exclude_files = 'core/src/gen/objc/*Test.{h,m}'
   s.resources = 'core/src/main/resources/*'
 
   s.public_header_files = 'core/src/gen/objc/*.h'

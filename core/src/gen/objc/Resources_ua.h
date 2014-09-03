@@ -18,6 +18,10 @@
 #define OrgOcpsoftPrettytimeI18nResources_ua_slavicPluralForms 3
 #define OrgOcpsoftPrettytimeI18nResources_ua_tolerance 50
 
+/**
+ @brief Created with IntelliJ IDEA.
+ User: Tumin Alexander Date: 2012-12-13 Time: 03:33 reedit to Ukrainian with Eclipse). User: Ihor Lavrynuk Date: 2013-01-06 Time: 15:04
+ */
 @interface OrgOcpsoftPrettytimeI18nResources_ua : JavaUtilListResourceBundle < OrgOcpsoftPrettytimeImplTimeFormatProvider > {
 }
 

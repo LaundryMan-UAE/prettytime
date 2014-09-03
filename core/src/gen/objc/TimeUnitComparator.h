@@ -14,6 +14,10 @@
 
 #define OrgOcpsoftPrettytimeUnitsTimeUnitComparator_serialVersionUID 1LL
 
+/**
+ @brief Compares two TimeUnit objects
+ @author lb3
+ */
 @interface OrgOcpsoftPrettytimeUnitsTimeUnitComparator : NSObject < JavaUtilComparator, JavaIoSerializable > {
 }
 

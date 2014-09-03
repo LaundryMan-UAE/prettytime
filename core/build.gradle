@@ -21,28 +21,45 @@ dependencies {
     testCompile "junit:junit:4.11"
 }
 
-task j2objc(type:Exec) {
-
-    System.setProperty("java.library.path", "$buildDir/classes/main")
-    println "$buildDir/classes/main"
-    description 'The j2objc tool translates specified Java source files into Objective-C sources for use in an iOS application.'
-    inputs.files sourceSets.main.allJava + sourceSets.test.allJava
-    outputs.files fileTree(dir: file('src/gen/objc').path, includes: ['**/*.h','**/*.m'])
-    executable "${J2OBJC_HOME}/j2objc"
-    args '-use-arc', '--no-package-directories'
-    args '-d', file('src/gen/objc').path
-    args '-sourcepath', (sourceSets.main.allJava.srcDirs + sourceSets.test.allJava.srcDirs).join(':')
-    args '-classpath', "${J2OBJC_HOME}/lib/junit-4.10.jar"
-    args sourceSets.main.allJava + sourceSets.test.allJava
+task cycleFinder(type:Exec) {
+    inputs.files configurations.runtime.allDependencies.dependencyProject.sourceSets.main.allJava.inject(sourceSets.main.allJava) { acc, val -> acc.plus(val) }
+    executable "${J2OBJC_HOME}/cycle_finder"
+    args '-sourcepath', (sourceSets.main.allJava.srcDirs + configurations.runtime.allDependencies.dependencyProject.sourceSets.main.allJava.srcDirs.flatten()).join(':')
+    args '-classpath', "${J2OBJC_HOME}/lib/guava-14.0.1.jar:${J2OBJC_HOME}/lib/jsr305-2.0.2.jar"
+    args inputs.files
 }
 
-task j2objcc(type:Exec, dependsOn: j2objc) {
-    description 'j2objcc is a convenience script to simplify compiling Objective-C or Objective-C++ files created by j2objc.'
-    inputs.files fileTree(dir: file('src/gen/objc').path, includes: ['**/*.h','**/*.m'])
+task translateJava(type:Exec) {
+    inputs.files configurations.runtime.allDependencies.dependencyProject.sourceSets.main.allJava.inject(sourceSets.main.allJava) { acc, val -> acc.plus(val) }
+
+    // the classpath is built from the runtime dependencies for the sourcesets ...
+    executable "${J2OBJC_HOME}/j2objc"
+    args '-use-arc', '--no-package-directories', '--doc-comments'
+    args '-d', file('src/gen/objc').path
+    args '-sourcepath', (sourceSets.main.allJava.srcDirs + configurations.runtime.allDependencies.dependencyProject.sourceSets.main.allJava.srcDirs.flatten()).join(':')
+    args '-classpath', sourceSets.main.runtimeClasspath.collect { it.absolutePath }.join(':')
+    args inputs.files
+}
+
+task translateTestJava(type:Exec, dependsOn: translateJava) {
+    inputs.files configurations.runtime.allDependencies.dependencyProject.sourceSets.test.allJava.inject(sourceSets.test.allJava) { acc, val -> acc.plus(val) }
+
+    executable "${J2OBJC_HOME}/j2objc"
+    args '--prefixes', file('src/main/resources/prefixes.properties').path
+    args '-use-arc', '--no-package-directories'
+    args '-d', buildDir
+    args '-sourcepath', (sourceSets.main.allJava.srcDirs + sourceSets.test.allJava.srcDirs + configurations.runtime.allDependencies.dependencyProject.sourceSets.main.allJava.srcDirs.flatten() + configurations.runtime.allDependencies.dependencyProject.sourceSets.test.allJava.srcDirs.flatten()).join(':')
+    args '-classpath', "${J2OBJC_HOME}/lib/junit-4.10.jar"
+    args inputs.files
+}
+
+task compileTestObjC(type:Exec, dependsOn: translateTestJava) {
+    inputs.files fileTree(dir: buildDir, includes: ['**/*.h','**/*.m']).plus(fileTree(dir: file('src/main/objc'), includes: ['**/*.h','**/*.m']))
     outputs.files file("$buildDir/testrunner")
     executable "${J2OBJC_HOME}/j2objcc"
     workingDir buildDir
-    args "-ObjC", "-ljunit", "-I$buildDir", "-I${file('src/gen/objc').path}"
+    args "-I$buildDir", "-I${file('src/gen/objc').path}"
+    args "-ObjC", "-ljunit"
     args "-o", "testrunner"
     fileTree(dir: buildDir, include: '**/*.m').files.each { i ->
         args i.path
@@ -50,20 +67,18 @@ task j2objcc(type:Exec, dependsOn: j2objc) {
     fileTree(dir: file('src/gen/objc'), include: '**/*.m').files.each { i ->
         args i.path
     }
-
 }
 
-task testj2objc(type:Exec, dependsOn: j2objcc) {
-    description 'Execute JUnit tests as binaries on OS X'
+task testObjC(type:Exec, dependsOn: compileTestObjC) {
     inputs.files file("$buildDir/testrunner")
     executable file("$buildDir/testrunner")
     args 'org.junit.runner.JUnitCore'
     args sourceSets.test.allJava.files.findAll { f -> f.name.endsWith('Test.java')}*.path*.replace("${sourceSets.test.java.srcDirs.iterator().next().path}/", '')*.replace('.java', '')*.replace('/', '.')
-}
-
-task debug {
-    doLast {
-        println sourceSets.test.allJava.files.findAll { f -> f.name.endsWith('Test.java')}*.path*.replace("${sourceSets.test.java.srcDirs.iterator().next().path}/", '')*.replace('.java', '')*.replace('/', '.').join(' ')
+    configurations.runtime.allDependencies.dependencyProject.sourceSets.test.allJava.each { i ->
+        args i.files.findAll { f -> f.name.endsWith('Test.java')}*.path*.replace("${i.srcDirs.iterator().next().path}/", '')*.replace('.java', '')*.replace('/', '.')
     }
 }
 
+task debug << {
+    println ();
+}

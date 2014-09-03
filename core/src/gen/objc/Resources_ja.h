@@ -105,6 +105,11 @@ J2OBJC_STATIC_FIELD_GETTER(OrgOcpsoftPrettytimeI18nResources_ja, OBJECTS_, IOSOb
 
 - (OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat *)setPastSuffixWithNSString:(NSString *)pastSuffix;
 
+/**
+ @brief The percentage of the current TimeUnit .getMillisPerUnit() for which the quantity may be rounded up by one.
+ @param roundingTolerance
+ @return 
+ */
 - (OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat *)setRoundingToleranceWithInt:(int)roundingTolerance;
 
 - (OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat *)setSingularNameWithNSString:(NSString *)name;

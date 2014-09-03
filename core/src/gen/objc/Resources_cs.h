@@ -22,6 +22,9 @@
 #include "java/lang/Comparable.h"
 #include "java/util/ListResourceBundle.h"
 
+/**
+ @author Martin Kouba
+ */
 @interface OrgOcpsoftPrettytimeI18nResources_cs : JavaUtilListResourceBundle < OrgOcpsoftPrettytimeImplTimeFormatProvider > {
 }
 

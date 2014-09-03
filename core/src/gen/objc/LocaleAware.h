@@ -10,8 +10,15 @@
 
 #import "JreEmulation.h"
 
+/**
+ @brief An object that behaves differently for various Locale settings.
+ @author <a href="mailto:lincolnbaxter@@gmail.com">Lincoln Baxter, III</a>
+ */
 @protocol OrgOcpsoftPrettytimeLocaleAware < NSObject, JavaObject >
 
+/**
+ @brief Set the Locale for which this instance should behave in.
+ */
 - (id)setLocaleWithJavaUtilLocale:(JavaUtilLocale *)locale;
 
 @end

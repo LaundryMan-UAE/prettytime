@@ -11,6 +11,10 @@
 #import "JreEmulation.h"
 #include "java/util/ListResourceBundle.h"
 
+/**
+ @brief Resource for Indonesian language.
+ @author xsalefter (xsalefter[at]gmail.com)
+ */
 @interface OrgOcpsoftPrettytimeI18nResources_in : JavaUtilListResourceBundle {
 }
 

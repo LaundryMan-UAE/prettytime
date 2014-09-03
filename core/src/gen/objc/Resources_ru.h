@@ -18,6 +18,10 @@
 #define OrgOcpsoftPrettytimeI18nResources_ru_russianPluralForms 3
 #define OrgOcpsoftPrettytimeI18nResources_ru_tolerance 50
 
+/**
+ @brief Created with IntelliJ IDEA.
+ User: Tumin Alexander Date: 2012-12-13 Time: 03:33
+ */
 @interface OrgOcpsoftPrettytimeI18nResources_ru : JavaUtilListResourceBundle < OrgOcpsoftPrettytimeImplTimeFormatProvider > {
 }
 

@@ -10,18 +10,40 @@
 
 #import "JreEmulation.h"
 
+/**
+ @brief Represents a quantity of any given TimeUnit
+ @author <a href="mailto:lincolnbaxter@@gmail.com">Lincoln Baxter, III</a>
+ */
 @protocol OrgOcpsoftPrettytimeDuration < NSObject, JavaObject >
 
+/**
+ @brief Return the calculated quantity of TimeUnit instances.
+ */
 - (long long int)getQuantity;
 
+/**
+ @brief Return the calculated quantity of TimeUnit instances, rounded up if #getDelta() is greater than or equal to the given tolerance.
+ */
 - (long long int)getQuantityRoundedWithInt:(int)tolerance;
 
+/**
+ @brief Return the TimeUnit represented by this Duration
+ */
 - (id<OrgOcpsoftPrettytimeTimeUnit>)getUnit;
 
+/**
+ @brief Return the number of milliseconds left over when calculating the number of TimeUnit 's that fit into the given time range.
+ */
 - (long long int)getDelta;
 
+/**
+ @brief Return true if this Duration represents a number of TimeUnit instances in the past.
+ */
 - (BOOL)isInPast;
 
+/**
+ @brief Return true if this Duration represents a number of TimeUnit instances in the future.
+ */
 - (BOOL)isInFuture;
 
 @end

@@ -9,12 +9,18 @@
 #import "JreEmulation.h"
 #include "TimeUnit.h"
 
+/**
+ @author <a href="mailto:lincolnbaxter@@gmail.com">Lincoln Baxter, III</a>
+ */
 @interface OrgOcpsoftPrettytimeImplResourcesTimeUnit : NSObject < OrgOcpsoftPrettytimeTimeUnit > {
  @public
   long long int maxQuantity_;
   long long int millisPerUnit_;
 }
 
+/**
+ @brief Return the name of the resource bundle from which this unit's format should be loaded.
+ */
 - (NSString *)getResourceKeyPrefix;
 
 - (NSString *)getResourceBundleName;

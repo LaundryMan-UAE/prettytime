@@ -10,15 +10,39 @@
 
 #import "JreEmulation.h"
 
+/**
+ @brief Format a Duration object.
+ @author <a href="mailto:lincolnbaxter@@gmail.com">Lincoln Baxter, III</a>
+ */
 @protocol OrgOcpsoftPrettytimeTimeFormat < NSObject, JavaObject >
 
+/**
+ @brief Given a populated Duration object.
+ Apply formatting (with rounding) and output the result.
+ @param The original Duration instance from which the time string should be decorated.
+ */
 - (NSString *)formatWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration;
 
+/**
+ @brief Given a populated Duration object.
+ Apply formatting (without rounding) and output the result.
+ @param The original Duration instance from which the time string should be decorated.
+ */
 - (NSString *)formatUnroundedWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration;
 
+/**
+ @brief Decorate with past or future prefix/suffix (with rounding)
+ @param duration The original Duration instance from which the time string should be decorated.
+ @param time The formatted time string.
+ */
 - (NSString *)decorateWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration
                                           withNSString:(NSString *)time;
 
+/**
+ @brief Decorate with past or future prefix/suffix (without rounding)
+ @param duration The original Duration instance from which the time string should be decorated.
+ @param time The formatted time string.
+ */
 - (NSString *)decorateUnroundedWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration
                                                    withNSString:(NSString *)time;
 

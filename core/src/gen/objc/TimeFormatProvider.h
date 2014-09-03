@@ -11,8 +11,16 @@
 
 #import "JreEmulation.h"
 
+/**
+ @brief Produces time formats.
+ Currently only to be used on Resource bundle implementations when used in ResourcesTimeFormat instances..
+ @author <a href="mailto:lincolnbaxter@@gmail.com">Lincoln Baxter, III</a>
+ */
 @protocol OrgOcpsoftPrettytimeImplTimeFormatProvider < NSObject, JavaObject >
 
+/**
+ @brief Return the appropriate TimeFormat for the given TimeUnit
+ */
 - (id<OrgOcpsoftPrettytimeTimeFormat>)getFormatForWithOrgOcpsoftPrettytimeTimeUnit:(id<OrgOcpsoftPrettytimeTimeUnit>)t;
 
 @end

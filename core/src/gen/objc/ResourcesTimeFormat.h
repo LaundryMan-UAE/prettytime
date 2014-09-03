@@ -16,6 +16,10 @@
 #include "SimpleTimeFormat.h"
 #include "TimeFormat.h"
 
+/**
+ @brief Represents a simple method of formatting a specific Duration of time
+ @author lb3
+ */
 @interface OrgOcpsoftPrettytimeImplResourcesTimeFormat : OrgOcpsoftPrettytimeFormatSimpleTimeFormat < OrgOcpsoftPrettytimeTimeFormat, OrgOcpsoftPrettytimeLocaleAware > {
  @public
   JavaUtilResourceBundle *bundle_;
