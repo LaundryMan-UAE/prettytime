@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.name             = "Prettytime"
   s.version          = '3.2.6.1'
   s.author           = { "Marcus Smith" => "m_badenochsmith@yahoo.co.uk" }
-  s.source           = { :git => "https://github.com/sadevelopment/prettytime.git" }
+  s.source           = { :git => "https://github.com/hambroperks/prettytime.git" }
   s.summary 	     = "Version 3.2.6-SNAPSHOT update translated via J2ObjC - check core"
   s.homepage         = "http://ocpsoft.org/prettytime/"
   s.license          = { :type => 'Apache License, Version 2.0', :file => 'LICENSE' }
