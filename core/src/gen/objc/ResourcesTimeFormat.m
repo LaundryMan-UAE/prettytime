@@ -4,6 +4,7 @@
 //
 
 #include "Duration.h"
+#include "IOSClass.h"
 #include "ResourcesTimeFormat.h"
 #include "ResourcesTimeUnit.h"
 #include "SimpleTimeFormat.h"
@@ -17,47 +18,47 @@
 
 - (instancetype)initWithOrgOcpsoftPrettytimeImplResourcesTimeUnit:(OrgOcpsoftPrettytimeImplResourcesTimeUnit *)unit {
   if (self = [super init]) {
-    self->unit_ = unit;
+    OrgOcpsoftPrettytimeImplResourcesTimeFormat_set_unit_(self, unit);
   }
   return self;
 }
 
 - (OrgOcpsoftPrettytimeImplResourcesTimeFormat *)setLocaleWithJavaUtilLocale:(JavaUtilLocale *)locale {
-  bundle_ = JavaUtilResourceBundle_getBundleWithNSString_withJavaUtilLocale_([((OrgOcpsoftPrettytimeImplResourcesTimeUnit *) nil_chk(unit_)) getResourceBundleName], locale);
+  OrgOcpsoftPrettytimeImplResourcesTimeFormat_set_bundle_(self, JavaUtilResourceBundle_getBundleWithNSString_withJavaUtilLocale_([((OrgOcpsoftPrettytimeImplResourcesTimeUnit *) nil_chk(unit_)) getResourceBundleName], locale));
   if ([bundle_ conformsToProtocol: @protocol(OrgOcpsoftPrettytimeImplTimeFormatProvider)]) {
     id<OrgOcpsoftPrettytimeTimeFormat> format = [((id<OrgOcpsoftPrettytimeImplTimeFormatProvider>) nil_chk(((id<OrgOcpsoftPrettytimeImplTimeFormatProvider>) check_protocol_cast(bundle_, @protocol(OrgOcpsoftPrettytimeImplTimeFormatProvider))))) getFormatForWithOrgOcpsoftPrettytimeTimeUnit:unit_];
     if (format != nil) {
-      self->override_ = format;
+      OrgOcpsoftPrettytimeImplResourcesTimeFormat_set_override_(self, format);
     }
   }
   else {
-    override_ = nil;
+    OrgOcpsoftPrettytimeImplResourcesTimeFormat_set_override_(self, nil);
   }
   if (override_ == nil) {
-    (void) [self setPatternWithNSString:[((JavaUtilResourceBundle *) nil_chk(bundle_)) getStringWithNSString:JreStrcat("$$", [unit_ getResourceKeyPrefix], @"Pattern")]];
-    (void) [self setFuturePrefixWithNSString:[bundle_ getStringWithNSString:JreStrcat("$$", [unit_ getResourceKeyPrefix], @"FuturePrefix")]];
-    (void) [self setFutureSuffixWithNSString:[bundle_ getStringWithNSString:JreStrcat("$$", [unit_ getResourceKeyPrefix], @"FutureSuffix")]];
-    (void) [self setPastPrefixWithNSString:[bundle_ getStringWithNSString:JreStrcat("$$", [unit_ getResourceKeyPrefix], @"PastPrefix")]];
-    (void) [self setPastSuffixWithNSString:[bundle_ getStringWithNSString:JreStrcat("$$", [unit_ getResourceKeyPrefix], @"PastSuffix")]];
-    (void) [self setSingularNameWithNSString:[bundle_ getStringWithNSString:JreStrcat("$$", [unit_ getResourceKeyPrefix], @"SingularName")]];
-    (void) [self setPluralNameWithNSString:[bundle_ getStringWithNSString:JreStrcat("$$", [unit_ getResourceKeyPrefix], @"PluralName")]];
+    [self setPatternWithNSString:[((JavaUtilResourceBundle *) nil_chk(bundle_)) getStringWithNSString:JreStrcat("$$", [unit_ getResourceKeyPrefix], @"Pattern")]];
+    [self setFuturePrefixWithNSString:[bundle_ getStringWithNSString:JreStrcat("$$", [unit_ getResourceKeyPrefix], @"FuturePrefix")]];
+    [self setFutureSuffixWithNSString:[bundle_ getStringWithNSString:JreStrcat("$$", [unit_ getResourceKeyPrefix], @"FutureSuffix")]];
+    [self setPastPrefixWithNSString:[bundle_ getStringWithNSString:JreStrcat("$$", [unit_ getResourceKeyPrefix], @"PastPrefix")]];
+    [self setPastSuffixWithNSString:[bundle_ getStringWithNSString:JreStrcat("$$", [unit_ getResourceKeyPrefix], @"PastSuffix")]];
+    [self setSingularNameWithNSString:[bundle_ getStringWithNSString:JreStrcat("$$", [unit_ getResourceKeyPrefix], @"SingularName")]];
+    [self setPluralNameWithNSString:[bundle_ getStringWithNSString:JreStrcat("$$", [unit_ getResourceKeyPrefix], @"PluralName")]];
     @try {
-      (void) [self setFuturePluralNameWithNSString:[bundle_ getStringWithNSString:JreStrcat("$$", [unit_ getResourceKeyPrefix], @"FuturePluralName")]];
+      [self setFuturePluralNameWithNSString:[bundle_ getStringWithNSString:JreStrcat("$$", [unit_ getResourceKeyPrefix], @"FuturePluralName")]];
     }
     @catch (JavaLangException *e) {
     }
     @try {
-      (void) [self setFutureSingularNameWithNSString:([bundle_ getStringWithNSString:JreStrcat("$$", [unit_ getResourceKeyPrefix], @"FutureSingularName")])];
+      [self setFutureSingularNameWithNSString:([bundle_ getStringWithNSString:JreStrcat("$$", [unit_ getResourceKeyPrefix], @"FutureSingularName")])];
     }
     @catch (JavaLangException *e) {
     }
     @try {
-      (void) [self setPastPluralNameWithNSString:([bundle_ getStringWithNSString:JreStrcat("$$", [unit_ getResourceKeyPrefix], @"PastPluralName")])];
+      [self setPastPluralNameWithNSString:([bundle_ getStringWithNSString:JreStrcat("$$", [unit_ getResourceKeyPrefix], @"PastPluralName")])];
     }
     @catch (JavaLangException *e) {
     }
     @try {
-      (void) [self setPastSingularNameWithNSString:([bundle_ getStringWithNSString:JreStrcat("$$", [unit_ getResourceKeyPrefix], @"PastSingularName")])];
+      [self setPastSingularNameWithNSString:([bundle_ getStringWithNSString:JreStrcat("$$", [unit_ getResourceKeyPrefix], @"PastSingularName")])];
     }
     @catch (JavaLangException *e) {
     }
@@ -83,11 +84,18 @@
   return override_ == nil ? [super formatUnroundedWithOrgOcpsoftPrettytimeDuration:duration] : [override_ formatUnroundedWithOrgOcpsoftPrettytimeDuration:duration];
 }
 
+- (void)dealloc {
+  OrgOcpsoftPrettytimeImplResourcesTimeFormat_set_bundle_(self, nil);
+  OrgOcpsoftPrettytimeImplResourcesTimeFormat_set_unit_(self, nil);
+  OrgOcpsoftPrettytimeImplResourcesTimeFormat_set_override_(self, nil);
+  [super dealloc];
+}
+
 - (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeImplResourcesTimeFormat *)other {
   [super copyAllFieldsTo:other];
-  other->bundle_ = bundle_;
-  other->unit_ = unit_;
-  other->override_ = override_;
+  OrgOcpsoftPrettytimeImplResourcesTimeFormat_set_bundle_(other, bundle_);
+  OrgOcpsoftPrettytimeImplResourcesTimeFormat_set_unit_(other, unit_);
+  OrgOcpsoftPrettytimeImplResourcesTimeFormat_set_override_(other, override_);
 }
 
 + (const J2ObjcClassInfo *)__metadata {

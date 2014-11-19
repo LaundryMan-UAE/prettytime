@@ -41,6 +41,8 @@
 
 - (NSString *)formatUnroundedWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration;
 
+- (void)dealloc;
+
 - (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeImplResourcesTimeFormat *)other;
 
 @end

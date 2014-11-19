@@ -38,40 +38,40 @@ IOSObjectArray * OrgOcpsoftPrettytimeI18nResources_ua_OBJECTS_;
 
 - (id<OrgOcpsoftPrettytimeTimeFormat>)getFormatForWithOrgOcpsoftPrettytimeTimeUnit:(id<OrgOcpsoftPrettytimeTimeUnit>)t {
   if ([(id) t isKindOfClass:[OrgOcpsoftPrettytimeUnitsJustNow class]]) {
-    return [[OrgOcpsoftPrettytimeI18nResources_ua_$1 alloc] init];
+    return [[[OrgOcpsoftPrettytimeI18nResources_ua_$1 alloc] init] autorelease];
   }
   else if ([(id) t isKindOfClass:[OrgOcpsoftPrettytimeUnitsCentury class]]) {
-    return [[OrgOcpsoftPrettytimeI18nResources_ua_TimeFormatAided alloc] initWithNSStringArray:[IOSObjectArray arrayWithObjects:(id[]){ @"\u0441\u0442\u043e\u043b\u0456\u0442\u0442\u044f", @"\u0441\u0442\u043e\u043b\u0456\u0442\u0442\u044f", @"\u0441\u0442\u043e\u043b\u0456\u0442\u0442\u044c" } count:3 type:[IOSClass classWithClass:[NSString class]]]];
+    return [[[OrgOcpsoftPrettytimeI18nResources_ua_TimeFormatAided alloc] initWithNSStringArray:[IOSObjectArray arrayWithObjects:(id[]){ @"\u0441\u0442\u043e\u043b\u0456\u0442\u0442\u044f", @"\u0441\u0442\u043e\u043b\u0456\u0442\u0442\u044f", @"\u0441\u0442\u043e\u043b\u0456\u0442\u0442\u044c" } count:3 type:[IOSClass classWithClass:[NSString class]]]] autorelease];
   }
   else if ([(id) t isKindOfClass:[OrgOcpsoftPrettytimeUnitsDay class]]) {
-    return [[OrgOcpsoftPrettytimeI18nResources_ua_TimeFormatAided alloc] initWithNSStringArray:[IOSObjectArray arrayWithObjects:(id[]){ @"\u0434\u0435\u043d\u044c", @"\u0434\u043d\u0456", @"\u0434\u043d\u0456\u0432" } count:3 type:[IOSClass classWithClass:[NSString class]]]];
+    return [[[OrgOcpsoftPrettytimeI18nResources_ua_TimeFormatAided alloc] initWithNSStringArray:[IOSObjectArray arrayWithObjects:(id[]){ @"\u0434\u0435\u043d\u044c", @"\u0434\u043d\u0456", @"\u0434\u043d\u0456\u0432" } count:3 type:[IOSClass classWithClass:[NSString class]]]] autorelease];
   }
   else if ([(id) t isKindOfClass:[OrgOcpsoftPrettytimeUnitsDecade class]]) {
-    return [[OrgOcpsoftPrettytimeI18nResources_ua_TimeFormatAided alloc] initWithNSStringArray:[IOSObjectArray arrayWithObjects:(id[]){ @"\u0434\u0435\u0441\u044f\u0442\u0438\u043b\u0456\u0442\u0442\u044f", @"\u0434\u0435\u0441\u044f\u0442\u0438\u043b\u0456\u0442\u0442\u044f", @"\u0434\u0435\u0441\u044f\u0442\u0438\u043b\u0456\u0442\u044c" } count:3 type:[IOSClass classWithClass:[NSString class]]]];
+    return [[[OrgOcpsoftPrettytimeI18nResources_ua_TimeFormatAided alloc] initWithNSStringArray:[IOSObjectArray arrayWithObjects:(id[]){ @"\u0434\u0435\u0441\u044f\u0442\u0438\u043b\u0456\u0442\u0442\u044f", @"\u0434\u0435\u0441\u044f\u0442\u0438\u043b\u0456\u0442\u0442\u044f", @"\u0434\u0435\u0441\u044f\u0442\u0438\u043b\u0456\u0442\u044c" } count:3 type:[IOSClass classWithClass:[NSString class]]]] autorelease];
   }
   else if ([(id) t isKindOfClass:[OrgOcpsoftPrettytimeUnitsHour class]]) {
-    return [[OrgOcpsoftPrettytimeI18nResources_ua_TimeFormatAided alloc] initWithNSStringArray:[IOSObjectArray arrayWithObjects:(id[]){ @"\u0433\u043e\u0434\u0438\u043d\u0443", @"\u0433\u043e\u0434\u0438\u043d\u0438", @"\u0433\u043e\u0434\u0438\u043d" } count:3 type:[IOSClass classWithClass:[NSString class]]]];
+    return [[[OrgOcpsoftPrettytimeI18nResources_ua_TimeFormatAided alloc] initWithNSStringArray:[IOSObjectArray arrayWithObjects:(id[]){ @"\u0433\u043e\u0434\u0438\u043d\u0443", @"\u0433\u043e\u0434\u0438\u043d\u0438", @"\u0433\u043e\u0434\u0438\u043d" } count:3 type:[IOSClass classWithClass:[NSString class]]]] autorelease];
   }
   else if ([(id) t isKindOfClass:[OrgOcpsoftPrettytimeUnitsMillennium class]]) {
-    return [[OrgOcpsoftPrettytimeI18nResources_ua_TimeFormatAided alloc] initWithNSStringArray:[IOSObjectArray arrayWithObjects:(id[]){ @"\u0442\u0438\u0441\u044f\u0447\u043e\u043b\u0456\u0442\u0442\u044f", @"\u0442\u0438\u0441\u044f\u0447\u043e\u043b\u0456\u0442\u0442\u044f", @"\u0442\u0438\u0441\u044f\u0447\u043e\u043b\u0456\u0442\u044c" } count:3 type:[IOSClass classWithClass:[NSString class]]]];
+    return [[[OrgOcpsoftPrettytimeI18nResources_ua_TimeFormatAided alloc] initWithNSStringArray:[IOSObjectArray arrayWithObjects:(id[]){ @"\u0442\u0438\u0441\u044f\u0447\u043e\u043b\u0456\u0442\u0442\u044f", @"\u0442\u0438\u0441\u044f\u0447\u043e\u043b\u0456\u0442\u0442\u044f", @"\u0442\u0438\u0441\u044f\u0447\u043e\u043b\u0456\u0442\u044c" } count:3 type:[IOSClass classWithClass:[NSString class]]]] autorelease];
   }
   else if ([(id) t isKindOfClass:[OrgOcpsoftPrettytimeUnitsMillisecond class]]) {
-    return [[OrgOcpsoftPrettytimeI18nResources_ua_TimeFormatAided alloc] initWithNSStringArray:[IOSObjectArray arrayWithObjects:(id[]){ @"\u043c\u0456\u043b\u0456\u0441\u0435\u043a\u0443\u043d\u0434\u0443", @"\u043c\u0456\u043b\u0456\u0441\u0435\u043a\u0443\u043d\u0434\u0438", @"\u043c\u0456\u043b\u0456\u0441\u0435\u043a\u0443\u043d\u0434" } count:3 type:[IOSClass classWithClass:[NSString class]]]];
+    return [[[OrgOcpsoftPrettytimeI18nResources_ua_TimeFormatAided alloc] initWithNSStringArray:[IOSObjectArray arrayWithObjects:(id[]){ @"\u043c\u0456\u043b\u0456\u0441\u0435\u043a\u0443\u043d\u0434\u0443", @"\u043c\u0456\u043b\u0456\u0441\u0435\u043a\u0443\u043d\u0434\u0438", @"\u043c\u0456\u043b\u0456\u0441\u0435\u043a\u0443\u043d\u0434" } count:3 type:[IOSClass classWithClass:[NSString class]]]] autorelease];
   }
   else if ([(id) t isKindOfClass:[OrgOcpsoftPrettytimeUnitsMinute class]]) {
-    return [[OrgOcpsoftPrettytimeI18nResources_ua_TimeFormatAided alloc] initWithNSStringArray:[IOSObjectArray arrayWithObjects:(id[]){ @"\u0445\u0432\u0438\u043b\u0438\u043d\u0443", @"\u0445\u0432\u0438\u043b\u0438\u043d\u0438", @"\u0445\u0432\u0438\u043b\u0438\u043d" } count:3 type:[IOSClass classWithClass:[NSString class]]]];
+    return [[[OrgOcpsoftPrettytimeI18nResources_ua_TimeFormatAided alloc] initWithNSStringArray:[IOSObjectArray arrayWithObjects:(id[]){ @"\u0445\u0432\u0438\u043b\u0438\u043d\u0443", @"\u0445\u0432\u0438\u043b\u0438\u043d\u0438", @"\u0445\u0432\u0438\u043b\u0438\u043d" } count:3 type:[IOSClass classWithClass:[NSString class]]]] autorelease];
   }
   else if ([(id) t isKindOfClass:[OrgOcpsoftPrettytimeUnitsMonth class]]) {
-    return [[OrgOcpsoftPrettytimeI18nResources_ua_TimeFormatAided alloc] initWithNSStringArray:[IOSObjectArray arrayWithObjects:(id[]){ @"\u043c\u0456\u0441\u044f\u0446\u044c", @"\u043c\u0456\u0441\u044f\u0446\u0456", @"\u043c\u0456\u0441\u044f\u0446\u0456\u0432" } count:3 type:[IOSClass classWithClass:[NSString class]]]];
+    return [[[OrgOcpsoftPrettytimeI18nResources_ua_TimeFormatAided alloc] initWithNSStringArray:[IOSObjectArray arrayWithObjects:(id[]){ @"\u043c\u0456\u0441\u044f\u0446\u044c", @"\u043c\u0456\u0441\u044f\u0446\u0456", @"\u043c\u0456\u0441\u044f\u0446\u0456\u0432" } count:3 type:[IOSClass classWithClass:[NSString class]]]] autorelease];
   }
   else if ([(id) t isKindOfClass:[OrgOcpsoftPrettytimeUnitsSecond class]]) {
-    return [[OrgOcpsoftPrettytimeI18nResources_ua_TimeFormatAided alloc] initWithNSStringArray:[IOSObjectArray arrayWithObjects:(id[]){ @"\u0441\u0435\u043a\u0443\u043d\u0434\u0443", @"\u0441\u0435\u043a\u0443\u043d\u0434\u0438", @"\u0441\u0435\u043a\u0443\u043d\u0434" } count:3 type:[IOSClass classWithClass:[NSString class]]]];
+    return [[[OrgOcpsoftPrettytimeI18nResources_ua_TimeFormatAided alloc] initWithNSStringArray:[IOSObjectArray arrayWithObjects:(id[]){ @"\u0441\u0435\u043a\u0443\u043d\u0434\u0443", @"\u0441\u0435\u043a\u0443\u043d\u0434\u0438", @"\u0441\u0435\u043a\u0443\u043d\u0434" } count:3 type:[IOSClass classWithClass:[NSString class]]]] autorelease];
   }
   else if ([(id) t isKindOfClass:[OrgOcpsoftPrettytimeUnitsWeek class]]) {
-    return [[OrgOcpsoftPrettytimeI18nResources_ua_TimeFormatAided alloc] initWithNSStringArray:[IOSObjectArray arrayWithObjects:(id[]){ @"\u0442\u0438\u0436\u0434\u0435\u043d\u044c", @"\u0442\u0438\u0436\u043d\u0456", @"\u0442\u0438\u0436\u043d\u0456\u0432" } count:3 type:[IOSClass classWithClass:[NSString class]]]];
+    return [[[OrgOcpsoftPrettytimeI18nResources_ua_TimeFormatAided alloc] initWithNSStringArray:[IOSObjectArray arrayWithObjects:(id[]){ @"\u0442\u0438\u0436\u0434\u0435\u043d\u044c", @"\u0442\u0438\u0436\u043d\u0456", @"\u0442\u0438\u0436\u043d\u0456\u0432" } count:3 type:[IOSClass classWithClass:[NSString class]]]] autorelease];
   }
   else if ([(id) t isKindOfClass:[OrgOcpsoftPrettytimeUnitsYear class]]) {
-    return [[OrgOcpsoftPrettytimeI18nResources_ua_TimeFormatAided alloc] initWithNSStringArray:[IOSObjectArray arrayWithObjects:(id[]){ @"\u0440\u0456\u043a", @"\u0440\u043e\u043a\u0438", @"\u0440\u043e\u043a\u0456\u0432" } count:3 type:[IOSClass classWithClass:[NSString class]]]];
+    return [[[OrgOcpsoftPrettytimeI18nResources_ua_TimeFormatAided alloc] initWithNSStringArray:[IOSObjectArray arrayWithObjects:(id[]){ @"\u0440\u0456\u043a", @"\u0440\u043e\u043a\u0438", @"\u0440\u043e\u043a\u0456\u0432" } count:3 type:[IOSClass classWithClass:[NSString class]]]] autorelease];
   }
   return nil;
 }
@@ -82,7 +82,7 @@ IOSObjectArray * OrgOcpsoftPrettytimeI18nResources_ua_OBJECTS_;
 
 + (void)initialize {
   if (self == [OrgOcpsoftPrettytimeI18nResources_ua class]) {
-    OrgOcpsoftPrettytimeI18nResources_ua_OBJECTS_ = [IOSObjectArray arrayWithDimensions:2 lengths:(jint[]){ 0, 0 } type:[IOSClass classWithClass:[NSObject class]]];
+    JreStrongAssignAndConsume(&OrgOcpsoftPrettytimeI18nResources_ua_OBJECTS_, nil, [IOSObjectArray newArrayWithDimensions:2 lengths:(jint[]){ 0, 0 } type:[IOSClass classWithClass:[NSObject class]]]);
     J2OBJC_SET_INITIALIZED(OrgOcpsoftPrettytimeI18nResources_ua)
   }
 }
@@ -109,24 +109,24 @@ IOSObjectArray * OrgOcpsoftPrettytimeI18nResources_ua_OBJECTS_;
 - (instancetype)initWithNSStringArray:(IOSObjectArray *)plurals {
   if (self = [super init]) {
     if (((IOSObjectArray *) nil_chk(plurals))->size_ != OrgOcpsoftPrettytimeI18nResources_ua_slavicPluralForms) {
-      @throw [[JavaLangIllegalArgumentException alloc] initWithNSString:@"Wrong plural forms number for slavic language!"];
+      @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Wrong plural forms number for slavic language!"] autorelease];
     }
-    self->pluarls_ = plurals;
+    OrgOcpsoftPrettytimeI18nResources_ua_TimeFormatAided_set_pluarls_(self, plurals);
   }
   return self;
 }
 
 - (NSString *)formatWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration {
   jlong quantity = [((id<OrgOcpsoftPrettytimeDuration>) nil_chk(duration)) getQuantityRoundedWithInt:OrgOcpsoftPrettytimeI18nResources_ua_tolerance];
-  JavaLangStringBuilder *result = [[JavaLangStringBuilder alloc] init];
-  (void) [result appendWithLong:quantity];
+  JavaLangStringBuilder *result = [[[JavaLangStringBuilder alloc] init] autorelease];
+  [result appendWithLong:quantity];
   return [result description];
 }
 
 - (NSString *)formatUnroundedWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration {
   jlong quantity = [((id<OrgOcpsoftPrettytimeDuration>) nil_chk(duration)) getQuantity];
-  JavaLangStringBuilder *result = [[JavaLangStringBuilder alloc] init];
-  (void) [result appendWithLong:quantity];
+  JavaLangStringBuilder *result = [[[JavaLangStringBuilder alloc] init] autorelease];
+  [result appendWithLong:quantity];
   return [result description];
 }
 
@@ -146,24 +146,29 @@ IOSObjectArray * OrgOcpsoftPrettytimeI18nResources_ua_OBJECTS_;
                               withNSString:(NSString *)time {
   jint pluralIdx = (n % 10 == 1 && n % 100 != 11 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2);
   if (pluralIdx > OrgOcpsoftPrettytimeI18nResources_ua_slavicPluralForms) {
-    @throw [[JavaLangIllegalStateException alloc] initWithNSString:@"Wrong plural index was calculated somehow for slavic language"];
+    @throw [[[JavaLangIllegalStateException alloc] initWithNSString:@"Wrong plural index was calculated somehow for slavic language"] autorelease];
   }
-  JavaLangStringBuilder *result = [[JavaLangStringBuilder alloc] init];
+  JavaLangStringBuilder *result = [[[JavaLangStringBuilder alloc] init] autorelease];
   if (future) {
-    (void) [result appendWithNSString:@"\u0447\u0435\u0440\u0435\u0437 "];
+    [result appendWithNSString:@"\u0447\u0435\u0440\u0435\u0437 "];
   }
-  (void) [result appendWithNSString:time];
-  (void) [result appendWithChar:' '];
-  (void) [result appendWithNSString:IOSObjectArray_Get(nil_chk(pluarls_), pluralIdx)];
+  [result appendWithNSString:time];
+  [result appendWithChar:' '];
+  [result appendWithNSString:IOSObjectArray_Get(nil_chk(pluarls_), pluralIdx)];
   if (past) {
-    (void) [result appendWithNSString:@" \u0442\u043e\u043c\u0443"];
+    [result appendWithNSString:@" \u0442\u043e\u043c\u0443"];
   }
   return [result description];
 }
 
+- (void)dealloc {
+  OrgOcpsoftPrettytimeI18nResources_ua_TimeFormatAided_set_pluarls_(self, nil);
+  [super dealloc];
+}
+
 - (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeI18nResources_ua_TimeFormatAided *)other {
   [super copyAllFieldsTo:other];
-  other->pluarls_ = pluarls_;
+  OrgOcpsoftPrettytimeI18nResources_ua_TimeFormatAided_set_pluarls_(other, pluarls_);
 }
 
 + (const J2ObjcClassInfo *)__metadata {

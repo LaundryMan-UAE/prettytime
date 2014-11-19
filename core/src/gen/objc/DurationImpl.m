@@ -4,6 +4,7 @@
 //
 
 #include "DurationImpl.h"
+#include "IOSClass.h"
 #include "TimeUnit.h"
 #include "java/lang/Math.h"
 
@@ -22,7 +23,7 @@
 }
 
 - (void)setUnitWithOrgOcpsoftPrettytimeTimeUnit:(id<OrgOcpsoftPrettytimeTimeUnit>)unit {
-  self->unit_ = unit;
+  OrgOcpsoftPrettytimeImplDurationImpl_set_unit_(self, unit);
 }
 
 - (jlong)getDelta {
@@ -56,11 +57,16 @@
   return [super init];
 }
 
+- (void)dealloc {
+  OrgOcpsoftPrettytimeImplDurationImpl_set_unit_(self, nil);
+  [super dealloc];
+}
+
 - (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeImplDurationImpl *)other {
   [super copyAllFieldsTo:other];
   other->quantity_ = quantity_;
   other->delta_ = delta_;
-  other->unit_ = unit_;
+  OrgOcpsoftPrettytimeImplDurationImpl_set_unit_(other, unit_);
 }
 
 + (const J2ObjcClassInfo *)__metadata {

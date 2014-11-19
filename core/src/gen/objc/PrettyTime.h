@@ -205,6 +205,8 @@
  */
 - (id<JavaUtilList>)clearUnits;
 
+- (void)dealloc;
+
 - (void)copyAllFieldsTo:(OrgOcpsoftPrettytimePrettyTime *)other;
 
 @end

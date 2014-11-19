@@ -31,6 +31,8 @@
 
 - (IOSObjectArray *)getContents;
 
+- (void)dealloc;
+
 - (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeI18nResources_fi *)other;
 
 @end
@@ -88,6 +90,8 @@ J2OBJC_STATIC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_fi, CONTENTS_, IOSO
                                           withNSString:(NSString *)time;
 
 - (NSString *)getUnitNameWithOrgOcpsoftPrettytimeTimeUnit:(id<OrgOcpsoftPrettytimeTimeUnit>)unit;
+
+- (void)dealloc;
 
 - (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat *)other;
 

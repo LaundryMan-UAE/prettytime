@@ -38,6 +38,8 @@
 
 - (instancetype)init;
 
+- (void)dealloc;
+
 - (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeImplDurationImpl *)other;
 
 @end

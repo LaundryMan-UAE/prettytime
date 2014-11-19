@@ -28,6 +28,8 @@
 
 - (instancetype)init;
 
+- (void)dealloc;
+
 - (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeI18nResources_ja *)other;
 
 @end
@@ -125,6 +127,8 @@ J2OBJC_STATIC_FIELD_GETTER(OrgOcpsoftPrettytimeI18nResources_ja, OBJECTS_, IOSOb
 - (OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat *)setPastPluralNameWithNSString:(NSString *)pastPluralName;
 
 - (NSString *)description;
+
+- (void)dealloc;
 
 - (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat *)other;
 

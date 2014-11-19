@@ -62,6 +62,8 @@ J2OBJC_STATIC_FIELD_GETTER(OrgOcpsoftPrettytimeI18nResources_cs, OBJECTS_, IOSOb
 
 - (OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat *)buildWithJavaUtilResourceBundle:(JavaUtilResourceBundle *)bundle;
 
+- (void)dealloc;
+
 - (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *)other;
 
 @end
@@ -86,6 +88,8 @@ J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder, re
 
 - (NSString *)getGramaticallyCorrectNameWithLong:(jlong)quantity
                                 withJavaUtilList:(id<JavaUtilList>)names;
+
+- (void)dealloc;
 
 - (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat *)other;
 
@@ -114,6 +118,8 @@ J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat, pastNames
 - (jlong)getThreshold;
 
 - (jint)compareToWithId:(OrgOcpsoftPrettytimeI18nResources_cs_CsName *)o;
+
+- (void)dealloc;
 
 - (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeI18nResources_cs_CsName *)other;
 

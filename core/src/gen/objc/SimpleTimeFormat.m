@@ -4,6 +4,7 @@
 //
 
 #include "Duration.h"
+#include "IOSClass.h"
 #include "SimpleTimeFormat.h"
 #include "java/lang/Math.h"
 #include "java/lang/StringBuilder.h"
@@ -25,12 +26,12 @@ NSString * OrgOcpsoftPrettytimeFormatSimpleTimeFormat_UNIT_ = @"%u";
 
 - (NSString *)decorateWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration
                                           withNSString:(NSString *)time {
-  JavaLangStringBuilder *result = [[JavaLangStringBuilder alloc] init];
+  JavaLangStringBuilder *result = [[[JavaLangStringBuilder alloc] init] autorelease];
   if ([((id<OrgOcpsoftPrettytimeDuration>) nil_chk(duration)) isInPast]) {
-    (void) [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([result appendWithNSString:pastPrefix_])) appendWithNSString:@" "])) appendWithNSString:time])) appendWithNSString:@" "])) appendWithNSString:pastSuffix_];
+    [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([result appendWithNSString:pastPrefix_])) appendWithNSString:@" "])) appendWithNSString:time])) appendWithNSString:@" "])) appendWithNSString:pastSuffix_];
   }
   else {
-    (void) [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([result appendWithNSString:futurePrefix_])) appendWithNSString:@" "])) appendWithNSString:time])) appendWithNSString:@" "])) appendWithNSString:futureSuffix_];
+    [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([result appendWithNSString:futurePrefix_])) appendWithNSString:@" "])) appendWithNSString:time])) appendWithNSString:@" "])) appendWithNSString:futureSuffix_];
   }
   return [((NSString *) nil_chk([((NSString *) nil_chk([result description])) replaceAll:@"\\s+" withReplacement:@" "])) trim];
 }
@@ -99,27 +100,27 @@ NSString * OrgOcpsoftPrettytimeFormatSimpleTimeFormat_UNIT_ = @"%u";
 }
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setPatternWithNSString:(NSString *)pattern {
-  self->pattern_ = pattern;
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pattern_(self, pattern);
   return self;
 }
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setFuturePrefixWithNSString:(NSString *)futurePrefix {
-  self->futurePrefix_ = [((NSString *) nil_chk(futurePrefix)) trim];
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futurePrefix_(self, [((NSString *) nil_chk(futurePrefix)) trim]);
   return self;
 }
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setFutureSuffixWithNSString:(NSString *)futureSuffix {
-  self->futureSuffix_ = [((NSString *) nil_chk(futureSuffix)) trim];
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futureSuffix_(self, [((NSString *) nil_chk(futureSuffix)) trim]);
   return self;
 }
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setPastPrefixWithNSString:(NSString *)pastPrefix {
-  self->pastPrefix_ = [((NSString *) nil_chk(pastPrefix)) trim];
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastPrefix_(self, [((NSString *) nil_chk(pastPrefix)) trim]);
   return self;
 }
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setPastSuffixWithNSString:(NSString *)pastSuffix {
-  self->pastSuffix_ = [((NSString *) nil_chk(pastSuffix)) trim];
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastSuffix_(self, [((NSString *) nil_chk(pastSuffix)) trim]);
   return self;
 }
 
@@ -129,32 +130,32 @@ NSString * OrgOcpsoftPrettytimeFormatSimpleTimeFormat_UNIT_ = @"%u";
 }
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setSingularNameWithNSString:(NSString *)name {
-  self->singularName_ = name;
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_singularName_(self, name);
   return self;
 }
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setPluralNameWithNSString:(NSString *)pluralName {
-  self->pluralName_ = pluralName;
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pluralName_(self, pluralName);
   return self;
 }
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setFutureSingularNameWithNSString:(NSString *)futureSingularName {
-  self->futureSingularName_ = futureSingularName;
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futureSingularName_(self, futureSingularName);
   return self;
 }
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setFuturePluralNameWithNSString:(NSString *)futurePluralName {
-  self->futurePluralName_ = futurePluralName;
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futurePluralName_(self, futurePluralName);
   return self;
 }
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setPastSingularNameWithNSString:(NSString *)pastSingularName {
-  self->pastSingularName_ = pastSingularName;
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastSingularName_(self, pastSingularName);
   return self;
 }
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setPastPluralNameWithNSString:(NSString *)pastPluralName {
-  self->pastPluralName_ = pastPluralName;
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastPluralName_(self, pastPluralName);
   return self;
 }
 
@@ -164,35 +165,50 @@ NSString * OrgOcpsoftPrettytimeFormatSimpleTimeFormat_UNIT_ = @"%u";
 
 - (instancetype)init {
   if (self = [super init]) {
-    singularName_ = @"";
-    pluralName_ = @"";
-    futureSingularName_ = @"";
-    futurePluralName_ = @"";
-    pastSingularName_ = @"";
-    pastPluralName_ = @"";
-    pattern_ = @"";
-    futurePrefix_ = @"";
-    futureSuffix_ = @"";
-    pastPrefix_ = @"";
-    pastSuffix_ = @"";
+    OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_singularName_(self, @"");
+    OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pluralName_(self, @"");
+    OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futureSingularName_(self, @"");
+    OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futurePluralName_(self, @"");
+    OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastSingularName_(self, @"");
+    OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastPluralName_(self, @"");
+    OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pattern_(self, @"");
+    OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futurePrefix_(self, @"");
+    OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futureSuffix_(self, @"");
+    OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastPrefix_(self, @"");
+    OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastSuffix_(self, @"");
     roundingTolerance_ = 50;
   }
   return self;
 }
 
+- (void)dealloc {
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_singularName_(self, nil);
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pluralName_(self, nil);
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futureSingularName_(self, nil);
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futurePluralName_(self, nil);
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastSingularName_(self, nil);
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastPluralName_(self, nil);
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pattern_(self, nil);
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futurePrefix_(self, nil);
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futureSuffix_(self, nil);
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastPrefix_(self, nil);
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastSuffix_(self, nil);
+  [super dealloc];
+}
+
 - (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)other {
   [super copyAllFieldsTo:other];
-  other->singularName_ = singularName_;
-  other->pluralName_ = pluralName_;
-  other->futureSingularName_ = futureSingularName_;
-  other->futurePluralName_ = futurePluralName_;
-  other->pastSingularName_ = pastSingularName_;
-  other->pastPluralName_ = pastPluralName_;
-  other->pattern_ = pattern_;
-  other->futurePrefix_ = futurePrefix_;
-  other->futureSuffix_ = futureSuffix_;
-  other->pastPrefix_ = pastPrefix_;
-  other->pastSuffix_ = pastSuffix_;
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_singularName_(other, singularName_);
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pluralName_(other, pluralName_);
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futureSingularName_(other, futureSingularName_);
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futurePluralName_(other, futurePluralName_);
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastSingularName_(other, pastSingularName_);
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastPluralName_(other, pastPluralName_);
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pattern_(other, pattern_);
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futurePrefix_(other, futurePrefix_);
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futureSuffix_(other, futureSuffix_);
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastPrefix_(other, pastPrefix_);
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastSuffix_(other, pastSuffix_);
   other->roundingTolerance_ = roundingTolerance_;
 }
 

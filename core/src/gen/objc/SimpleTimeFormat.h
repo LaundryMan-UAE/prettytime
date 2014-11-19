@@ -97,6 +97,8 @@
 
 - (instancetype)init;
 
+- (void)dealloc;
+
 - (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)other;
 
 @end

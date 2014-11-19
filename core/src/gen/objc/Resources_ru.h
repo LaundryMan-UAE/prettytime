@@ -65,6 +65,8 @@ J2OBJC_STATIC_FIELD_GETTER(OrgOcpsoftPrettytimeI18nResources_ru, russianPluralFo
                                   withLong:(jlong)n
                               withNSString:(NSString *)time;
 
+- (void)dealloc;
+
 - (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided *)other;
 
 @end
