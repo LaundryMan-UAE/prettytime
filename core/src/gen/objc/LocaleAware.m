@@ -3,6 +3,7 @@
 //  source: /Users/nbransby/Documents/prettytime/core/src/main/java/org/ocpsoft/prettytime/LocaleAware.java
 //
 
+#include "J2ObjC_source.h"
 #include "LocaleAware.h"
 #include "java/util/Locale.h"
 
@@ -15,9 +16,10 @@
   static const J2ObjcMethodInfo methods[] = {
     { "setLocaleWithJavaUtilLocale:", "setLocale", "TTYPE;", 0x401, NULL },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeLocaleAware = { "LocaleAware", "org.ocpsoft.prettytime", NULL, 0x201, 1, methods, 0, NULL, 0, NULL};
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeLocaleAware = { 1, "LocaleAware", "org.ocpsoft.prettytime", NULL, 0x201, 1, methods, 0, NULL, 0, NULL};
   return &_OrgOcpsoftPrettytimeLocaleAware;
 }
 
 @end
 
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeLocaleAware)

@@ -10,7 +10,7 @@
 @protocol OrgOcpsoftPrettytimeDuration;
 @protocol OrgOcpsoftPrettytimeTimeUnit;
 
-#import "JreEmulation.h"
+#include "J2ObjC_header.h"
 #include "TimeFormat.h"
 #include "TimeFormatProvider.h"
 #include "java/util/ListResourceBundle.h"
@@ -36,16 +36,19 @@
 FOUNDATION_EXPORT BOOL OrgOcpsoftPrettytimeI18nResources_ru_initialized;
 J2OBJC_STATIC_INIT(OrgOcpsoftPrettytimeI18nResources_ru)
 
+CF_EXTERN_C_BEGIN
+
 FOUNDATION_EXPORT IOSObjectArray *OrgOcpsoftPrettytimeI18nResources_ru_OBJECTS_;
 J2OBJC_STATIC_FIELD_GETTER(OrgOcpsoftPrettytimeI18nResources_ru, OBJECTS_, IOSObjectArray *)
 
 J2OBJC_STATIC_FIELD_GETTER(OrgOcpsoftPrettytimeI18nResources_ru, tolerance, jint)
 
 J2OBJC_STATIC_FIELD_GETTER(OrgOcpsoftPrettytimeI18nResources_ru, russianPluralForms, jint)
+CF_EXTERN_C_END
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeI18nResources_ru)
 
 @interface OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided : NSObject < OrgOcpsoftPrettytimeTimeFormat > {
- @public
-  IOSObjectArray *pluarls_;
 }
 
 - (instancetype)initWithNSStringArray:(IOSObjectArray *)plurals;
@@ -60,20 +63,14 @@ J2OBJC_STATIC_FIELD_GETTER(OrgOcpsoftPrettytimeI18nResources_ru, russianPluralFo
 - (NSString *)decorateUnroundedWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration
                                                    withNSString:(NSString *)time;
 
-- (NSString *)performDecorationWithBoolean:(jboolean)past
-                               withBoolean:(jboolean)future
-                                  withLong:(jlong)n
-                              withNSString:(NSString *)time;
-
-- (void)dealloc;
-
-- (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided *)other;
-
 @end
 
-__attribute__((always_inline)) inline void OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided_init() {}
+J2OBJC_EMPTY_STATIC_INIT(OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided)
 
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided, pluarls_, IOSObjectArray *)
+CF_EXTERN_C_BEGIN
+CF_EXTERN_C_END
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided)
 
 @interface OrgOcpsoftPrettytimeI18nResources_ru_$1 : NSObject < OrgOcpsoftPrettytimeTimeFormat > {
 }
@@ -81,8 +78,6 @@ J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided, pluarl
 - (NSString *)formatWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration;
 
 - (NSString *)formatUnroundedWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration;
-
-- (NSString *)performFormatWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration;
 
 - (NSString *)decorateWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration
                                           withNSString:(NSString *)time;
@@ -94,6 +89,11 @@ J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided, pluarl
 
 @end
 
-__attribute__((always_inline)) inline void OrgOcpsoftPrettytimeI18nResources_ru_$1_init() {}
+J2OBJC_EMPTY_STATIC_INIT(OrgOcpsoftPrettytimeI18nResources_ru_$1)
+
+CF_EXTERN_C_BEGIN
+CF_EXTERN_C_END
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeI18nResources_ru_$1)
 
 #endif // _OrgOcpsoftPrettytimeI18nResources_ru_H_

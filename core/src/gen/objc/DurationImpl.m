@@ -4,9 +4,19 @@
 //
 
 #include "DurationImpl.h"
-#include "IOSClass.h"
+#include "J2ObjC_source.h"
 #include "TimeUnit.h"
 #include "java/lang/Math.h"
+
+@interface OrgOcpsoftPrettytimeImplDurationImpl () {
+ @public
+  jlong quantity_;
+  jlong delta_;
+  id<OrgOcpsoftPrettytimeTimeUnit> unit_;
+}
+@end
+
+J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeImplDurationImpl, unit_, id<OrgOcpsoftPrettytimeTimeUnit>)
 
 @implementation OrgOcpsoftPrettytimeImplDurationImpl
 
@@ -58,7 +68,7 @@
 }
 
 - (void)dealloc {
-  OrgOcpsoftPrettytimeImplDurationImpl_set_unit_(self, nil);
+  RELEASE_(unit_);
   [super dealloc];
 }
 
@@ -87,8 +97,10 @@
     { "delta_", NULL, 0x2, "J", NULL,  },
     { "unit_", NULL, 0x2, "Lorg.ocpsoft.prettytime.TimeUnit;", NULL,  },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeImplDurationImpl = { "DurationImpl", "org.ocpsoft.prettytime.impl", NULL, 0x1, 10, methods, 3, fields, 0, NULL};
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeImplDurationImpl = { 1, "DurationImpl", "org.ocpsoft.prettytime.impl", NULL, 0x1, 10, methods, 3, fields, 0, NULL};
   return &_OrgOcpsoftPrettytimeImplDurationImpl;
 }
 
 @end
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeImplDurationImpl)

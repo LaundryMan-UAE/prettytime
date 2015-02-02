@@ -8,7 +8,7 @@
 
 @class JavaUtilLocale;
 
-#import "JreEmulation.h"
+#include "J2ObjC_header.h"
 
 /**
  @brief An object that behaves differently for various Locale settings.
@@ -23,6 +23,8 @@
 
 @end
 
-__attribute__((always_inline)) inline void OrgOcpsoftPrettytimeLocaleAware_init() {}
+J2OBJC_EMPTY_STATIC_INIT(OrgOcpsoftPrettytimeLocaleAware)
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeLocaleAware)
 
 #endif // _OrgOcpsoftPrettytimeLocaleAware_H_

@@ -8,6 +8,7 @@
 #include "Hour.h"
 #include "IOSClass.h"
 #include "IOSObjectArray.h"
+#include "J2ObjC_source.h"
 #include "Minute.h"
 #include "Month.h"
 #include "Resources_cs.h"
@@ -27,6 +28,51 @@
 #include "java/util/List.h"
 #include "java/util/ResourceBundle.h"
 
+__attribute__((unused)) static OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder_addNameWithBoolean_withNSString_withLong_(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *self, jboolean isFuture, NSString *name, jlong limit);
+__attribute__((unused)) static NSString *OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat_getGramaticallyCorrectNameWithLong_withJavaUtilList_(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat *self, jlong quantity, id<JavaUtilList> names);
+
+@interface OrgOcpsoftPrettytimeI18nResources_cs () {
+}
+@end
+
+@interface OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder () {
+ @public
+  id<JavaUtilList> names_;
+  NSString *resourceKeyPrefix_;
+}
+
+- (OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *)addNameWithBoolean:(jboolean)isFuture
+                                                                    withNSString:(NSString *)name
+                                                                        withLong:(jlong)limit;
+@end
+
+J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder, names_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder, resourceKeyPrefix_, NSString *)
+
+@interface OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat () {
+ @public
+  id<JavaUtilList> futureNames_;
+  id<JavaUtilList> pastNames_;
+}
+
+- (NSString *)getGramaticallyCorrectNameWithLong:(jlong)quantity
+                                withJavaUtilList:(id<JavaUtilList>)names;
+@end
+
+J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat, futureNames_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat, pastNames_, id<JavaUtilList>)
+
+@interface OrgOcpsoftPrettytimeI18nResources_cs_CsName () {
+ @public
+  jboolean isFuture__;
+  NSString *value_;
+  JavaLangLong *threshold_;
+}
+@end
+
+J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_cs_CsName, value_, NSString *)
+J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_cs_CsName, threshold_, JavaLangLong *)
+
 BOOL OrgOcpsoftPrettytimeI18nResources_cs_initialized = NO;
 
 @implementation OrgOcpsoftPrettytimeI18nResources_cs
@@ -38,22 +84,22 @@ IOSObjectArray * OrgOcpsoftPrettytimeI18nResources_cs_OBJECTS_;
 }
 
 - (id<OrgOcpsoftPrettytimeTimeFormat>)getFormatForWithOrgOcpsoftPrettytimeTimeUnit:(id<OrgOcpsoftPrettytimeTimeUnit>)t {
-  if ([(id) t isKindOfClass:[OrgOcpsoftPrettytimeUnitsMinute class]]) {
+  if ([t isKindOfClass:[OrgOcpsoftPrettytimeUnitsMinute class]]) {
     return [((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) [[[OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder alloc] initWithNSString:@"Minute"] autorelease]) addFutureNameWithNSString:@"minutu" withLong:1])) addFutureNameWithNSString:@"minuty" withLong:4])) addFutureNameWithNSString:@"minut" withLong:JavaLangLong_MAX_VALUE])) addPastNameWithNSString:@"minutou" withLong:1])) addPastNameWithNSString:@"minutami" withLong:JavaLangLong_MAX_VALUE])) buildWithJavaUtilResourceBundle:self];
   }
-  else if ([(id) t isKindOfClass:[OrgOcpsoftPrettytimeUnitsHour class]]) {
+  else if ([t isKindOfClass:[OrgOcpsoftPrettytimeUnitsHour class]]) {
     return [((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) [[[OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder alloc] initWithNSString:@"Hour"] autorelease]) addFutureNameWithNSString:@"hodinu" withLong:1])) addFutureNameWithNSString:@"hodiny" withLong:4])) addFutureNameWithNSString:@"hodin" withLong:JavaLangLong_MAX_VALUE])) addPastNameWithNSString:@"hodinou" withLong:1])) addPastNameWithNSString:@"hodinami" withLong:JavaLangLong_MAX_VALUE])) buildWithJavaUtilResourceBundle:self];
   }
-  else if ([(id) t isKindOfClass:[OrgOcpsoftPrettytimeUnitsDay class]]) {
+  else if ([t isKindOfClass:[OrgOcpsoftPrettytimeUnitsDay class]]) {
     return [((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) [[[OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder alloc] initWithNSString:@"Day"] autorelease]) addFutureNameWithNSString:@"den" withLong:1])) addFutureNameWithNSString:@"dny" withLong:4])) addFutureNameWithNSString:@"dn\u00ed" withLong:JavaLangLong_MAX_VALUE])) addPastNameWithNSString:@"dnem" withLong:1])) addPastNameWithNSString:@"dny" withLong:JavaLangLong_MAX_VALUE])) buildWithJavaUtilResourceBundle:self];
   }
-  else if ([(id) t isKindOfClass:[OrgOcpsoftPrettytimeUnitsWeek class]]) {
+  else if ([t isKindOfClass:[OrgOcpsoftPrettytimeUnitsWeek class]]) {
     return [((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) [[[OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder alloc] initWithNSString:@"Week"] autorelease]) addFutureNameWithNSString:@"t\u00fdden" withLong:1])) addFutureNameWithNSString:@"t\u00fddny" withLong:4])) addFutureNameWithNSString:@"t\u00fddn\u016f" withLong:JavaLangLong_MAX_VALUE])) addPastNameWithNSString:@"t\u00fddnem" withLong:1])) addPastNameWithNSString:@"t\u00fddny" withLong:JavaLangLong_MAX_VALUE])) buildWithJavaUtilResourceBundle:self];
   }
-  else if ([(id) t isKindOfClass:[OrgOcpsoftPrettytimeUnitsMonth class]]) {
+  else if ([t isKindOfClass:[OrgOcpsoftPrettytimeUnitsMonth class]]) {
     return [((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) [[[OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder alloc] initWithNSString:@"Month"] autorelease]) addFutureNameWithNSString:@"m\u011bs\u00edc" withLong:1])) addFutureNameWithNSString:@"m\u011bs\u00edce" withLong:4])) addFutureNameWithNSString:@"m\u011bs\u00edc\u016f" withLong:JavaLangLong_MAX_VALUE])) addPastNameWithNSString:@"m\u011bs\u00edcem" withLong:1])) addPastNameWithNSString:@"m\u011bs\u00edci" withLong:JavaLangLong_MAX_VALUE])) buildWithJavaUtilResourceBundle:self];
   }
-  else if ([(id) t isKindOfClass:[OrgOcpsoftPrettytimeUnitsYear class]]) {
+  else if ([t isKindOfClass:[OrgOcpsoftPrettytimeUnitsYear class]]) {
     return [((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) nil_chk([((OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *) [[[OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder alloc] initWithNSString:@"Year"] autorelease]) addFutureNameWithNSString:@"rok" withLong:1])) addFutureNameWithNSString:@"roky" withLong:4])) addFutureNameWithNSString:@"let" withLong:JavaLangLong_MAX_VALUE])) addPastNameWithNSString:@"rokem" withLong:1])) addPastNameWithNSString:@"roky" withLong:JavaLangLong_MAX_VALUE])) buildWithJavaUtilResourceBundle:self];
   }
   return nil;
@@ -65,7 +111,7 @@ IOSObjectArray * OrgOcpsoftPrettytimeI18nResources_cs_OBJECTS_;
 
 + (void)initialize {
   if (self == [OrgOcpsoftPrettytimeI18nResources_cs class]) {
-    JreStrongAssignAndConsume(&OrgOcpsoftPrettytimeI18nResources_cs_OBJECTS_, nil, [IOSObjectArray newArrayWithObjects:(id[]){ [IOSObjectArray arrayWithObjects:(id[]){ @"CenturyPattern", @"%n %u" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"CenturyFuturePrefix", @"za " } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"CenturyFutureSuffix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"CenturyPastPrefix", @"p\u0159ed " } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"CenturyPastSuffix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"CenturySingularName", @"stolet\u00ed" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"CenturyPluralName", @"stolet\u00ed" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"CenturyPastSingularName", @"stolet\u00edm" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"CenturyPastPluralName", @"stolet\u00edmi" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"CenturyFutureSingularName", @"stolet\u00ed" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"CenturyFuturePluralName", @"stolet\u00ed" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"DayPattern", @"%n %u" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"DayFuturePrefix", @"za " } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"DayFutureSuffix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"DayPastPrefix", @"p\u0159ed " } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"DayPastSuffix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"DaySingularName", @"den" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"DayPluralName", @"dny" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadePattern", @"%n %u" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadeFuturePrefix", @"za " } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadeFutureSuffix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadePastPrefix", @"p\u0159ed " } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadePastSuffix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadeSingularName", @"desetilet\u00ed" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadePluralName", @"desetilet\u00ed" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadePastSingularName", @"desetilet\u00edm" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadePastPluralName", @"desetilet\u00edmi" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadeFutureSingularName", @"desetilet\u00ed" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadeFuturePluralName", @"desetilet\u00ed" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"HourPattern", @"%n %u" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"HourFuturePrefix", @"za " } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"HourFutureSuffix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"HourPastPrefix", @"p\u0159ed" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"HourPastSuffix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"HourSingularName", @"hodina" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"HourPluralName", @"hodiny" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"JustNowPattern", @"%u" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"JustNowFuturePrefix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"JustNowFutureSuffix", @"za chv\u00edli" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"JustNowPastPrefix", @"p\u0159ed chv\u00edl\u00ed" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"JustNowPastSuffix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"JustNowSingularName", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"JustNowPluralName", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MillenniumPattern", @"%n %u" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MillenniumFuturePrefix", @"za " } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MillenniumFutureSuffix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MillenniumPastPrefix", @"p\u0159ed " } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MillenniumPastSuffix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MillenniumSingularName", @"tis\u00edcilet\u00ed" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MillenniumPluralName", @"tis\u00edcilet\u00ed" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondPattern", @"%n %u" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondFuturePrefix", @"za " } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondFutureSuffix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondPastPrefix", @"p\u0159ed " } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondPastSuffix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondSingularName", @"milisekunda" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondPluralName", @"milisekundy" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondPastSingularName", @"milisekundou" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondPastPluralName", @"milisekundami" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondFutureSingularName", @"milisekundu" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondFuturePluralName", @"milisekund" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MinutePattern", @"%n %u" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MinuteFuturePrefix", @"za " } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MinuteFutureSuffix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MinutePastPrefix", @"p\u0159ed " } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MinutePastSuffix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MinuteSingularName", @"minuta" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MinutePluralName", @"minuty" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MonthPattern", @"%n %u" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MonthFuturePrefix", @"za " } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MonthFutureSuffix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MonthPastPrefix", @"p\u0159ed " } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MonthPastSuffix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MonthSingularName", @"m\u011bs\u00edc" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"MonthPluralName", @"m\u011bs\u00edce" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"SecondPattern", @"%n %u" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"SecondFuturePrefix", @"za " } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"SecondFutureSuffix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"SecondPastPrefix", @"p\u0159ed " } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"SecondPastSuffix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"SecondSingularName", @"sekunda" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"SecondPluralName", @"sekundy" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"WeekPattern", @"%n %u" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"WeekFuturePrefix", @"za " } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"WeekFutureSuffix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"WeekPastPrefix", @"p\u0159ed " } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"WeekPastSuffix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"WeekSingularName", @"t\u00fdden" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"WeekPluralName", @"t\u00fddny" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"YearPattern", @"%n %u" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"YearFuturePrefix", @"za " } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"YearFutureSuffix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"YearPastPrefix", @"p\u0159ed " } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"YearPastSuffix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"YearSingularName", @"rok" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"YearPluralName", @"roky" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"AbstractTimeUnitPattern", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"AbstractTimeUnitFuturePrefix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"AbstractTimeUnitFutureSuffix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"AbstractTimeUnitPastPrefix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"AbstractTimeUnitPastSuffix", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"AbstractTimeUnitSingularName", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]], [IOSObjectArray arrayWithObjects:(id[]){ @"AbstractTimeUnitPluralName", @"" } count:2 type:[IOSClass classWithClass:[NSObject class]]] } count:103 type:[IOSObjectArray iosClassWithType:[IOSClass classWithClass:[NSObject class]]]]);
+    JreStrongAssignAndConsume(&OrgOcpsoftPrettytimeI18nResources_cs_OBJECTS_, nil, [IOSObjectArray newArrayWithObjects:(id[]){ [IOSObjectArray arrayWithObjects:(id[]){ @"CenturyPattern", @"%n %u" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"CenturyFuturePrefix", @"za " } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"CenturyFutureSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"CenturyPastPrefix", @"p\u0159ed " } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"CenturyPastSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"CenturySingularName", @"stolet\u00ed" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"CenturyPluralName", @"stolet\u00ed" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"CenturyPastSingularName", @"stolet\u00edm" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"CenturyPastPluralName", @"stolet\u00edmi" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"CenturyFutureSingularName", @"stolet\u00ed" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"CenturyFuturePluralName", @"stolet\u00ed" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DayPattern", @"%n %u" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DayFuturePrefix", @"za " } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DayFutureSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DayPastPrefix", @"p\u0159ed " } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DayPastSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DaySingularName", @"den" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DayPluralName", @"dny" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadePattern", @"%n %u" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadeFuturePrefix", @"za " } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadeFutureSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadePastPrefix", @"p\u0159ed " } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadePastSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadeSingularName", @"desetilet\u00ed" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadePluralName", @"desetilet\u00ed" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadePastSingularName", @"desetilet\u00edm" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadePastPluralName", @"desetilet\u00edmi" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadeFutureSingularName", @"desetilet\u00ed" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadeFuturePluralName", @"desetilet\u00ed" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"HourPattern", @"%n %u" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"HourFuturePrefix", @"za " } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"HourFutureSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"HourPastPrefix", @"p\u0159ed" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"HourPastSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"HourSingularName", @"hodina" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"HourPluralName", @"hodiny" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"JustNowPattern", @"%u" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"JustNowFuturePrefix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"JustNowFutureSuffix", @"za chv\u00edli" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"JustNowPastPrefix", @"p\u0159ed chv\u00edl\u00ed" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"JustNowPastSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"JustNowSingularName", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"JustNowPluralName", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillenniumPattern", @"%n %u" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillenniumFuturePrefix", @"za " } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillenniumFutureSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillenniumPastPrefix", @"p\u0159ed " } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillenniumPastSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillenniumSingularName", @"tis\u00edcilet\u00ed" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillenniumPluralName", @"tis\u00edcilet\u00ed" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondPattern", @"%n %u" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondFuturePrefix", @"za " } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondFutureSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondPastPrefix", @"p\u0159ed " } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondPastSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondSingularName", @"milisekunda" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondPluralName", @"milisekundy" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondPastSingularName", @"milisekundou" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondPastPluralName", @"milisekundami" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondFutureSingularName", @"milisekundu" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondFuturePluralName", @"milisekund" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MinutePattern", @"%n %u" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MinuteFuturePrefix", @"za " } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MinuteFutureSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MinutePastPrefix", @"p\u0159ed " } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MinutePastSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MinuteSingularName", @"minuta" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MinutePluralName", @"minuty" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MonthPattern", @"%n %u" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MonthFuturePrefix", @"za " } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MonthFutureSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MonthPastPrefix", @"p\u0159ed " } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MonthPastSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MonthSingularName", @"m\u011bs\u00edc" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MonthPluralName", @"m\u011bs\u00edce" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"SecondPattern", @"%n %u" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"SecondFuturePrefix", @"za " } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"SecondFutureSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"SecondPastPrefix", @"p\u0159ed " } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"SecondPastSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"SecondSingularName", @"sekunda" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"SecondPluralName", @"sekundy" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"WeekPattern", @"%n %u" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"WeekFuturePrefix", @"za " } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"WeekFutureSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"WeekPastPrefix", @"p\u0159ed " } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"WeekPastSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"WeekSingularName", @"t\u00fdden" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"WeekPluralName", @"t\u00fddny" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"YearPattern", @"%n %u" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"YearFuturePrefix", @"za " } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"YearFutureSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"YearPastPrefix", @"p\u0159ed " } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"YearPastSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"YearSingularName", @"rok" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"YearPluralName", @"roky" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"AbstractTimeUnitPattern", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"AbstractTimeUnitFuturePrefix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"AbstractTimeUnitFutureSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"AbstractTimeUnitPastPrefix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"AbstractTimeUnitPastSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"AbstractTimeUnitSingularName", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"AbstractTimeUnitPluralName", @"" } count:2 type:NSObject_class_()] } count:103 type:IOSClass_arrayType(NSObject_class_(), 1)]);
     J2OBJC_SET_INITIALIZED(OrgOcpsoftPrettytimeI18nResources_cs)
   }
 }
@@ -79,11 +125,13 @@ IOSObjectArray * OrgOcpsoftPrettytimeI18nResources_cs_OBJECTS_;
   static const J2ObjcFieldInfo fields[] = {
     { "OBJECTS_", NULL, 0x1a, "[[Ljava.lang.Object;", &OrgOcpsoftPrettytimeI18nResources_cs_OBJECTS_,  },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeI18nResources_cs = { "Resources_cs", "org.ocpsoft.prettytime.i18n", NULL, 0x1, 3, methods, 1, fields, 0, NULL};
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeI18nResources_cs = { 1, "Resources_cs", "org.ocpsoft.prettytime.i18n", NULL, 0x1, 3, methods, 1, fields, 0, NULL};
   return &_OrgOcpsoftPrettytimeI18nResources_cs;
 }
 
 @end
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeI18nResources_cs)
 
 @implementation OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder
 
@@ -97,22 +145,18 @@ IOSObjectArray * OrgOcpsoftPrettytimeI18nResources_cs_OBJECTS_;
 
 - (OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *)addFutureNameWithNSString:(NSString *)name
                                                                                withLong:(jlong)limit {
-  return [self addNameWithBoolean:YES withNSString:name withLong:limit];
+  return OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder_addNameWithBoolean_withNSString_withLong_(self, YES, name, limit);
 }
 
 - (OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *)addPastNameWithNSString:(NSString *)name
                                                                              withLong:(jlong)limit {
-  return [self addNameWithBoolean:NO withNSString:name withLong:limit];
+  return OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder_addNameWithBoolean_withNSString_withLong_(self, NO, name, limit);
 }
 
 - (OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *)addNameWithBoolean:(jboolean)isFuture
                                                                     withNSString:(NSString *)name
                                                                         withLong:(jlong)limit {
-  if (name == nil) {
-    @throw [[[JavaLangIllegalArgumentException alloc] init] autorelease];
-  }
-  [((id<JavaUtilList>) nil_chk(names_)) addWithId:[[[OrgOcpsoftPrettytimeI18nResources_cs_CsName alloc] initWithBoolean:isFuture withNSString:name withJavaLangLong:JavaLangLong_valueOfWithLong_(limit)] autorelease]];
-  return self;
+  return OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder_addNameWithBoolean_withNSString_withLong_(self, isFuture, name, limit);
 }
 
 - (OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat *)buildWithJavaUtilResourceBundle:(JavaUtilResourceBundle *)bundle {
@@ -120,8 +164,8 @@ IOSObjectArray * OrgOcpsoftPrettytimeI18nResources_cs_OBJECTS_;
 }
 
 - (void)dealloc {
-  OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder_set_names_(self, nil);
-  OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder_set_resourceKeyPrefix_(self, nil);
+  RELEASE_(names_);
+  RELEASE_(resourceKeyPrefix_);
   [super dealloc];
 }
 
@@ -143,11 +187,21 @@ IOSObjectArray * OrgOcpsoftPrettytimeI18nResources_cs_OBJECTS_;
     { "names_", NULL, 0x2, "Ljava.util.List;", NULL,  },
     { "resourceKeyPrefix_", NULL, 0x2, "Ljava.lang.String;", NULL,  },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder = { "CsTimeFormatBuilder", "org.ocpsoft.prettytime.i18n", "Resources_cs", 0xa, 5, methods, 2, fields, 0, NULL};
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder = { 1, "CsTimeFormatBuilder", "org.ocpsoft.prettytime.i18n", "Resources_cs", 0xa, 5, methods, 2, fields, 0, NULL};
   return &_OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder;
 }
 
 @end
+
+OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder_addNameWithBoolean_withNSString_withLong_(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *self, jboolean isFuture, NSString *name, jlong limit) {
+  if (name == nil) {
+    @throw [[[JavaLangIllegalArgumentException alloc] init] autorelease];
+  }
+  [((id<JavaUtilList>) nil_chk(self->names_)) addWithId:[[[OrgOcpsoftPrettytimeI18nResources_cs_CsName alloc] initWithBoolean:isFuture withNSString:name withJavaLangLong:JavaLangLong_valueOfWithLong_(limit)] autorelease]];
+  return self;
+}
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder)
 
 @implementation OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat
 
@@ -202,24 +256,19 @@ IOSObjectArray * OrgOcpsoftPrettytimeI18nResources_cs_OBJECTS_;
                                                              withBoolean:(jboolean)round {
   jlong quantity = JavaLangMath_absWithLong_([self getQuantityWithOrgOcpsoftPrettytimeDuration:d withBoolean:round]);
   if ([((id<OrgOcpsoftPrettytimeDuration>) nil_chk(d)) isInFuture]) {
-    return [self getGramaticallyCorrectNameWithLong:quantity withJavaUtilList:futureNames_];
+    return OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat_getGramaticallyCorrectNameWithLong_withJavaUtilList_(self, quantity, futureNames_);
   }
-  return [self getGramaticallyCorrectNameWithLong:quantity withJavaUtilList:pastNames_];
+  return OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat_getGramaticallyCorrectNameWithLong_withJavaUtilList_(self, quantity, pastNames_);
 }
 
 - (NSString *)getGramaticallyCorrectNameWithLong:(jlong)quantity
                                 withJavaUtilList:(id<JavaUtilList>)names {
-  for (OrgOcpsoftPrettytimeI18nResources_cs_CsName * __strong name in nil_chk(names)) {
-    if ([((OrgOcpsoftPrettytimeI18nResources_cs_CsName *) nil_chk(name)) getThreshold] >= quantity) {
-      return [name get];
-    }
-  }
-  @throw [[[JavaLangIllegalStateException alloc] initWithNSString:@"Invalid resource bundle configuration"] autorelease];
+  return OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat_getGramaticallyCorrectNameWithLong_withJavaUtilList_(self, quantity, names);
 }
 
 - (void)dealloc {
-  OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat_set_futureNames_(self, nil);
-  OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat_set_pastNames_(self, nil);
+  RELEASE_(futureNames_);
+  RELEASE_(pastNames_);
   [super dealloc];
 }
 
@@ -239,11 +288,22 @@ IOSObjectArray * OrgOcpsoftPrettytimeI18nResources_cs_OBJECTS_;
     { "futureNames_", NULL, 0x12, "Ljava.util.List;", NULL,  },
     { "pastNames_", NULL, 0x12, "Ljava.util.List;", NULL,  },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat = { "CsTimeFormat", "org.ocpsoft.prettytime.i18n", "Resources_cs", 0xa, 3, methods, 2, fields, 0, NULL};
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat = { 1, "CsTimeFormat", "org.ocpsoft.prettytime.i18n", "Resources_cs", 0xa, 3, methods, 2, fields, 0, NULL};
   return &_OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat;
 }
 
 @end
+
+NSString *OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat_getGramaticallyCorrectNameWithLong_withJavaUtilList_(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat *self, jlong quantity, id<JavaUtilList> names) {
+  for (OrgOcpsoftPrettytimeI18nResources_cs_CsName * __strong name in nil_chk(names)) {
+    if ([((OrgOcpsoftPrettytimeI18nResources_cs_CsName *) nil_chk(name)) getThreshold] >= quantity) {
+      return [name get];
+    }
+  }
+  @throw [[[JavaLangIllegalStateException alloc] initWithNSString:@"Invalid resource bundle configuration"] autorelease];
+}
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat)
 
 @implementation OrgOcpsoftPrettytimeI18nResources_cs_CsName
 
@@ -276,8 +336,8 @@ IOSObjectArray * OrgOcpsoftPrettytimeI18nResources_cs_OBJECTS_;
 }
 
 - (void)dealloc {
-  OrgOcpsoftPrettytimeI18nResources_cs_CsName_set_value_(self, nil);
-  OrgOcpsoftPrettytimeI18nResources_cs_CsName_set_threshold_(self, nil);
+  RELEASE_(value_);
+  RELEASE_(threshold_);
   [super dealloc];
 }
 
@@ -301,8 +361,10 @@ IOSObjectArray * OrgOcpsoftPrettytimeI18nResources_cs_OBJECTS_;
     { "value_", NULL, 0x12, "Ljava.lang.String;", NULL,  },
     { "threshold_", NULL, 0x12, "Ljava.lang.Long;", NULL,  },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeI18nResources_cs_CsName = { "CsName", "org.ocpsoft.prettytime.i18n", "Resources_cs", 0xa, 5, methods, 3, fields, 0, NULL};
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeI18nResources_cs_CsName = { 1, "CsName", "org.ocpsoft.prettytime.i18n", "Resources_cs", 0xa, 5, methods, 3, fields, 0, NULL};
   return &_OrgOcpsoftPrettytimeI18nResources_cs_CsName;
 }
 
 @end
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeI18nResources_cs_CsName)

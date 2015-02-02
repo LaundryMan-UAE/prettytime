@@ -6,7 +6,7 @@
 #ifndef _OrgOcpsoftPrettytimeUnitsDecade_H_
 #define _OrgOcpsoftPrettytimeUnitsDecade_H_
 
-#import "JreEmulation.h"
+#include "J2ObjC_header.h"
 #include "ResourcesTimeUnit.h"
 #include "TimeUnit.h"
 
@@ -19,6 +19,11 @@
 
 @end
 
-__attribute__((always_inline)) inline void OrgOcpsoftPrettytimeUnitsDecade_init() {}
+J2OBJC_EMPTY_STATIC_INIT(OrgOcpsoftPrettytimeUnitsDecade)
+
+CF_EXTERN_C_BEGIN
+CF_EXTERN_C_END
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeUnitsDecade)
 
 #endif // _OrgOcpsoftPrettytimeUnitsDecade_H_

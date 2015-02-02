@@ -8,7 +8,7 @@
 
 @class IOSObjectArray;
 
-#import "JreEmulation.h"
+#include "J2ObjC_header.h"
 #include "java/util/ListResourceBundle.h"
 
 @interface OrgOcpsoftPrettytimeI18nResources_pl : JavaUtilListResourceBundle {
@@ -23,7 +23,12 @@
 FOUNDATION_EXPORT BOOL OrgOcpsoftPrettytimeI18nResources_pl_initialized;
 J2OBJC_STATIC_INIT(OrgOcpsoftPrettytimeI18nResources_pl)
 
+CF_EXTERN_C_BEGIN
+
 FOUNDATION_EXPORT IOSObjectArray *OrgOcpsoftPrettytimeI18nResources_pl_OBJECTS_;
 J2OBJC_STATIC_FIELD_GETTER(OrgOcpsoftPrettytimeI18nResources_pl, OBJECTS_, IOSObjectArray *)
+CF_EXTERN_C_END
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeI18nResources_pl)
 
 #endif // _OrgOcpsoftPrettytimeI18nResources_pl_H_

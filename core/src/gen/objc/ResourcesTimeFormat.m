@@ -5,6 +5,7 @@
 
 #include "Duration.h"
 #include "IOSClass.h"
+#include "J2ObjC_source.h"
 #include "ResourcesTimeFormat.h"
 #include "ResourcesTimeUnit.h"
 #include "SimpleTimeFormat.h"
@@ -13,6 +14,18 @@
 #include "java/lang/Exception.h"
 #include "java/util/Locale.h"
 #include "java/util/ResourceBundle.h"
+
+@interface OrgOcpsoftPrettytimeImplResourcesTimeFormat () {
+ @public
+  JavaUtilResourceBundle *bundle_;
+  OrgOcpsoftPrettytimeImplResourcesTimeUnit *unit_;
+  id<OrgOcpsoftPrettytimeTimeFormat> override_;
+}
+@end
+
+J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeImplResourcesTimeFormat, bundle_, JavaUtilResourceBundle *)
+J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeImplResourcesTimeFormat, unit_, OrgOcpsoftPrettytimeImplResourcesTimeUnit *)
+J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeImplResourcesTimeFormat, override_, id<OrgOcpsoftPrettytimeTimeFormat>)
 
 @implementation OrgOcpsoftPrettytimeImplResourcesTimeFormat
 
@@ -25,7 +38,7 @@
 
 - (OrgOcpsoftPrettytimeImplResourcesTimeFormat *)setLocaleWithJavaUtilLocale:(JavaUtilLocale *)locale {
   OrgOcpsoftPrettytimeImplResourcesTimeFormat_set_bundle_(self, JavaUtilResourceBundle_getBundleWithNSString_withJavaUtilLocale_([((OrgOcpsoftPrettytimeImplResourcesTimeUnit *) nil_chk(unit_)) getResourceBundleName], locale));
-  if ([bundle_ conformsToProtocol: @protocol(OrgOcpsoftPrettytimeImplTimeFormatProvider)]) {
+  if ([OrgOcpsoftPrettytimeImplTimeFormatProvider_class_() isInstance:bundle_]) {
     id<OrgOcpsoftPrettytimeTimeFormat> format = [((id<OrgOcpsoftPrettytimeImplTimeFormatProvider>) nil_chk(((id<OrgOcpsoftPrettytimeImplTimeFormatProvider>) check_protocol_cast(bundle_, @protocol(OrgOcpsoftPrettytimeImplTimeFormatProvider))))) getFormatForWithOrgOcpsoftPrettytimeTimeUnit:unit_];
     if (format != nil) {
       OrgOcpsoftPrettytimeImplResourcesTimeFormat_set_override_(self, format);
@@ -85,9 +98,9 @@
 }
 
 - (void)dealloc {
-  OrgOcpsoftPrettytimeImplResourcesTimeFormat_set_bundle_(self, nil);
-  OrgOcpsoftPrettytimeImplResourcesTimeFormat_set_unit_(self, nil);
-  OrgOcpsoftPrettytimeImplResourcesTimeFormat_set_override_(self, nil);
+  RELEASE_(bundle_);
+  RELEASE_(unit_);
+  RELEASE_(override_);
   [super dealloc];
 }
 
@@ -112,8 +125,10 @@
     { "unit_", NULL, 0x12, "Lorg.ocpsoft.prettytime.impl.ResourcesTimeUnit;", NULL,  },
     { "override_", NULL, 0x2, "Lorg.ocpsoft.prettytime.TimeFormat;", NULL,  },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeImplResourcesTimeFormat = { "ResourcesTimeFormat", "org.ocpsoft.prettytime.impl", NULL, 0x1, 6, methods, 3, fields, 0, NULL};
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeImplResourcesTimeFormat = { 1, "ResourcesTimeFormat", "org.ocpsoft.prettytime.impl", NULL, 0x1, 6, methods, 3, fields, 0, NULL};
   return &_OrgOcpsoftPrettytimeImplResourcesTimeFormat;
 }
 
 @end
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeImplResourcesTimeFormat)

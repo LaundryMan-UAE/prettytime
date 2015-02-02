@@ -4,6 +4,7 @@
 //
 
 #include "Duration.h"
+#include "J2ObjC_source.h"
 #include "TimeUnit.h"
 
 @interface OrgOcpsoftPrettytimeDuration : NSObject
@@ -20,9 +21,10 @@
     { "isInPast", NULL, "Z", 0x401, NULL },
     { "isInFuture", NULL, "Z", 0x401, NULL },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeDuration = { "Duration", "org.ocpsoft.prettytime", NULL, 0x201, 6, methods, 0, NULL, 0, NULL};
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeDuration = { 1, "Duration", "org.ocpsoft.prettytime", NULL, 0x201, 6, methods, 0, NULL, 0, NULL};
   return &_OrgOcpsoftPrettytimeDuration;
 }
 
 @end
 
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeDuration)

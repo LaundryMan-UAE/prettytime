@@ -3,6 +3,7 @@
 //  source: /Users/nbransby/Documents/prettytime/core/src/main/java/org/ocpsoft/prettytime/TimeUnit.java
 //
 
+#include "J2ObjC_source.h"
 #include "TimeUnit.h"
 
 @interface OrgOcpsoftPrettytimeTimeUnit : NSObject
@@ -15,9 +16,10 @@
     { "getMillisPerUnit", NULL, "J", 0x401, NULL },
     { "getMaxQuantity", NULL, "J", 0x401, NULL },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeTimeUnit = { "TimeUnit", "org.ocpsoft.prettytime", NULL, 0x201, 2, methods, 0, NULL, 0, NULL};
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeTimeUnit = { 1, "TimeUnit", "org.ocpsoft.prettytime", NULL, 0x201, 2, methods, 0, NULL, 0, NULL};
   return &_OrgOcpsoftPrettytimeTimeUnit;
 }
 
 @end
 
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeTimeUnit)

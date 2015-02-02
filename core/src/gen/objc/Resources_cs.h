@@ -15,7 +15,7 @@
 @protocol OrgOcpsoftPrettytimeDuration;
 @protocol OrgOcpsoftPrettytimeTimeUnit;
 
-#import "JreEmulation.h"
+#include "J2ObjC_header.h"
 #include "SimpleTimeFormat.h"
 #include "TimeFormat.h"
 #include "TimeFormatProvider.h"
@@ -39,13 +39,15 @@
 FOUNDATION_EXPORT BOOL OrgOcpsoftPrettytimeI18nResources_cs_initialized;
 J2OBJC_STATIC_INIT(OrgOcpsoftPrettytimeI18nResources_cs)
 
+CF_EXTERN_C_BEGIN
+
 FOUNDATION_EXPORT IOSObjectArray *OrgOcpsoftPrettytimeI18nResources_cs_OBJECTS_;
 J2OBJC_STATIC_FIELD_GETTER(OrgOcpsoftPrettytimeI18nResources_cs, OBJECTS_, IOSObjectArray *)
+CF_EXTERN_C_END
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeI18nResources_cs)
 
 @interface OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder : NSObject {
- @public
-  id<JavaUtilList> names_;
-  NSString *resourceKeyPrefix_;
 }
 
 - (instancetype)initWithNSString:(NSString *)resourceKeyPrefix;
@@ -56,27 +58,18 @@ J2OBJC_STATIC_FIELD_GETTER(OrgOcpsoftPrettytimeI18nResources_cs, OBJECTS_, IOSOb
 - (OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *)addPastNameWithNSString:(NSString *)name
                                                                              withLong:(jlong)limit;
 
-- (OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *)addNameWithBoolean:(jboolean)isFuture
-                                                                    withNSString:(NSString *)name
-                                                                        withLong:(jlong)limit;
-
 - (OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat *)buildWithJavaUtilResourceBundle:(JavaUtilResourceBundle *)bundle;
-
-- (void)dealloc;
-
-- (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *)other;
 
 @end
 
-__attribute__((always_inline)) inline void OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder_init() {}
+J2OBJC_EMPTY_STATIC_INIT(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder)
 
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder, names_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder, resourceKeyPrefix_, NSString *)
+CF_EXTERN_C_BEGIN
+CF_EXTERN_C_END
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder)
 
 @interface OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat : OrgOcpsoftPrettytimeFormatSimpleTimeFormat < OrgOcpsoftPrettytimeTimeFormat > {
- @public
-  id<JavaUtilList> futureNames_;
-  id<JavaUtilList> pastNames_;
 }
 
 - (instancetype)initWithNSString:(NSString *)resourceKeyPrefix
@@ -86,25 +79,16 @@ J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder, re
 - (NSString *)getGramaticallyCorrectNameWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)d
                                                              withBoolean:(jboolean)round;
 
-- (NSString *)getGramaticallyCorrectNameWithLong:(jlong)quantity
-                                withJavaUtilList:(id<JavaUtilList>)names;
-
-- (void)dealloc;
-
-- (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat *)other;
-
 @end
 
-__attribute__((always_inline)) inline void OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat_init() {}
+J2OBJC_EMPTY_STATIC_INIT(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat)
 
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat, futureNames_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat, pastNames_, id<JavaUtilList>)
+CF_EXTERN_C_BEGIN
+CF_EXTERN_C_END
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat)
 
 @interface OrgOcpsoftPrettytimeI18nResources_cs_CsName : NSObject < JavaLangComparable > {
- @public
-  jboolean isFuture__;
-  NSString *value_;
-  JavaLangLong *threshold_;
 }
 
 - (instancetype)initWithBoolean:(jboolean)isFuture
@@ -119,15 +103,13 @@ J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat, pastNames
 
 - (jint)compareToWithId:(OrgOcpsoftPrettytimeI18nResources_cs_CsName *)o;
 
-- (void)dealloc;
-
-- (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeI18nResources_cs_CsName *)other;
-
 @end
 
-__attribute__((always_inline)) inline void OrgOcpsoftPrettytimeI18nResources_cs_CsName_init() {}
+J2OBJC_EMPTY_STATIC_INIT(OrgOcpsoftPrettytimeI18nResources_cs_CsName)
 
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_cs_CsName, value_, NSString *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_cs_CsName, threshold_, JavaLangLong *)
+CF_EXTERN_C_BEGIN
+CF_EXTERN_C_END
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeI18nResources_cs_CsName)
 
 #endif // _OrgOcpsoftPrettytimeI18nResources_cs_H_

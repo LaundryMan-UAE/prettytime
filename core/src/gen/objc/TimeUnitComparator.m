@@ -3,8 +3,13 @@
 //  source: /Users/nbransby/Documents/prettytime/core/src/main/java/org/ocpsoft/prettytime/units/TimeUnitComparator.java
 //
 
+#include "J2ObjC_source.h"
 #include "TimeUnit.h"
 #include "TimeUnitComparator.h"
+
+@interface OrgOcpsoftPrettytimeUnitsTimeUnitComparator () {
+}
+@end
 
 @implementation OrgOcpsoftPrettytimeUnitsTimeUnitComparator
 
@@ -31,8 +36,10 @@
   static const J2ObjcFieldInfo fields[] = {
     { "serialVersionUID_", NULL, 0x1a, "J", NULL, .constantValue.asLong = OrgOcpsoftPrettytimeUnitsTimeUnitComparator_serialVersionUID },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeUnitsTimeUnitComparator = { "TimeUnitComparator", "org.ocpsoft.prettytime.units", NULL, 0x1, 2, methods, 1, fields, 0, NULL};
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeUnitsTimeUnitComparator = { 1, "TimeUnitComparator", "org.ocpsoft.prettytime.units", NULL, 0x1, 2, methods, 1, fields, 0, NULL};
   return &_OrgOcpsoftPrettytimeUnitsTimeUnitComparator;
 }
 
 @end
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeUnitsTimeUnitComparator)

@@ -3,7 +3,15 @@
 //  source: /Users/nbransby/Documents/prettytime/core/src/main/java/org/ocpsoft/prettytime/impl/ResourcesTimeUnit.java
 //
 
+#include "J2ObjC_source.h"
 #include "ResourcesTimeUnit.h"
+
+@interface OrgOcpsoftPrettytimeImplResourcesTimeUnit () {
+ @public
+  jlong maxQuantity_;
+  jlong millisPerUnit_;
+}
+@end
 
 @implementation OrgOcpsoftPrettytimeImplResourcesTimeUnit
 
@@ -61,8 +69,10 @@
     { "maxQuantity_", NULL, 0x2, "J", NULL,  },
     { "millisPerUnit_", NULL, 0x2, "J", NULL,  },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeImplResourcesTimeUnit = { "ResourcesTimeUnit", "org.ocpsoft.prettytime.impl", NULL, 0x401, 7, methods, 2, fields, 0, NULL};
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeImplResourcesTimeUnit = { 1, "ResourcesTimeUnit", "org.ocpsoft.prettytime.impl", NULL, 0x401, 7, methods, 2, fields, 0, NULL};
   return &_OrgOcpsoftPrettytimeImplResourcesTimeUnit;
 }
 
 @end
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeImplResourcesTimeUnit)

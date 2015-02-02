@@ -3,6 +3,7 @@
 //  source: /Users/nbransby/Documents/prettytime/core/src/main/java/org/ocpsoft/prettytime/impl/TimeFormatProvider.java
 //
 
+#include "J2ObjC_source.h"
 #include "TimeFormat.h"
 #include "TimeFormatProvider.h"
 #include "TimeUnit.h"
@@ -16,9 +17,10 @@
   static const J2ObjcMethodInfo methods[] = {
     { "getFormatForWithOrgOcpsoftPrettytimeTimeUnit:", "getFormatFor", "Lorg.ocpsoft.prettytime.TimeFormat;", 0x401, NULL },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeImplTimeFormatProvider = { "TimeFormatProvider", "org.ocpsoft.prettytime.impl", NULL, 0x201, 1, methods, 0, NULL, 0, NULL};
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeImplTimeFormatProvider = { 1, "TimeFormatProvider", "org.ocpsoft.prettytime.impl", NULL, 0x201, 1, methods, 0, NULL, 0, NULL};
   return &_OrgOcpsoftPrettytimeImplTimeFormatProvider;
 }
 
 @end
 
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeImplTimeFormatProvider)

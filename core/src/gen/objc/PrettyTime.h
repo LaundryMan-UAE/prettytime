@@ -17,7 +17,7 @@
 @protocol OrgOcpsoftPrettytimeTimeFormat;
 @protocol OrgOcpsoftPrettytimeTimeUnit;
 
-#import "JreEmulation.h"
+#include "J2ObjC_header.h"
 
 /**
  @brief A utility for creating social-networking style timestamps.
@@ -25,11 +25,6 @@
  @author <a href="mailto:lincolnbaxter@@gmail.com>Lincoln Baxter, III</a>
  */
 @interface OrgOcpsoftPrettytimePrettyTime : NSObject {
- @public
-  JavaUtilDate *reference_;
-  JavaUtilLocale *locale_;
-  id<JavaUtilMap> units_;
-  id<JavaUtilList> mCachedUnits_;
 }
 
 /**
@@ -60,14 +55,6 @@
  @brief Calculate the approximate duration between the referenceDate and date
  */
 - (id<OrgOcpsoftPrettytimeDuration>)approximateDurationWithJavaUtilDate:(JavaUtilDate *)then;
-
-- (void)initTimeUnits OBJC_METHOD_FAMILY_NONE;
-
-- (void)addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit:(OrgOcpsoftPrettytimeImplResourcesTimeUnit *)unit;
-
-- (id<OrgOcpsoftPrettytimeDuration>)calculateDurationWithLong:(jlong)difference;
-
-- (jlong)getSignWithLong:(jlong)difference;
 
 /**
  @brief Calculate to the precision of the smallest provided TimeUnit , the exact duration represented by the difference between the reference timestamp, and <code>then</code> <p> <b>Note</b>: Precision may be lost if no supplied TimeUnit is granular enough to represent one millisecond
@@ -205,17 +192,13 @@
  */
 - (id<JavaUtilList>)clearUnits;
 
-- (void)dealloc;
-
-- (void)copyAllFieldsTo:(OrgOcpsoftPrettytimePrettyTime *)other;
-
 @end
 
-__attribute__((always_inline)) inline void OrgOcpsoftPrettytimePrettyTime_init() {}
+J2OBJC_EMPTY_STATIC_INIT(OrgOcpsoftPrettytimePrettyTime)
 
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimePrettyTime, reference_, JavaUtilDate *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimePrettyTime, locale_, JavaUtilLocale *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimePrettyTime, units_, id<JavaUtilMap>)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimePrettyTime, mCachedUnits_, id<JavaUtilList>)
+CF_EXTERN_C_BEGIN
+CF_EXTERN_C_END
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimePrettyTime)
 
 #endif // _OrgOcpsoftPrettytimePrettyTime_H_

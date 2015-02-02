@@ -8,7 +8,7 @@
 
 @protocol OrgOcpsoftPrettytimeDuration;
 
-#import "JreEmulation.h"
+#include "J2ObjC_header.h"
 #include "TimeFormat.h"
 
 /**
@@ -16,19 +16,6 @@
  @author <a href="mailto:lincolnbaxter@@gmail.com">Lincoln Baxter, III</a>
  */
 @interface OrgOcpsoftPrettytimeFormatSimpleTimeFormat : NSObject < OrgOcpsoftPrettytimeTimeFormat > {
- @public
-  NSString *singularName_;
-  NSString *pluralName_;
-  NSString *futureSingularName_;
-  NSString *futurePluralName_;
-  NSString *pastSingularName_;
-  NSString *pastPluralName_;
-  NSString *pattern_;
-  NSString *futurePrefix_;
-  NSString *futureSuffix_;
-  NSString *pastPrefix_;
-  NSString *pastSuffix_;
-  jint roundingTolerance_;
 }
 
 - (NSString *)formatWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration;
@@ -41,13 +28,6 @@
 - (NSString *)decorateUnroundedWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration
                                                    withNSString:(NSString *)time;
 
-- (NSString *)formatWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration
-                                         withBoolean:(jboolean)round;
-
-- (NSString *)applyPatternWithNSString:(NSString *)sign
-                          withNSString:(NSString *)unit
-                              withLong:(jlong)quantity;
-
 - (NSString *)getPatternWithLong:(jlong)quantity;
 
 - (NSString *)getPattern;
@@ -57,12 +37,6 @@
 
 - (NSString *)getGramaticallyCorrectNameWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)d
                                                              withBoolean:(jboolean)round;
-
-- (NSString *)getSignWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)d;
-
-- (NSString *)getSingularNameWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration;
-
-- (NSString *)getPluralNameWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration;
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setPatternWithNSString:(NSString *)pattern;
 
@@ -97,25 +71,11 @@
 
 - (instancetype)init;
 
-- (void)dealloc;
-
-- (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)other;
-
 @end
 
-__attribute__((always_inline)) inline void OrgOcpsoftPrettytimeFormatSimpleTimeFormat_init() {}
+J2OBJC_EMPTY_STATIC_INIT(OrgOcpsoftPrettytimeFormatSimpleTimeFormat)
 
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, singularName_, NSString *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, pluralName_, NSString *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, futureSingularName_, NSString *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, futurePluralName_, NSString *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, pastSingularName_, NSString *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, pastPluralName_, NSString *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, pattern_, NSString *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, futurePrefix_, NSString *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, futureSuffix_, NSString *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, pastPrefix_, NSString *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, pastSuffix_, NSString *)
+CF_EXTERN_C_BEGIN
 
 FOUNDATION_EXPORT NSString *OrgOcpsoftPrettytimeFormatSimpleTimeFormat_NEGATIVE_;
 J2OBJC_STATIC_FIELD_GETTER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, NEGATIVE_, NSString *)
@@ -128,5 +88,8 @@ J2OBJC_STATIC_FIELD_GETTER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, QUANTITY_
 
 FOUNDATION_EXPORT NSString *OrgOcpsoftPrettytimeFormatSimpleTimeFormat_UNIT_;
 J2OBJC_STATIC_FIELD_GETTER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, UNIT_, NSString *)
+CF_EXTERN_C_END
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat)
 
 #endif // _OrgOcpsoftPrettytimeFormatSimpleTimeFormat_H_

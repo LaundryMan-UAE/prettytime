@@ -9,7 +9,7 @@
 @protocol OrgOcpsoftPrettytimeTimeFormat;
 @protocol OrgOcpsoftPrettytimeTimeUnit;
 
-#import "JreEmulation.h"
+#include "J2ObjC_header.h"
 
 /**
  @brief Produces time formats.
@@ -25,6 +25,8 @@
 
 @end
 
-__attribute__((always_inline)) inline void OrgOcpsoftPrettytimeImplTimeFormatProvider_init() {}
+J2OBJC_EMPTY_STATIC_INIT(OrgOcpsoftPrettytimeImplTimeFormatProvider)
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeImplTimeFormatProvider)
 
 #endif // _OrgOcpsoftPrettytimeImplTimeFormatProvider_H_

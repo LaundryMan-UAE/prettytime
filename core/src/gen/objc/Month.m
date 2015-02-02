@@ -3,6 +3,7 @@
 //  source: /Users/nbransby/Documents/prettytime/core/src/main/java/org/ocpsoft/prettytime/units/Month.java
 //
 
+#include "J2ObjC_source.h"
 #include "Month.h"
 #include "ResourcesTimeUnit.h"
 
@@ -24,8 +25,10 @@
     { "init", "Month", NULL, 0x1, NULL },
     { "getResourceKeyPrefix", NULL, "Ljava.lang.String;", 0x4, NULL },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeUnitsMonth = { "Month", "org.ocpsoft.prettytime.units", NULL, 0x1, 2, methods, 0, NULL, 0, NULL};
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeUnitsMonth = { 1, "Month", "org.ocpsoft.prettytime.units", NULL, 0x1, 2, methods, 0, NULL, 0, NULL};
   return &_OrgOcpsoftPrettytimeUnitsMonth;
 }
 
 @end
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeUnitsMonth)

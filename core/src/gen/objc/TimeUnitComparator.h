@@ -8,7 +8,7 @@
 
 @protocol OrgOcpsoftPrettytimeTimeUnit;
 
-#import "JreEmulation.h"
+#include "J2ObjC_header.h"
 #include "java/io/Serializable.h"
 #include "java/util/Comparator.h"
 
@@ -28,8 +28,13 @@
 
 @end
 
-__attribute__((always_inline)) inline void OrgOcpsoftPrettytimeUnitsTimeUnitComparator_init() {}
+J2OBJC_EMPTY_STATIC_INIT(OrgOcpsoftPrettytimeUnitsTimeUnitComparator)
+
+CF_EXTERN_C_BEGIN
 
 J2OBJC_STATIC_FIELD_GETTER(OrgOcpsoftPrettytimeUnitsTimeUnitComparator, serialVersionUID, jlong)
+CF_EXTERN_C_END
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeUnitsTimeUnitComparator)
 
 #endif // _OrgOcpsoftPrettytimeUnitsTimeUnitComparator_H_

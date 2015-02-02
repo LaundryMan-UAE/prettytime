@@ -10,6 +10,7 @@
 #include "DurationImpl.h"
 #include "Hour.h"
 #include "IOSClass.h"
+#include "J2ObjC_source.h"
 #include "JustNow.h"
 #include "LocaleAware.h"
 #include "Millennium.h"
@@ -39,13 +40,40 @@
 #include "java/util/Map.h"
 #include "java/util/Set.h"
 
+__attribute__((unused)) static void OrgOcpsoftPrettytimePrettyTime_initTimeUnits(OrgOcpsoftPrettytimePrettyTime *self);
+__attribute__((unused)) static void OrgOcpsoftPrettytimePrettyTime_addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit_(OrgOcpsoftPrettytimePrettyTime *self, OrgOcpsoftPrettytimeImplResourcesTimeUnit *unit);
+__attribute__((unused)) static id<OrgOcpsoftPrettytimeDuration> OrgOcpsoftPrettytimePrettyTime_calculateDurationWithLong_(OrgOcpsoftPrettytimePrettyTime *self, jlong difference);
+__attribute__((unused)) static jlong OrgOcpsoftPrettytimePrettyTime_getSignWithLong_(OrgOcpsoftPrettytimePrettyTime *self, jlong difference);
+
+@interface OrgOcpsoftPrettytimePrettyTime () {
+ @public
+  JavaUtilDate *reference_;
+  JavaUtilLocale *locale_;
+  id<JavaUtilMap> units_;
+  id<JavaUtilList> mCachedUnits_;
+}
+
+- (void)initTimeUnits OBJC_METHOD_FAMILY_NONE;
+
+- (void)addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit:(OrgOcpsoftPrettytimeImplResourcesTimeUnit *)unit;
+
+- (id<OrgOcpsoftPrettytimeDuration>)calculateDurationWithLong:(jlong)difference;
+
+- (jlong)getSignWithLong:(jlong)difference;
+@end
+
+J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimePrettyTime, reference_, JavaUtilDate *)
+J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimePrettyTime, locale_, JavaUtilLocale *)
+J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimePrettyTime, units_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimePrettyTime, mCachedUnits_, id<JavaUtilList>)
+
 @implementation OrgOcpsoftPrettytimePrettyTime
 
 - (instancetype)initOrgOcpsoftPrettytimePrettyTime {
   if (self = [super init]) {
     OrgOcpsoftPrettytimePrettyTime_set_locale_(self, JavaUtilLocale_getDefault());
     OrgOcpsoftPrettytimePrettyTime_setAndConsume_units_(self, [[JavaUtilLinkedHashMap alloc] init]);
-    [self initTimeUnits];
+    OrgOcpsoftPrettytimePrettyTime_initTimeUnits(self);
   }
   return self;
 }
@@ -66,7 +94,7 @@
     OrgOcpsoftPrettytimePrettyTime_set_locale_(self, JavaUtilLocale_getDefault());
     OrgOcpsoftPrettytimePrettyTime_setAndConsume_units_(self, [[JavaUtilLinkedHashMap alloc] init]);
     [self setLocaleWithJavaUtilLocale:locale];
-    [self initTimeUnits];
+    OrgOcpsoftPrettytimePrettyTime_initTimeUnits(self);
   }
   return self;
 }
@@ -88,63 +116,23 @@
   JavaUtilDate *ref = reference_;
   if (nil == ref) ref = [[[JavaUtilDate alloc] init] autorelease];
   jlong difference = [((JavaUtilDate *) nil_chk(then)) getTime] - [((JavaUtilDate *) nil_chk(ref)) getTime];
-  return [self calculateDurationWithLong:difference];
+  return OrgOcpsoftPrettytimePrettyTime_calculateDurationWithLong_(self, difference);
 }
 
 - (void)initTimeUnits {
-  [self addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit:[[[OrgOcpsoftPrettytimeUnitsJustNow alloc] init] autorelease]];
-  [self addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit:[[[OrgOcpsoftPrettytimeUnitsMillisecond alloc] init] autorelease]];
-  [self addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit:[[[OrgOcpsoftPrettytimeUnitsSecond alloc] init] autorelease]];
-  [self addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit:[[[OrgOcpsoftPrettytimeUnitsMinute alloc] init] autorelease]];
-  [self addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit:[[[OrgOcpsoftPrettytimeUnitsHour alloc] init] autorelease]];
-  [self addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit:[[[OrgOcpsoftPrettytimeUnitsDay alloc] init] autorelease]];
-  [self addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit:[[[OrgOcpsoftPrettytimeUnitsWeek alloc] init] autorelease]];
-  [self addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit:[[[OrgOcpsoftPrettytimeUnitsMonth alloc] init] autorelease]];
-  [self addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit:[[[OrgOcpsoftPrettytimeUnitsYear alloc] init] autorelease]];
-  [self addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit:[[[OrgOcpsoftPrettytimeUnitsDecade alloc] init] autorelease]];
-  [self addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit:[[[OrgOcpsoftPrettytimeUnitsCentury alloc] init] autorelease]];
-  [self addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit:[[[OrgOcpsoftPrettytimeUnitsMillennium alloc] init] autorelease]];
+  OrgOcpsoftPrettytimePrettyTime_initTimeUnits(self);
 }
 
 - (void)addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit:(OrgOcpsoftPrettytimeImplResourcesTimeUnit *)unit {
-  [self registerUnitWithOrgOcpsoftPrettytimeTimeUnit:unit withOrgOcpsoftPrettytimeTimeFormat:[[[OrgOcpsoftPrettytimeImplResourcesTimeFormat alloc] initWithOrgOcpsoftPrettytimeImplResourcesTimeUnit:unit] autorelease]];
+  OrgOcpsoftPrettytimePrettyTime_addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit_(self, unit);
 }
 
 - (id<OrgOcpsoftPrettytimeDuration>)calculateDurationWithLong:(jlong)difference {
-  jlong absoluteDifference = JavaLangMath_absWithLong_(difference);
-  id<JavaUtilList> localUnits = [self getUnits];
-  OrgOcpsoftPrettytimeImplDurationImpl *result = [[[OrgOcpsoftPrettytimeImplDurationImpl alloc] init] autorelease];
-  for (jint i = 0; i < [((id<JavaUtilList>) nil_chk(localUnits)) size]; i++) {
-    id<OrgOcpsoftPrettytimeTimeUnit> unit = [localUnits getWithInt:i];
-    jlong millisPerUnit = JavaLangMath_absWithLong_([((id<OrgOcpsoftPrettytimeTimeUnit>) nil_chk(unit)) getMillisPerUnit]);
-    jlong quantity = JavaLangMath_absWithLong_([unit getMaxQuantity]);
-    jboolean isLastUnit = i == [localUnits size] - 1;
-    if ((0 == quantity) && !isLastUnit) {
-      quantity = [((id<OrgOcpsoftPrettytimeTimeUnit>) nil_chk([localUnits getWithInt:i + 1])) getMillisPerUnit] / [unit getMillisPerUnit];
-    }
-    if ((millisPerUnit * quantity > absoluteDifference) || isLastUnit) {
-      [result setUnitWithOrgOcpsoftPrettytimeTimeUnit:unit];
-      if (millisPerUnit > absoluteDifference) {
-        [result setQuantityWithLong:[self getSignWithLong:difference]];
-        [result setDeltaWithLong:0];
-      }
-      else {
-        [result setQuantityWithLong:difference / millisPerUnit];
-        [result setDeltaWithLong:difference - [result getQuantity] * millisPerUnit];
-      }
-      break;
-    }
-  }
-  return result;
+  return OrgOcpsoftPrettytimePrettyTime_calculateDurationWithLong_(self, difference);
 }
 
 - (jlong)getSignWithLong:(jlong)difference {
-  if (0 > difference) {
-    return -1;
-  }
-  else {
-    return 1;
-  }
+  return OrgOcpsoftPrettytimePrettyTime_getSignWithLong_(self, difference);
 }
 
 - (id<JavaUtilList>)calculatePreciseDurationWithJavaUtilDate:(JavaUtilDate *)then {
@@ -152,10 +140,10 @@
   if (nil == reference_) OrgOcpsoftPrettytimePrettyTime_setAndConsume_reference_(self, [[JavaUtilDate alloc] init]);
   id<JavaUtilList> result = [[[JavaUtilArrayList alloc] init] autorelease];
   jlong difference = [((JavaUtilDate *) nil_chk(then)) getTime] - [((JavaUtilDate *) nil_chk(reference_)) getTime];
-  id<OrgOcpsoftPrettytimeDuration> duration = [self calculateDurationWithLong:difference];
+  id<OrgOcpsoftPrettytimeDuration> duration = OrgOcpsoftPrettytimePrettyTime_calculateDurationWithLong_(self, difference);
   [result addWithId:duration];
   while (0 != [((id<OrgOcpsoftPrettytimeDuration>) nil_chk(duration)) getDelta]) {
-    duration = [self calculateDurationWithLong:[duration getDelta]];
+    duration = OrgOcpsoftPrettytimePrettyTime_calculateDurationWithLong_(self, [duration getDelta]);
     [result addWithId:duration];
   }
   return result;
@@ -268,8 +256,8 @@
   if (format == nil) @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Format to register must not be null."] autorelease];
   OrgOcpsoftPrettytimePrettyTime_set_mCachedUnits_(self, nil);
   [((id<JavaUtilMap>) nil_chk(units_)) putWithId:unit withId:format];
-  if ([(id) unit conformsToProtocol: @protocol(OrgOcpsoftPrettytimeLocaleAware)]) [((id<OrgOcpsoftPrettytimeLocaleAware>) nil_chk(((id<OrgOcpsoftPrettytimeLocaleAware>) check_protocol_cast(unit, @protocol(OrgOcpsoftPrettytimeLocaleAware))))) setLocaleWithJavaUtilLocale:locale_];
-  if ([(id) format conformsToProtocol: @protocol(OrgOcpsoftPrettytimeLocaleAware)]) [((id<OrgOcpsoftPrettytimeLocaleAware>) nil_chk(((id<OrgOcpsoftPrettytimeLocaleAware>) check_protocol_cast(format, @protocol(OrgOcpsoftPrettytimeLocaleAware))))) setLocaleWithJavaUtilLocale:locale_];
+  if ([OrgOcpsoftPrettytimeLocaleAware_class_() isInstance:unit]) [((id<OrgOcpsoftPrettytimeLocaleAware>) nil_chk(((id<OrgOcpsoftPrettytimeLocaleAware>) check_protocol_cast(unit, @protocol(OrgOcpsoftPrettytimeLocaleAware))))) setLocaleWithJavaUtilLocale:locale_];
+  if ([OrgOcpsoftPrettytimeLocaleAware_class_() isInstance:format]) [((id<OrgOcpsoftPrettytimeLocaleAware>) nil_chk(((id<OrgOcpsoftPrettytimeLocaleAware>) check_protocol_cast(format, @protocol(OrgOcpsoftPrettytimeLocaleAware))))) setLocaleWithJavaUtilLocale:locale_];
   return self;
 }
 
@@ -297,10 +285,10 @@
 - (OrgOcpsoftPrettytimePrettyTime *)setLocaleWithJavaUtilLocale:(JavaUtilLocale *)locale {
   OrgOcpsoftPrettytimePrettyTime_set_locale_(self, locale);
   for (id<OrgOcpsoftPrettytimeTimeUnit> __strong unit in nil_chk([((id<JavaUtilMap>) nil_chk(units_)) keySet])) {
-    if ([(id) unit conformsToProtocol: @protocol(OrgOcpsoftPrettytimeLocaleAware)]) [((id<OrgOcpsoftPrettytimeLocaleAware>) nil_chk(((id<OrgOcpsoftPrettytimeLocaleAware>) check_protocol_cast(unit, @protocol(OrgOcpsoftPrettytimeLocaleAware))))) setLocaleWithJavaUtilLocale:locale];
+    if ([OrgOcpsoftPrettytimeLocaleAware_class_() isInstance:unit]) [((id<OrgOcpsoftPrettytimeLocaleAware>) nil_chk(((id<OrgOcpsoftPrettytimeLocaleAware>) check_protocol_cast(unit, @protocol(OrgOcpsoftPrettytimeLocaleAware))))) setLocaleWithJavaUtilLocale:locale];
   }
   for (id<OrgOcpsoftPrettytimeTimeFormat> __strong format in nil_chk([units_ values])) {
-    if ([(id) format conformsToProtocol: @protocol(OrgOcpsoftPrettytimeLocaleAware)]) [((id<OrgOcpsoftPrettytimeLocaleAware>) nil_chk(((id<OrgOcpsoftPrettytimeLocaleAware>) check_protocol_cast(format, @protocol(OrgOcpsoftPrettytimeLocaleAware))))) setLocaleWithJavaUtilLocale:locale];
+    if ([OrgOcpsoftPrettytimeLocaleAware_class_() isInstance:format]) [((id<OrgOcpsoftPrettytimeLocaleAware>) nil_chk(((id<OrgOcpsoftPrettytimeLocaleAware>) check_protocol_cast(format, @protocol(OrgOcpsoftPrettytimeLocaleAware))))) setLocaleWithJavaUtilLocale:locale];
   }
   return self;
 }
@@ -317,10 +305,10 @@
 }
 
 - (void)dealloc {
-  OrgOcpsoftPrettytimePrettyTime_set_reference_(self, nil);
-  OrgOcpsoftPrettytimePrettyTime_set_locale_(self, nil);
-  OrgOcpsoftPrettytimePrettyTime_set_units_(self, nil);
-  OrgOcpsoftPrettytimePrettyTime_set_mCachedUnits_(self, nil);
+  RELEASE_(reference_);
+  RELEASE_(locale_);
+  RELEASE_(units_);
+  RELEASE_(mCachedUnits_);
   [super dealloc];
 }
 
@@ -371,8 +359,66 @@
     { "units_", NULL, 0x42, "Ljava.util.Map;", NULL,  },
     { "mCachedUnits_", NULL, 0x2, "Ljava.util.List;", NULL,  },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimePrettyTime = { "PrettyTime", "org.ocpsoft.prettytime", NULL, 0x1, 30, methods, 4, fields, 0, NULL};
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimePrettyTime = { 1, "PrettyTime", "org.ocpsoft.prettytime", NULL, 0x1, 30, methods, 4, fields, 0, NULL};
   return &_OrgOcpsoftPrettytimePrettyTime;
 }
 
 @end
+
+void OrgOcpsoftPrettytimePrettyTime_initTimeUnits(OrgOcpsoftPrettytimePrettyTime *self) {
+  OrgOcpsoftPrettytimePrettyTime_addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit_(self, [[[OrgOcpsoftPrettytimeUnitsJustNow alloc] init] autorelease]);
+  OrgOcpsoftPrettytimePrettyTime_addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit_(self, [[[OrgOcpsoftPrettytimeUnitsMillisecond alloc] init] autorelease]);
+  OrgOcpsoftPrettytimePrettyTime_addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit_(self, [[[OrgOcpsoftPrettytimeUnitsSecond alloc] init] autorelease]);
+  OrgOcpsoftPrettytimePrettyTime_addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit_(self, [[[OrgOcpsoftPrettytimeUnitsMinute alloc] init] autorelease]);
+  OrgOcpsoftPrettytimePrettyTime_addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit_(self, [[[OrgOcpsoftPrettytimeUnitsHour alloc] init] autorelease]);
+  OrgOcpsoftPrettytimePrettyTime_addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit_(self, [[[OrgOcpsoftPrettytimeUnitsDay alloc] init] autorelease]);
+  OrgOcpsoftPrettytimePrettyTime_addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit_(self, [[[OrgOcpsoftPrettytimeUnitsWeek alloc] init] autorelease]);
+  OrgOcpsoftPrettytimePrettyTime_addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit_(self, [[[OrgOcpsoftPrettytimeUnitsMonth alloc] init] autorelease]);
+  OrgOcpsoftPrettytimePrettyTime_addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit_(self, [[[OrgOcpsoftPrettytimeUnitsYear alloc] init] autorelease]);
+  OrgOcpsoftPrettytimePrettyTime_addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit_(self, [[[OrgOcpsoftPrettytimeUnitsDecade alloc] init] autorelease]);
+  OrgOcpsoftPrettytimePrettyTime_addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit_(self, [[[OrgOcpsoftPrettytimeUnitsCentury alloc] init] autorelease]);
+  OrgOcpsoftPrettytimePrettyTime_addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit_(self, [[[OrgOcpsoftPrettytimeUnitsMillennium alloc] init] autorelease]);
+}
+
+void OrgOcpsoftPrettytimePrettyTime_addUnitWithOrgOcpsoftPrettytimeImplResourcesTimeUnit_(OrgOcpsoftPrettytimePrettyTime *self, OrgOcpsoftPrettytimeImplResourcesTimeUnit *unit) {
+  [self registerUnitWithOrgOcpsoftPrettytimeTimeUnit:unit withOrgOcpsoftPrettytimeTimeFormat:[[[OrgOcpsoftPrettytimeImplResourcesTimeFormat alloc] initWithOrgOcpsoftPrettytimeImplResourcesTimeUnit:unit] autorelease]];
+}
+
+id<OrgOcpsoftPrettytimeDuration> OrgOcpsoftPrettytimePrettyTime_calculateDurationWithLong_(OrgOcpsoftPrettytimePrettyTime *self, jlong difference) {
+  jlong absoluteDifference = JavaLangMath_absWithLong_(difference);
+  id<JavaUtilList> localUnits = [self getUnits];
+  OrgOcpsoftPrettytimeImplDurationImpl *result = [[[OrgOcpsoftPrettytimeImplDurationImpl alloc] init] autorelease];
+  for (jint i = 0; i < [((id<JavaUtilList>) nil_chk(localUnits)) size]; i++) {
+    id<OrgOcpsoftPrettytimeTimeUnit> unit = [localUnits getWithInt:i];
+    jlong millisPerUnit = JavaLangMath_absWithLong_([((id<OrgOcpsoftPrettytimeTimeUnit>) nil_chk(unit)) getMillisPerUnit]);
+    jlong quantity = JavaLangMath_absWithLong_([unit getMaxQuantity]);
+    jboolean isLastUnit = i == [localUnits size] - 1;
+    if ((0 == quantity) && !isLastUnit) {
+      quantity = [((id<OrgOcpsoftPrettytimeTimeUnit>) nil_chk([localUnits getWithInt:i + 1])) getMillisPerUnit] / [unit getMillisPerUnit];
+    }
+    if ((millisPerUnit * quantity > absoluteDifference) || isLastUnit) {
+      [result setUnitWithOrgOcpsoftPrettytimeTimeUnit:unit];
+      if (millisPerUnit > absoluteDifference) {
+        [result setQuantityWithLong:OrgOcpsoftPrettytimePrettyTime_getSignWithLong_(self, difference)];
+        [result setDeltaWithLong:0];
+      }
+      else {
+        [result setQuantityWithLong:difference / millisPerUnit];
+        [result setDeltaWithLong:difference - [result getQuantity] * millisPerUnit];
+      }
+      break;
+    }
+  }
+  return result;
+}
+
+jlong OrgOcpsoftPrettytimePrettyTime_getSignWithLong_(OrgOcpsoftPrettytimePrettyTime *self, jlong difference) {
+  if (0 > difference) {
+    return -1;
+  }
+  else {
+    return 1;
+  }
+}
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimePrettyTime)

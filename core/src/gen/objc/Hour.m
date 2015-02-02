@@ -4,6 +4,7 @@
 //
 
 #include "Hour.h"
+#include "J2ObjC_source.h"
 #include "ResourcesTimeUnit.h"
 
 @implementation OrgOcpsoftPrettytimeUnitsHour
@@ -24,8 +25,10 @@
     { "init", "Hour", NULL, 0x1, NULL },
     { "getResourceKeyPrefix", NULL, "Ljava.lang.String;", 0x4, NULL },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeUnitsHour = { "Hour", "org.ocpsoft.prettytime.units", NULL, 0x1, 2, methods, 0, NULL, 0, NULL};
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeUnitsHour = { 1, "Hour", "org.ocpsoft.prettytime.units", NULL, 0x1, 2, methods, 0, NULL, 0, NULL};
   return &_OrgOcpsoftPrettytimeUnitsHour;
 }
 
 @end
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeUnitsHour)

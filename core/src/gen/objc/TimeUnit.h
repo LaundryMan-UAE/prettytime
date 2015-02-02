@@ -6,7 +6,7 @@
 #ifndef _OrgOcpsoftPrettytimeTimeUnit_H_
 #define _OrgOcpsoftPrettytimeTimeUnit_H_
 
-#import "JreEmulation.h"
+#include "J2ObjC_header.h"
 
 /**
  @brief Defines a Unit of time (e.g. seconds, minutes, hours) and its conversion to milliseconds.
@@ -27,6 +27,8 @@
 
 @end
 
-__attribute__((always_inline)) inline void OrgOcpsoftPrettytimeTimeUnit_init() {}
+J2OBJC_EMPTY_STATIC_INIT(OrgOcpsoftPrettytimeTimeUnit)
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeTimeUnit)
 
 #endif // _OrgOcpsoftPrettytimeTimeUnit_H_

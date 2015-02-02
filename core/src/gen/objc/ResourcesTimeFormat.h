@@ -11,7 +11,7 @@
 @class OrgOcpsoftPrettytimeImplResourcesTimeUnit;
 @protocol OrgOcpsoftPrettytimeDuration;
 
-#import "JreEmulation.h"
+#include "J2ObjC_header.h"
 #include "LocaleAware.h"
 #include "SimpleTimeFormat.h"
 #include "TimeFormat.h"
@@ -21,10 +21,6 @@
  @author lb3
  */
 @interface OrgOcpsoftPrettytimeImplResourcesTimeFormat : OrgOcpsoftPrettytimeFormatSimpleTimeFormat < OrgOcpsoftPrettytimeTimeFormat, OrgOcpsoftPrettytimeLocaleAware > {
- @public
-  JavaUtilResourceBundle *bundle_;
-  OrgOcpsoftPrettytimeImplResourcesTimeUnit *unit_;
-  id<OrgOcpsoftPrettytimeTimeFormat> override_;
 }
 
 - (instancetype)initWithOrgOcpsoftPrettytimeImplResourcesTimeUnit:(OrgOcpsoftPrettytimeImplResourcesTimeUnit *)unit;
@@ -41,16 +37,13 @@
 
 - (NSString *)formatUnroundedWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration;
 
-- (void)dealloc;
-
-- (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeImplResourcesTimeFormat *)other;
-
 @end
 
-__attribute__((always_inline)) inline void OrgOcpsoftPrettytimeImplResourcesTimeFormat_init() {}
+J2OBJC_EMPTY_STATIC_INIT(OrgOcpsoftPrettytimeImplResourcesTimeFormat)
 
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeImplResourcesTimeFormat, bundle_, JavaUtilResourceBundle *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeImplResourcesTimeFormat, unit_, OrgOcpsoftPrettytimeImplResourcesTimeUnit *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeImplResourcesTimeFormat, override_, id<OrgOcpsoftPrettytimeTimeFormat>)
+CF_EXTERN_C_BEGIN
+CF_EXTERN_C_END
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeImplResourcesTimeFormat)
 
 #endif // _OrgOcpsoftPrettytimeImplResourcesTimeFormat_H_

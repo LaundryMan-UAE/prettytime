@@ -6,16 +6,13 @@
 #ifndef _OrgOcpsoftPrettytimeImplResourcesTimeUnit_H_
 #define _OrgOcpsoftPrettytimeImplResourcesTimeUnit_H_
 
-#import "JreEmulation.h"
+#include "J2ObjC_header.h"
 #include "TimeUnit.h"
 
 /**
  @author <a href="mailto:lincolnbaxter@@gmail.com">Lincoln Baxter, III</a>
  */
 @interface OrgOcpsoftPrettytimeImplResourcesTimeUnit : NSObject < OrgOcpsoftPrettytimeTimeUnit > {
- @public
-  jlong maxQuantity_;
-  jlong millisPerUnit_;
 }
 
 /**
@@ -35,10 +32,13 @@
 
 - (instancetype)init;
 
-- (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeImplResourcesTimeUnit *)other;
-
 @end
 
-__attribute__((always_inline)) inline void OrgOcpsoftPrettytimeImplResourcesTimeUnit_init() {}
+J2OBJC_EMPTY_STATIC_INIT(OrgOcpsoftPrettytimeImplResourcesTimeUnit)
+
+CF_EXTERN_C_BEGIN
+CF_EXTERN_C_END
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeImplResourcesTimeUnit)
 
 #endif // _OrgOcpsoftPrettytimeImplResourcesTimeUnit_H_

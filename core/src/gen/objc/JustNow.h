@@ -6,7 +6,7 @@
 #ifndef _OrgOcpsoftPrettytimeUnitsJustNow_H_
 #define _OrgOcpsoftPrettytimeUnitsJustNow_H_
 
-#import "JreEmulation.h"
+#include "J2ObjC_header.h"
 #include "ResourcesTimeUnit.h"
 #include "TimeUnit.h"
 
@@ -19,6 +19,11 @@
 
 @end
 
-__attribute__((always_inline)) inline void OrgOcpsoftPrettytimeUnitsJustNow_init() {}
+J2OBJC_EMPTY_STATIC_INIT(OrgOcpsoftPrettytimeUnitsJustNow)
+
+CF_EXTERN_C_BEGIN
+CF_EXTERN_C_END
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeUnitsJustNow)
 
 #endif // _OrgOcpsoftPrettytimeUnitsJustNow_H_

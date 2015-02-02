@@ -3,6 +3,7 @@
 //  source: /Users/nbransby/Documents/prettytime/core/src/main/java/org/ocpsoft/prettytime/units/Week.java
 //
 
+#include "J2ObjC_source.h"
 #include "ResourcesTimeUnit.h"
 #include "Week.h"
 
@@ -24,8 +25,10 @@
     { "init", "Week", NULL, 0x1, NULL },
     { "getResourceKeyPrefix", NULL, "Ljava.lang.String;", 0x4, NULL },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeUnitsWeek = { "Week", "org.ocpsoft.prettytime.units", NULL, 0x1, 2, methods, 0, NULL, 0, NULL};
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeUnitsWeek = { 1, "Week", "org.ocpsoft.prettytime.units", NULL, 0x1, 2, methods, 0, NULL, 0, NULL};
   return &_OrgOcpsoftPrettytimeUnitsWeek;
 }
 
 @end
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeUnitsWeek)

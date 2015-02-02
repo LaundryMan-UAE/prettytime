@@ -3,6 +3,7 @@
 //  source: /Users/nbransby/Documents/prettytime/core/src/main/java/org/ocpsoft/prettytime/units/Minute.java
 //
 
+#include "J2ObjC_source.h"
 #include "Minute.h"
 #include "ResourcesTimeUnit.h"
 
@@ -24,8 +25,10 @@
     { "init", "Minute", NULL, 0x1, NULL },
     { "getResourceKeyPrefix", NULL, "Ljava.lang.String;", 0x4, NULL },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeUnitsMinute = { "Minute", "org.ocpsoft.prettytime.units", NULL, 0x1, 2, methods, 0, NULL, 0, NULL};
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeUnitsMinute = { 1, "Minute", "org.ocpsoft.prettytime.units", NULL, 0x1, 2, methods, 0, NULL, 0, NULL};
   return &_OrgOcpsoftPrettytimeUnitsMinute;
 }
 
 @end
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeUnitsMinute)

@@ -13,7 +13,7 @@
 @protocol OrgOcpsoftPrettytimeTimeFormat;
 @protocol OrgOcpsoftPrettytimeTimeUnit;
 
-#import "JreEmulation.h"
+#include "J2ObjC_header.h"
 #include "SimpleTimeFormat.h"
 #include "TimeFormatProvider.h"
 #include "java/util/ListResourceBundle.h"
@@ -21,8 +21,6 @@
 #define OrgOcpsoftPrettytimeI18nResources_fi_tolerance 50
 
 @interface OrgOcpsoftPrettytimeI18nResources_fi : JavaUtilListResourceBundle < OrgOcpsoftPrettytimeImplTimeFormatProvider > {
- @public
-  id<JavaUtilConcurrentConcurrentMap> formatMap_;
 }
 
 - (instancetype)init;
@@ -31,31 +29,23 @@
 
 - (IOSObjectArray *)getContents;
 
-- (void)dealloc;
-
-- (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeI18nResources_fi *)other;
-
 @end
 
 FOUNDATION_EXPORT BOOL OrgOcpsoftPrettytimeI18nResources_fi_initialized;
 J2OBJC_STATIC_INIT(OrgOcpsoftPrettytimeI18nResources_fi)
 
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_fi, formatMap_, id<JavaUtilConcurrentConcurrentMap>)
+CF_EXTERN_C_BEGIN
 
 J2OBJC_STATIC_FIELD_GETTER(OrgOcpsoftPrettytimeI18nResources_fi, tolerance, jint)
 
 FOUNDATION_EXPORT IOSObjectArray *OrgOcpsoftPrettytimeI18nResources_fi_CONTENTS_;
 J2OBJC_STATIC_FIELD_GETTER(OrgOcpsoftPrettytimeI18nResources_fi, CONTENTS_, IOSObjectArray *)
 J2OBJC_STATIC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_fi, CONTENTS_, IOSObjectArray *)
+CF_EXTERN_C_END
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeI18nResources_fi)
 
 @interface OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat : OrgOcpsoftPrettytimeFormatSimpleTimeFormat {
- @public
-  JavaUtilResourceBundle *bundle_;
-  NSString *pastName_;
-  NSString *futureName_;
-  NSString *pastPluralName_FiTimeFormat_;
-  NSString *futurePluralName_FiTimeFormat_;
-  NSString *pluralPattern_;
 }
 
 - (instancetype)initWithJavaUtilResourceBundle:(JavaUtilResourceBundle *)rb
@@ -89,21 +79,13 @@ J2OBJC_STATIC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_fi, CONTENTS_, IOSO
 - (NSString *)decorateWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration
                                           withNSString:(NSString *)time;
 
-- (NSString *)getUnitNameWithOrgOcpsoftPrettytimeTimeUnit:(id<OrgOcpsoftPrettytimeTimeUnit>)unit;
-
-- (void)dealloc;
-
-- (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat *)other;
-
 @end
 
-__attribute__((always_inline)) inline void OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat_init() {}
+J2OBJC_EMPTY_STATIC_INIT(OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat)
 
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat, bundle_, JavaUtilResourceBundle *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat, pastName_, NSString *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat, futureName_, NSString *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat, pastPluralName_FiTimeFormat_, NSString *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat, futurePluralName_FiTimeFormat_, NSString *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat, pluralPattern_, NSString *)
+CF_EXTERN_C_BEGIN
+CF_EXTERN_C_END
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat)
 
 #endif // _OrgOcpsoftPrettytimeI18nResources_fi_H_

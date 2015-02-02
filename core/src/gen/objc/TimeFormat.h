@@ -8,7 +8,7 @@
 
 @protocol OrgOcpsoftPrettytimeDuration;
 
-#import "JreEmulation.h"
+#include "J2ObjC_header.h"
 
 /**
  @brief Format a Duration object.
@@ -48,6 +48,8 @@
 
 @end
 
-__attribute__((always_inline)) inline void OrgOcpsoftPrettytimeTimeFormat_init() {}
+J2OBJC_EMPTY_STATIC_INIT(OrgOcpsoftPrettytimeTimeFormat)
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeTimeFormat)
 
 #endif // _OrgOcpsoftPrettytimeTimeFormat_H_

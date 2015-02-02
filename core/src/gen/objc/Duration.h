@@ -8,7 +8,7 @@
 
 @protocol OrgOcpsoftPrettytimeTimeUnit;
 
-#import "JreEmulation.h"
+#include "J2ObjC_header.h"
 
 /**
  @brief Represents a quantity of any given TimeUnit
@@ -48,6 +48,8 @@
 
 @end
 
-__attribute__((always_inline)) inline void OrgOcpsoftPrettytimeDuration_init() {}
+J2OBJC_EMPTY_STATIC_INIT(OrgOcpsoftPrettytimeDuration)
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeDuration)
 
 #endif // _OrgOcpsoftPrettytimeDuration_H_

@@ -12,14 +12,12 @@
 @protocol OrgOcpsoftPrettytimeDuration;
 @protocol OrgOcpsoftPrettytimeTimeUnit;
 
-#import "JreEmulation.h"
+#include "J2ObjC_header.h"
 #include "TimeFormat.h"
 #include "TimeFormatProvider.h"
 #include "java/util/ListResourceBundle.h"
 
 @interface OrgOcpsoftPrettytimeI18nResources_ja : JavaUtilListResourceBundle < OrgOcpsoftPrettytimeImplTimeFormatProvider > {
- @public
-  id<JavaUtilConcurrentConcurrentMap> formatMap_;
 }
 
 - (IOSObjectArray *)getContents;
@@ -28,52 +26,28 @@
 
 - (instancetype)init;
 
-- (void)dealloc;
-
-- (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeI18nResources_ja *)other;
-
 @end
 
 FOUNDATION_EXPORT BOOL OrgOcpsoftPrettytimeI18nResources_ja_initialized;
 J2OBJC_STATIC_INIT(OrgOcpsoftPrettytimeI18nResources_ja)
 
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_ja, formatMap_, id<JavaUtilConcurrentConcurrentMap>)
+CF_EXTERN_C_BEGIN
 
 FOUNDATION_EXPORT IOSObjectArray *OrgOcpsoftPrettytimeI18nResources_ja_OBJECTS_;
 J2OBJC_STATIC_FIELD_GETTER(OrgOcpsoftPrettytimeI18nResources_ja, OBJECTS_, IOSObjectArray *)
+CF_EXTERN_C_END
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeI18nResources_ja)
 
 @interface OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat : NSObject < OrgOcpsoftPrettytimeTimeFormat > {
- @public
-  JavaUtilResourceBundle *bundle_;
-  NSString *singularName_;
-  NSString *pluralName_;
-  NSString *futureSingularName_;
-  NSString *futurePluralName_;
-  NSString *pastSingularName_;
-  NSString *pastPluralName_;
-  NSString *pattern_;
-  NSString *futurePrefix_;
-  NSString *futureSuffix_;
-  NSString *pastPrefix_;
-  NSString *pastSuffix_;
-  jint roundingTolerance_;
 }
 
 - (instancetype)initWithJavaUtilResourceBundle:(JavaUtilResourceBundle *)bundle
               withOrgOcpsoftPrettytimeTimeUnit:(id<OrgOcpsoftPrettytimeTimeUnit>)unit;
 
-- (NSString *)getUnitNameWithOrgOcpsoftPrettytimeTimeUnit:(id<OrgOcpsoftPrettytimeTimeUnit>)unit;
-
 - (NSString *)formatWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration;
 
 - (NSString *)formatUnroundedWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration;
-
-- (NSString *)formatWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration
-                                         withBoolean:(jboolean)round;
-
-- (NSString *)applyPatternWithNSString:(NSString *)sign
-                          withNSString:(NSString *)unit
-                              withLong:(jlong)quantity;
 
 - (NSString *)getPatternWithLong:(jlong)quantity;
 
@@ -84,12 +58,6 @@ J2OBJC_STATIC_FIELD_GETTER(OrgOcpsoftPrettytimeI18nResources_ja, OBJECTS_, IOSOb
 
 - (NSString *)getGramaticallyCorrectNameWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)d
                                                              withBoolean:(jboolean)round;
-
-- (NSString *)getSignWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)d;
-
-- (NSString *)getSingularNameWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration;
-
-- (NSString *)getPluralNameWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration;
 
 - (NSString *)decorateWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration
                                           withNSString:(NSString *)time;
@@ -128,26 +96,11 @@ J2OBJC_STATIC_FIELD_GETTER(OrgOcpsoftPrettytimeI18nResources_ja, OBJECTS_, IOSOb
 
 - (NSString *)description;
 
-- (void)dealloc;
-
-- (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat *)other;
-
 @end
 
-__attribute__((always_inline)) inline void OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_init() {}
+J2OBJC_EMPTY_STATIC_INIT(OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat)
 
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat, bundle_, JavaUtilResourceBundle *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat, singularName_, NSString *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat, pluralName_, NSString *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat, futureSingularName_, NSString *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat, futurePluralName_, NSString *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat, pastSingularName_, NSString *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat, pastPluralName_, NSString *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat, pattern_, NSString *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat, futurePrefix_, NSString *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat, futureSuffix_, NSString *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat, pastPrefix_, NSString *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat, pastSuffix_, NSString *)
+CF_EXTERN_C_BEGIN
 
 FOUNDATION_EXPORT NSString *OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_NEGATIVE_;
 J2OBJC_STATIC_FIELD_GETTER(OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat, NEGATIVE_, NSString *)
@@ -160,5 +113,8 @@ J2OBJC_STATIC_FIELD_GETTER(OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat, QU
 
 FOUNDATION_EXPORT NSString *OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_UNIT_;
 J2OBJC_STATIC_FIELD_GETTER(OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat, UNIT_, NSString *)
+CF_EXTERN_C_END
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat)
 
 #endif // _OrgOcpsoftPrettytimeI18nResources_ja_H_

@@ -4,6 +4,7 @@
 //
 
 #include "Duration.h"
+#include "J2ObjC_source.h"
 #include "TimeFormat.h"
 
 @interface OrgOcpsoftPrettytimeTimeFormat : NSObject
@@ -18,9 +19,10 @@
     { "decorateWithOrgOcpsoftPrettytimeDuration:withNSString:", "decorate", "Ljava.lang.String;", 0x401, NULL },
     { "decorateUnroundedWithOrgOcpsoftPrettytimeDuration:withNSString:", "decorateUnrounded", "Ljava.lang.String;", 0x401, NULL },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeTimeFormat = { "TimeFormat", "org.ocpsoft.prettytime", NULL, 0x201, 4, methods, 0, NULL, 0, NULL};
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeTimeFormat = { 1, "TimeFormat", "org.ocpsoft.prettytime", NULL, 0x201, 4, methods, 0, NULL, 0, NULL};
   return &_OrgOcpsoftPrettytimeTimeFormat;
 }
 
 @end
 
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeTimeFormat)

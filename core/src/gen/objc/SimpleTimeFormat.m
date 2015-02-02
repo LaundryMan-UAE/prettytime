@@ -4,10 +4,58 @@
 //
 
 #include "Duration.h"
-#include "IOSClass.h"
+#include "J2ObjC_source.h"
 #include "SimpleTimeFormat.h"
 #include "java/lang/Math.h"
 #include "java/lang/StringBuilder.h"
+
+__attribute__((unused)) static NSString *OrgOcpsoftPrettytimeFormatSimpleTimeFormat_formatWithOrgOcpsoftPrettytimeDuration_withBoolean_(OrgOcpsoftPrettytimeFormatSimpleTimeFormat *self, id<OrgOcpsoftPrettytimeDuration> duration, jboolean round);
+__attribute__((unused)) static NSString *OrgOcpsoftPrettytimeFormatSimpleTimeFormat_applyPatternWithNSString_withNSString_withLong_(OrgOcpsoftPrettytimeFormatSimpleTimeFormat *self, NSString *sign, NSString *unit, jlong quantity);
+__attribute__((unused)) static NSString *OrgOcpsoftPrettytimeFormatSimpleTimeFormat_getSignWithOrgOcpsoftPrettytimeDuration_(OrgOcpsoftPrettytimeFormatSimpleTimeFormat *self, id<OrgOcpsoftPrettytimeDuration> d);
+__attribute__((unused)) static NSString *OrgOcpsoftPrettytimeFormatSimpleTimeFormat_getSingularNameWithOrgOcpsoftPrettytimeDuration_(OrgOcpsoftPrettytimeFormatSimpleTimeFormat *self, id<OrgOcpsoftPrettytimeDuration> duration);
+__attribute__((unused)) static NSString *OrgOcpsoftPrettytimeFormatSimpleTimeFormat_getPluralNameWithOrgOcpsoftPrettytimeDuration_(OrgOcpsoftPrettytimeFormatSimpleTimeFormat *self, id<OrgOcpsoftPrettytimeDuration> duration);
+
+@interface OrgOcpsoftPrettytimeFormatSimpleTimeFormat () {
+ @public
+  NSString *singularName_;
+  NSString *pluralName_;
+  NSString *futureSingularName_;
+  NSString *futurePluralName_;
+  NSString *pastSingularName_;
+  NSString *pastPluralName_;
+  NSString *pattern_;
+  NSString *futurePrefix_;
+  NSString *futureSuffix_;
+  NSString *pastPrefix_;
+  NSString *pastSuffix_;
+  jint roundingTolerance_;
+}
+
+- (NSString *)formatWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration
+                                         withBoolean:(jboolean)round;
+
+- (NSString *)applyPatternWithNSString:(NSString *)sign
+                          withNSString:(NSString *)unit
+                              withLong:(jlong)quantity;
+
+- (NSString *)getSignWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)d;
+
+- (NSString *)getSingularNameWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration;
+
+- (NSString *)getPluralNameWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration;
+@end
+
+J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, singularName_, NSString *)
+J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, pluralName_, NSString *)
+J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, futureSingularName_, NSString *)
+J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, futurePluralName_, NSString *)
+J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, pastSingularName_, NSString *)
+J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, pastPluralName_, NSString *)
+J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, pattern_, NSString *)
+J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, futurePrefix_, NSString *)
+J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, futureSuffix_, NSString *)
+J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, pastPrefix_, NSString *)
+J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, pastSuffix_, NSString *)
 
 @implementation OrgOcpsoftPrettytimeFormatSimpleTimeFormat
 
@@ -17,11 +65,11 @@ NSString * OrgOcpsoftPrettytimeFormatSimpleTimeFormat_QUANTITY_ = @"%n";
 NSString * OrgOcpsoftPrettytimeFormatSimpleTimeFormat_UNIT_ = @"%u";
 
 - (NSString *)formatWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration {
-  return [self formatWithOrgOcpsoftPrettytimeDuration:duration withBoolean:YES];
+  return OrgOcpsoftPrettytimeFormatSimpleTimeFormat_formatWithOrgOcpsoftPrettytimeDuration_withBoolean_(self, duration, YES);
 }
 
 - (NSString *)formatUnroundedWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration {
-  return [self formatWithOrgOcpsoftPrettytimeDuration:duration withBoolean:NO];
+  return OrgOcpsoftPrettytimeFormatSimpleTimeFormat_formatWithOrgOcpsoftPrettytimeDuration_withBoolean_(self, duration, NO);
 }
 
 - (NSString *)decorateWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration
@@ -43,19 +91,13 @@ NSString * OrgOcpsoftPrettytimeFormatSimpleTimeFormat_UNIT_ = @"%u";
 
 - (NSString *)formatWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration
                                          withBoolean:(jboolean)round {
-  NSString *sign = [self getSignWithOrgOcpsoftPrettytimeDuration:duration];
-  NSString *unit = [self getGramaticallyCorrectNameWithOrgOcpsoftPrettytimeDuration:duration withBoolean:round];
-  jlong quantity = [self getQuantityWithOrgOcpsoftPrettytimeDuration:duration withBoolean:round];
-  return [self applyPatternWithNSString:sign withNSString:unit withLong:quantity];
+  return OrgOcpsoftPrettytimeFormatSimpleTimeFormat_formatWithOrgOcpsoftPrettytimeDuration_withBoolean_(self, duration, round);
 }
 
 - (NSString *)applyPatternWithNSString:(NSString *)sign
                           withNSString:(NSString *)unit
                               withLong:(jlong)quantity {
-  NSString *result = [((NSString *) nil_chk([self getPatternWithLong:quantity])) replaceAll:OrgOcpsoftPrettytimeFormatSimpleTimeFormat_SIGN_ withReplacement:sign];
-  result = [((NSString *) nil_chk(result)) replaceAll:OrgOcpsoftPrettytimeFormatSimpleTimeFormat_QUANTITY_ withReplacement:NSString_valueOfWithLong_(quantity)];
-  result = [((NSString *) nil_chk(result)) replaceAll:OrgOcpsoftPrettytimeFormatSimpleTimeFormat_UNIT_ withReplacement:unit];
-  return result;
+  return OrgOcpsoftPrettytimeFormatSimpleTimeFormat_applyPatternWithNSString_withNSString_withLong_(self, sign, unit, quantity);
 }
 
 - (NSString *)getPatternWithLong:(jlong)quantity {
@@ -73,30 +115,23 @@ NSString * OrgOcpsoftPrettytimeFormatSimpleTimeFormat_UNIT_ = @"%u";
 
 - (NSString *)getGramaticallyCorrectNameWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)d
                                                              withBoolean:(jboolean)round {
-  NSString *result = [self getSingularNameWithOrgOcpsoftPrettytimeDuration:d];
+  NSString *result = OrgOcpsoftPrettytimeFormatSimpleTimeFormat_getSingularNameWithOrgOcpsoftPrettytimeDuration_(self, d);
   if ((JavaLangMath_absWithLong_([self getQuantityWithOrgOcpsoftPrettytimeDuration:d withBoolean:round]) == 0) || (JavaLangMath_absWithLong_([self getQuantityWithOrgOcpsoftPrettytimeDuration:d withBoolean:round]) > 1)) {
-    result = [self getPluralNameWithOrgOcpsoftPrettytimeDuration:d];
+    result = OrgOcpsoftPrettytimeFormatSimpleTimeFormat_getPluralNameWithOrgOcpsoftPrettytimeDuration_(self, d);
   }
   return result;
 }
 
 - (NSString *)getSignWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)d {
-  if ([((id<OrgOcpsoftPrettytimeDuration>) nil_chk(d)) getQuantity] < 0) {
-    return OrgOcpsoftPrettytimeFormatSimpleTimeFormat_NEGATIVE_;
-  }
-  return @"";
+  return OrgOcpsoftPrettytimeFormatSimpleTimeFormat_getSignWithOrgOcpsoftPrettytimeDuration_(self, d);
 }
 
 - (NSString *)getSingularNameWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration {
-  if ([((id<OrgOcpsoftPrettytimeDuration>) nil_chk(duration)) isInFuture] && futureSingularName_ != nil && ((jint) [futureSingularName_ length]) > 0) return futureSingularName_;
-  else if ([duration isInPast] && pastSingularName_ != nil && ((jint) [pastSingularName_ length]) > 0) return pastSingularName_;
-  else return singularName_;
+  return OrgOcpsoftPrettytimeFormatSimpleTimeFormat_getSingularNameWithOrgOcpsoftPrettytimeDuration_(self, duration);
 }
 
 - (NSString *)getPluralNameWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration {
-  if ([((id<OrgOcpsoftPrettytimeDuration>) nil_chk(duration)) isInFuture] && futurePluralName_ != nil && ((jint) [((NSString *) nil_chk(futureSingularName_)) length]) > 0) return futurePluralName_;
-  else if ([duration isInPast] && pastPluralName_ != nil && ((jint) [((NSString *) nil_chk(pastSingularName_)) length]) > 0) return pastPluralName_;
-  else return pluralName_;
+  return OrgOcpsoftPrettytimeFormatSimpleTimeFormat_getPluralNameWithOrgOcpsoftPrettytimeDuration_(self, duration);
 }
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setPatternWithNSString:(NSString *)pattern {
@@ -182,17 +217,17 @@ NSString * OrgOcpsoftPrettytimeFormatSimpleTimeFormat_UNIT_ = @"%u";
 }
 
 - (void)dealloc {
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_singularName_(self, nil);
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pluralName_(self, nil);
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futureSingularName_(self, nil);
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futurePluralName_(self, nil);
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastSingularName_(self, nil);
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastPluralName_(self, nil);
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pattern_(self, nil);
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futurePrefix_(self, nil);
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futureSuffix_(self, nil);
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastPrefix_(self, nil);
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastSuffix_(self, nil);
+  RELEASE_(singularName_);
+  RELEASE_(pluralName_);
+  RELEASE_(futureSingularName_);
+  RELEASE_(futurePluralName_);
+  RELEASE_(pastSingularName_);
+  RELEASE_(pastPluralName_);
+  RELEASE_(pattern_);
+  RELEASE_(futurePrefix_);
+  RELEASE_(futureSuffix_);
+  RELEASE_(pastPrefix_);
+  RELEASE_(pastSuffix_);
   [super dealloc];
 }
 
@@ -260,8 +295,43 @@ NSString * OrgOcpsoftPrettytimeFormatSimpleTimeFormat_UNIT_ = @"%u";
     { "pastSuffix_", NULL, 0x2, "Ljava.lang.String;", NULL,  },
     { "roundingTolerance_", NULL, 0x2, "I", NULL,  },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeFormatSimpleTimeFormat = { "SimpleTimeFormat", "org.ocpsoft.prettytime.format", NULL, 0x1, 27, methods, 16, fields, 0, NULL};
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeFormatSimpleTimeFormat = { 1, "SimpleTimeFormat", "org.ocpsoft.prettytime.format", NULL, 0x1, 27, methods, 16, fields, 0, NULL};
   return &_OrgOcpsoftPrettytimeFormatSimpleTimeFormat;
 }
 
 @end
+
+NSString *OrgOcpsoftPrettytimeFormatSimpleTimeFormat_formatWithOrgOcpsoftPrettytimeDuration_withBoolean_(OrgOcpsoftPrettytimeFormatSimpleTimeFormat *self, id<OrgOcpsoftPrettytimeDuration> duration, jboolean round) {
+  NSString *sign = OrgOcpsoftPrettytimeFormatSimpleTimeFormat_getSignWithOrgOcpsoftPrettytimeDuration_(self, duration);
+  NSString *unit = [self getGramaticallyCorrectNameWithOrgOcpsoftPrettytimeDuration:duration withBoolean:round];
+  jlong quantity = [self getQuantityWithOrgOcpsoftPrettytimeDuration:duration withBoolean:round];
+  return OrgOcpsoftPrettytimeFormatSimpleTimeFormat_applyPatternWithNSString_withNSString_withLong_(self, sign, unit, quantity);
+}
+
+NSString *OrgOcpsoftPrettytimeFormatSimpleTimeFormat_applyPatternWithNSString_withNSString_withLong_(OrgOcpsoftPrettytimeFormatSimpleTimeFormat *self, NSString *sign, NSString *unit, jlong quantity) {
+  NSString *result = [((NSString *) nil_chk([self getPatternWithLong:quantity])) replaceAll:OrgOcpsoftPrettytimeFormatSimpleTimeFormat_SIGN_ withReplacement:sign];
+  result = [((NSString *) nil_chk(result)) replaceAll:OrgOcpsoftPrettytimeFormatSimpleTimeFormat_QUANTITY_ withReplacement:NSString_valueOfWithLong_(quantity)];
+  result = [((NSString *) nil_chk(result)) replaceAll:OrgOcpsoftPrettytimeFormatSimpleTimeFormat_UNIT_ withReplacement:unit];
+  return result;
+}
+
+NSString *OrgOcpsoftPrettytimeFormatSimpleTimeFormat_getSignWithOrgOcpsoftPrettytimeDuration_(OrgOcpsoftPrettytimeFormatSimpleTimeFormat *self, id<OrgOcpsoftPrettytimeDuration> d) {
+  if ([((id<OrgOcpsoftPrettytimeDuration>) nil_chk(d)) getQuantity] < 0) {
+    return OrgOcpsoftPrettytimeFormatSimpleTimeFormat_NEGATIVE_;
+  }
+  return @"";
+}
+
+NSString *OrgOcpsoftPrettytimeFormatSimpleTimeFormat_getSingularNameWithOrgOcpsoftPrettytimeDuration_(OrgOcpsoftPrettytimeFormatSimpleTimeFormat *self, id<OrgOcpsoftPrettytimeDuration> duration) {
+  if ([((id<OrgOcpsoftPrettytimeDuration>) nil_chk(duration)) isInFuture] && self->futureSingularName_ != nil && ((jint) [self->futureSingularName_ length]) > 0) return self->futureSingularName_;
+  else if ([duration isInPast] && self->pastSingularName_ != nil && ((jint) [self->pastSingularName_ length]) > 0) return self->pastSingularName_;
+  else return self->singularName_;
+}
+
+NSString *OrgOcpsoftPrettytimeFormatSimpleTimeFormat_getPluralNameWithOrgOcpsoftPrettytimeDuration_(OrgOcpsoftPrettytimeFormatSimpleTimeFormat *self, id<OrgOcpsoftPrettytimeDuration> duration) {
+  if ([((id<OrgOcpsoftPrettytimeDuration>) nil_chk(duration)) isInFuture] && self->futurePluralName_ != nil && ((jint) [((NSString *) nil_chk(self->futureSingularName_)) length]) > 0) return self->futurePluralName_;
+  else if ([duration isInPast] && self->pastPluralName_ != nil && ((jint) [((NSString *) nil_chk(self->pastSingularName_)) length]) > 0) return self->pastPluralName_;
+  else return self->pluralName_;
+}
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeFormatSimpleTimeFormat)

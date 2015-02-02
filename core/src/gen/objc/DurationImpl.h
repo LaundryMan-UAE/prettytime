@@ -8,14 +8,10 @@
 
 @protocol OrgOcpsoftPrettytimeTimeUnit;
 
-#import "JreEmulation.h"
 #include "Duration.h"
+#include "J2ObjC_header.h"
 
 @interface OrgOcpsoftPrettytimeImplDurationImpl : NSObject < OrgOcpsoftPrettytimeDuration > {
- @public
-  jlong quantity_;
-  jlong delta_;
-  id<OrgOcpsoftPrettytimeTimeUnit> unit_;
 }
 
 - (jlong)getQuantity;
@@ -38,14 +34,13 @@
 
 - (instancetype)init;
 
-- (void)dealloc;
-
-- (void)copyAllFieldsTo:(OrgOcpsoftPrettytimeImplDurationImpl *)other;
-
 @end
 
-__attribute__((always_inline)) inline void OrgOcpsoftPrettytimeImplDurationImpl_init() {}
+J2OBJC_EMPTY_STATIC_INIT(OrgOcpsoftPrettytimeImplDurationImpl)
 
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeImplDurationImpl, unit_, id<OrgOcpsoftPrettytimeTimeUnit>)
+CF_EXTERN_C_BEGIN
+CF_EXTERN_C_END
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeImplDurationImpl)
 
 #endif // _OrgOcpsoftPrettytimeImplDurationImpl_H_
