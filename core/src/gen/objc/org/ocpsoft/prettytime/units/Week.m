@@ -9,10 +9,12 @@
 
 @implementation OrgOcpsoftPrettytimeUnitsWeek
 
+J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
   OrgOcpsoftPrettytimeUnitsWeek_init(self);
   return self;
 }
+J2OBJC_IGNORE_DESIGNATED_END
 
 - (NSString *)getResourceKeyPrefix {
   return @"Week";

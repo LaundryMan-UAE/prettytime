@@ -72,11 +72,11 @@ NSString *OrgOcpsoftPrettytimeFormatSimpleTimeFormat_UNIT_ = @"%u";
 @implementation OrgOcpsoftPrettytimeFormatSimpleTimeFormat
 
 - (NSString *)formatWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration {
-  return OrgOcpsoftPrettytimeFormatSimpleTimeFormat_formatWithOrgOcpsoftPrettytimeDuration_withBoolean_(self, duration, YES);
+  return OrgOcpsoftPrettytimeFormatSimpleTimeFormat_formatWithOrgOcpsoftPrettytimeDuration_withBoolean_(self, duration, true);
 }
 
 - (NSString *)formatUnroundedWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration {
-  return OrgOcpsoftPrettytimeFormatSimpleTimeFormat_formatWithOrgOcpsoftPrettytimeDuration_withBoolean_(self, duration, NO);
+  return OrgOcpsoftPrettytimeFormatSimpleTimeFormat_formatWithOrgOcpsoftPrettytimeDuration_withBoolean_(self, duration, false);
 }
 
 - (NSString *)decorateWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration
@@ -142,27 +142,27 @@ NSString *OrgOcpsoftPrettytimeFormatSimpleTimeFormat_UNIT_ = @"%u";
 }
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setPatternWithNSString:(NSString *)pattern {
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pattern_(self, pattern);
+  JreStrongAssign(&self->pattern_, pattern);
   return self;
 }
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setFuturePrefixWithNSString:(NSString *)futurePrefix {
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futurePrefix_(self, [((NSString *) nil_chk(futurePrefix)) trim]);
+  JreStrongAssign(&self->futurePrefix_, [((NSString *) nil_chk(futurePrefix)) trim]);
   return self;
 }
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setFutureSuffixWithNSString:(NSString *)futureSuffix {
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futureSuffix_(self, [((NSString *) nil_chk(futureSuffix)) trim]);
+  JreStrongAssign(&self->futureSuffix_, [((NSString *) nil_chk(futureSuffix)) trim]);
   return self;
 }
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setPastPrefixWithNSString:(NSString *)pastPrefix {
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastPrefix_(self, [((NSString *) nil_chk(pastPrefix)) trim]);
+  JreStrongAssign(&self->pastPrefix_, [((NSString *) nil_chk(pastPrefix)) trim]);
   return self;
 }
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setPastSuffixWithNSString:(NSString *)pastSuffix {
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastSuffix_(self, [((NSString *) nil_chk(pastSuffix)) trim]);
+  JreStrongAssign(&self->pastSuffix_, [((NSString *) nil_chk(pastSuffix)) trim]);
   return self;
 }
 
@@ -172,32 +172,32 @@ NSString *OrgOcpsoftPrettytimeFormatSimpleTimeFormat_UNIT_ = @"%u";
 }
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setSingularNameWithNSString:(NSString *)name {
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_singularName_(self, name);
+  JreStrongAssign(&self->singularName_, name);
   return self;
 }
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setPluralNameWithNSString:(NSString *)pluralName {
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pluralName_(self, pluralName);
+  JreStrongAssign(&self->pluralName_, pluralName);
   return self;
 }
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setFutureSingularNameWithNSString:(NSString *)futureSingularName {
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futureSingularName_(self, futureSingularName);
+  JreStrongAssign(&self->futureSingularName_, futureSingularName);
   return self;
 }
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setFuturePluralNameWithNSString:(NSString *)futurePluralName {
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futurePluralName_(self, futurePluralName);
+  JreStrongAssign(&self->futurePluralName_, futurePluralName);
   return self;
 }
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setPastSingularNameWithNSString:(NSString *)pastSingularName {
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastSingularName_(self, pastSingularName);
+  JreStrongAssign(&self->pastSingularName_, pastSingularName);
   return self;
 }
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setPastPluralNameWithNSString:(NSString *)pastPluralName {
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastPluralName_(self, pastPluralName);
+  JreStrongAssign(&self->pastPluralName_, pastPluralName);
   return self;
 }
 
@@ -205,10 +205,12 @@ NSString *OrgOcpsoftPrettytimeFormatSimpleTimeFormat_UNIT_ = @"%u";
   return JreStrcat("$$$$$$$$$$$IC", @"SimpleTimeFormat [pattern=", pattern_, @", futurePrefix=", futurePrefix_, @", futureSuffix=", futureSuffix_, @", pastPrefix=", pastPrefix_, @", pastSuffix=", pastSuffix_, @", roundingTolerance=", roundingTolerance_, ']');
 }
 
+J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
   OrgOcpsoftPrettytimeFormatSimpleTimeFormat_init(self);
   return self;
 }
+J2OBJC_IGNORE_DESIGNATED_END
 
 - (void)dealloc {
   RELEASE_(singularName_);
@@ -256,22 +258,22 @@ NSString *OrgOcpsoftPrettytimeFormatSimpleTimeFormat_UNIT_ = @"%u";
     { "init", NULL, NULL, 0x1, NULL, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
-    { "NEGATIVE_", NULL, 0x1a, "Ljava.lang.String;", &OrgOcpsoftPrettytimeFormatSimpleTimeFormat_NEGATIVE_, NULL,  },
-    { "SIGN_", NULL, 0x19, "Ljava.lang.String;", &OrgOcpsoftPrettytimeFormatSimpleTimeFormat_SIGN_, NULL,  },
-    { "QUANTITY_", NULL, 0x19, "Ljava.lang.String;", &OrgOcpsoftPrettytimeFormatSimpleTimeFormat_QUANTITY_, NULL,  },
-    { "UNIT_", NULL, 0x19, "Ljava.lang.String;", &OrgOcpsoftPrettytimeFormatSimpleTimeFormat_UNIT_, NULL,  },
-    { "singularName_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL,  },
-    { "pluralName_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL,  },
-    { "futureSingularName_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL,  },
-    { "futurePluralName_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL,  },
-    { "pastSingularName_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL,  },
-    { "pastPluralName_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL,  },
-    { "pattern_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL,  },
-    { "futurePrefix_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL,  },
-    { "futureSuffix_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL,  },
-    { "pastPrefix_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL,  },
-    { "pastSuffix_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL,  },
-    { "roundingTolerance_", NULL, 0x2, "I", NULL, NULL,  },
+    { "NEGATIVE_", NULL, 0x1a, "Ljava.lang.String;", &OrgOcpsoftPrettytimeFormatSimpleTimeFormat_NEGATIVE_, NULL, .constantValue.asLong = 0 },
+    { "SIGN_", NULL, 0x19, "Ljava.lang.String;", &OrgOcpsoftPrettytimeFormatSimpleTimeFormat_SIGN_, NULL, .constantValue.asLong = 0 },
+    { "QUANTITY_", NULL, 0x19, "Ljava.lang.String;", &OrgOcpsoftPrettytimeFormatSimpleTimeFormat_QUANTITY_, NULL, .constantValue.asLong = 0 },
+    { "UNIT_", NULL, 0x19, "Ljava.lang.String;", &OrgOcpsoftPrettytimeFormatSimpleTimeFormat_UNIT_, NULL, .constantValue.asLong = 0 },
+    { "singularName_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
+    { "pluralName_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
+    { "futureSingularName_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
+    { "futurePluralName_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
+    { "pastSingularName_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
+    { "pastPluralName_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
+    { "pattern_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
+    { "futurePrefix_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
+    { "futureSuffix_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
+    { "pastPrefix_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
+    { "pastSuffix_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
+    { "roundingTolerance_", NULL, 0x2, "I", NULL, NULL, .constantValue.asLong = 0 },
   };
   static const J2ObjcClassInfo _OrgOcpsoftPrettytimeFormatSimpleTimeFormat = { 2, "SimpleTimeFormat", "org.ocpsoft.prettytime.format", NULL, 0x1, 27, methods, 16, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_OrgOcpsoftPrettytimeFormatSimpleTimeFormat;
@@ -314,17 +316,17 @@ NSString *OrgOcpsoftPrettytimeFormatSimpleTimeFormat_getPluralNameWithOrgOcpsoft
 
 void OrgOcpsoftPrettytimeFormatSimpleTimeFormat_init(OrgOcpsoftPrettytimeFormatSimpleTimeFormat *self) {
   NSObject_init(self);
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_singularName_(self, @"");
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pluralName_(self, @"");
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futureSingularName_(self, @"");
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futurePluralName_(self, @"");
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastSingularName_(self, @"");
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastPluralName_(self, @"");
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pattern_(self, @"");
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futurePrefix_(self, @"");
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_futureSuffix_(self, @"");
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastPrefix_(self, @"");
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_set_pastSuffix_(self, @"");
+  JreStrongAssign(&self->singularName_, @"");
+  JreStrongAssign(&self->pluralName_, @"");
+  JreStrongAssign(&self->futureSingularName_, @"");
+  JreStrongAssign(&self->futurePluralName_, @"");
+  JreStrongAssign(&self->pastSingularName_, @"");
+  JreStrongAssign(&self->pastPluralName_, @"");
+  JreStrongAssign(&self->pattern_, @"");
+  JreStrongAssign(&self->futurePrefix_, @"");
+  JreStrongAssign(&self->futureSuffix_, @"");
+  JreStrongAssign(&self->pastPrefix_, @"");
+  JreStrongAssign(&self->pastSuffix_, @"");
   self->roundingTolerance_ = 50;
 }
 

@@ -34,7 +34,7 @@ J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeImplDurationImpl, unit_, id<OrgOcpsoftPr
 }
 
 - (void)setUnitWithOrgOcpsoftPrettytimeTimeUnit:(id<OrgOcpsoftPrettytimeTimeUnit>)unit {
-  OrgOcpsoftPrettytimeImplDurationImpl_set_unit_(self, unit);
+  JreStrongAssign(&self->unit_, unit);
 }
 
 - (jlong)getDelta {
@@ -64,10 +64,12 @@ J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeImplDurationImpl, unit_, id<OrgOcpsoftPr
   return quantity;
 }
 
+J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
   OrgOcpsoftPrettytimeImplDurationImpl_init(self);
   return self;
 }
+J2OBJC_IGNORE_DESIGNATED_END
 
 - (void)dealloc {
   RELEASE_(unit_);
@@ -88,9 +90,9 @@ J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeImplDurationImpl, unit_, id<OrgOcpsoftPr
     { "init", NULL, NULL, 0x1, NULL, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
-    { "quantity_", NULL, 0x2, "J", NULL, NULL,  },
-    { "delta_", NULL, 0x2, "J", NULL, NULL,  },
-    { "unit_", NULL, 0x2, "Lorg.ocpsoft.prettytime.TimeUnit;", NULL, NULL,  },
+    { "quantity_", NULL, 0x2, "J", NULL, NULL, .constantValue.asLong = 0 },
+    { "delta_", NULL, 0x2, "J", NULL, NULL, .constantValue.asLong = 0 },
+    { "unit_", NULL, 0x2, "Lorg.ocpsoft.prettytime.TimeUnit;", NULL, NULL, .constantValue.asLong = 0 },
   };
   static const J2ObjcClassInfo _OrgOcpsoftPrettytimeImplDurationImpl = { 2, "DurationImpl", "org.ocpsoft.prettytime.impl", NULL, 0x1, 10, methods, 3, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_OrgOcpsoftPrettytimeImplDurationImpl;

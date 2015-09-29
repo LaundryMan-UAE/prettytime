@@ -11,7 +11,7 @@
 
 @class IOSObjectArray;
 
-/**
+/*!
  @author lkmikkel
  */
 @interface OrgOcpsoftPrettytimeI18nResources_da : JavaUtilListResourceBundle

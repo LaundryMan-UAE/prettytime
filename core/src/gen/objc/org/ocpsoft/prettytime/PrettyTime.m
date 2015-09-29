@@ -42,9 +42,9 @@
 
 @interface OrgOcpsoftPrettytimePrettyTime () {
  @public
-  JavaUtilDate *reference_;
-  JavaUtilLocale *locale_;
-  id<JavaUtilMap> units_;
+  volatile_id reference_;
+  volatile_id locale_;
+  volatile_id units_;
   id<JavaUtilList> mCachedUnits_;
 }
 
@@ -58,9 +58,9 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimePrettyTime, reference_, JavaUtilDate *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimePrettyTime, locale_, JavaUtilLocale *)
-J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimePrettyTime, units_, id<JavaUtilMap>)
+J2OBJC_VOLATILE_FIELD_SETTER(OrgOcpsoftPrettytimePrettyTime, reference_, JavaUtilDate *)
+J2OBJC_VOLATILE_FIELD_SETTER(OrgOcpsoftPrettytimePrettyTime, locale_, JavaUtilLocale *)
+J2OBJC_VOLATILE_FIELD_SETTER(OrgOcpsoftPrettytimePrettyTime, units_, id<JavaUtilMap>)
 J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimePrettyTime, mCachedUnits_, id<JavaUtilList>)
 
 __attribute__((unused)) static void OrgOcpsoftPrettytimePrettyTime_initTimeUnits(OrgOcpsoftPrettytimePrettyTime *self);
@@ -73,10 +73,12 @@ __attribute__((unused)) static jlong OrgOcpsoftPrettytimePrettyTime_getSignWithL
 
 @implementation OrgOcpsoftPrettytimePrettyTime
 
+J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
   OrgOcpsoftPrettytimePrettyTime_init(self);
   return self;
 }
+J2OBJC_IGNORE_DESIGNATED_END
 
 - (instancetype)initWithJavaUtilDate:(JavaUtilDate *)reference {
   OrgOcpsoftPrettytimePrettyTime_initWithJavaUtilDate_(self, reference);
@@ -96,7 +98,7 @@ __attribute__((unused)) static jlong OrgOcpsoftPrettytimePrettyTime_getSignWithL
 
 - (id<OrgOcpsoftPrettytimeDuration>)approximateDurationWithJavaUtilDate:(JavaUtilDate *)then {
   if (then == nil) @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Date to approximate must not be null.") autorelease];
-  JavaUtilDate *ref = reference_;
+  JavaUtilDate *ref = JreLoadVolatileId(&reference_);
   if (nil == ref) ref = [new_JavaUtilDate_init() autorelease];
   jlong difference = [((JavaUtilDate *) nil_chk(then)) getTime] - [((JavaUtilDate *) nil_chk(ref)) getTime];
   return OrgOcpsoftPrettytimePrettyTime_calculateDurationWithLong_(self, difference);
@@ -120,9 +122,9 @@ __attribute__((unused)) static jlong OrgOcpsoftPrettytimePrettyTime_getSignWithL
 
 - (id<JavaUtilList>)calculatePreciseDurationWithJavaUtilDate:(JavaUtilDate *)then {
   if (then == nil) @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Date to calculate must not be null.") autorelease];
-  if (nil == reference_) OrgOcpsoftPrettytimePrettyTime_setAndConsume_reference_(self, new_JavaUtilDate_init());
+  if (nil == JreLoadVolatileId(&reference_)) JreVolatileStrongAssignAndConsume(&reference_, new_JavaUtilDate_init());
   id<JavaUtilList> result = [new_JavaUtilArrayList_init() autorelease];
-  jlong difference = [((JavaUtilDate *) nil_chk(then)) getTime] - [((JavaUtilDate *) nil_chk(reference_)) getTime];
+  jlong difference = [((JavaUtilDate *) nil_chk(then)) getTime] - [((JavaUtilDate *) nil_chk(JreLoadVolatileId(&reference_))) getTime];
   id<OrgOcpsoftPrettytimeDuration> duration = OrgOcpsoftPrettytimePrettyTime_calculateDurationWithLong_(self, difference);
   [result addWithId:duration];
   while (0 != [((id<OrgOcpsoftPrettytimeDuration>) nil_chk(duration)) getDelta]) {
@@ -199,35 +201,35 @@ __attribute__((unused)) static jlong OrgOcpsoftPrettytimePrettyTime_getSignWithL
 
 - (id<OrgOcpsoftPrettytimeTimeFormat>)getFormatWithOrgOcpsoftPrettytimeTimeUnit:(id<OrgOcpsoftPrettytimeTimeUnit>)unit {
   if (unit == nil) @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Time unit must not be null.") autorelease];
-  if ([((id<JavaUtilMap>) nil_chk(units_)) getWithId:unit] != nil) {
-    return [units_ getWithId:unit];
+  if ([((id<JavaUtilMap>) nil_chk(JreLoadVolatileId(&units_))) getWithId:unit] != nil) {
+    return [((id<JavaUtilMap>) JreLoadVolatileId(&units_)) getWithId:unit];
   }
   return nil;
 }
 
 - (JavaUtilDate *)getReference {
-  return reference_;
+  return JreLoadVolatileId(&reference_);
 }
 
 - (OrgOcpsoftPrettytimePrettyTime *)setReferenceWithJavaUtilDate:(JavaUtilDate *)timestamp {
-  OrgOcpsoftPrettytimePrettyTime_set_reference_(self, timestamp);
+  JreVolatileStrongAssign(&reference_, timestamp);
   return self;
 }
 
 - (id<JavaUtilList>)getUnits {
   if (mCachedUnits_ == nil) {
-    id<JavaUtilList> result = [new_JavaUtilArrayList_initWithJavaUtilCollection_([((id<JavaUtilMap>) nil_chk(units_)) keySet]) autorelease];
+    id<JavaUtilList> result = [new_JavaUtilArrayList_initWithJavaUtilCollection_([((id<JavaUtilMap>) nil_chk(JreLoadVolatileId(&units_))) keySet]) autorelease];
     JavaUtilCollections_sortWithJavaUtilList_withJavaUtilComparator_(result, [new_OrgOcpsoftPrettytimeUnitsTimeUnitComparator_init() autorelease]);
-    OrgOcpsoftPrettytimePrettyTime_set_mCachedUnits_(self, JavaUtilCollections_unmodifiableListWithJavaUtilList_(result));
+    JreStrongAssign(&mCachedUnits_, JavaUtilCollections_unmodifiableListWithJavaUtilList_(result));
   }
   return mCachedUnits_;
 }
 
 - (id)getUnitWithIOSClass:(IOSClass *)unitType {
   if (unitType == nil) @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Unit type to get must not be null.") autorelease];
-  for (id<OrgOcpsoftPrettytimeTimeUnit> __strong unit in nil_chk([((id<JavaUtilMap>) nil_chk(units_)) keySet])) {
+  for (id<OrgOcpsoftPrettytimeTimeUnit> __strong unit in nil_chk([((id<JavaUtilMap>) nil_chk(JreLoadVolatileId(&units_))) keySet])) {
     if ([((IOSClass *) nil_chk(unitType)) isAssignableFrom:[((id<OrgOcpsoftPrettytimeTimeUnit>) nil_chk(unit)) getClass]]) {
-      return (id<OrgOcpsoftPrettytimeTimeUnit>) check_protocol_cast(unit, @protocol(OrgOcpsoftPrettytimeTimeUnit));
+      return (id<OrgOcpsoftPrettytimeTimeUnit>) check_protocol_cast(unit, OrgOcpsoftPrettytimeTimeUnit_class_());
     }
   }
   return nil;
@@ -237,19 +239,19 @@ __attribute__((unused)) static jlong OrgOcpsoftPrettytimePrettyTime_getSignWithL
                                               withOrgOcpsoftPrettytimeTimeFormat:(id<OrgOcpsoftPrettytimeTimeFormat>)format {
   if (unit == nil) @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Unit to register must not be null.") autorelease];
   if (format == nil) @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Format to register must not be null.") autorelease];
-  OrgOcpsoftPrettytimePrettyTime_set_mCachedUnits_(self, nil);
-  [((id<JavaUtilMap>) nil_chk(units_)) putWithId:unit withId:format];
-  if ([OrgOcpsoftPrettytimeLocaleAware_class_() isInstance:unit]) [((id<OrgOcpsoftPrettytimeLocaleAware>) nil_chk(((id<OrgOcpsoftPrettytimeLocaleAware>) check_protocol_cast(unit, @protocol(OrgOcpsoftPrettytimeLocaleAware))))) setLocaleWithJavaUtilLocale:locale_];
-  if ([OrgOcpsoftPrettytimeLocaleAware_class_() isInstance:format]) [((id<OrgOcpsoftPrettytimeLocaleAware>) nil_chk(((id<OrgOcpsoftPrettytimeLocaleAware>) check_protocol_cast(format, @protocol(OrgOcpsoftPrettytimeLocaleAware))))) setLocaleWithJavaUtilLocale:locale_];
+  JreStrongAssign(&mCachedUnits_, nil);
+  [((id<JavaUtilMap>) nil_chk(JreLoadVolatileId(&units_))) putWithId:unit withId:format];
+  if ([OrgOcpsoftPrettytimeLocaleAware_class_() isInstance:unit]) [((id<OrgOcpsoftPrettytimeLocaleAware>) nil_chk(((id<OrgOcpsoftPrettytimeLocaleAware>) check_protocol_cast(unit, OrgOcpsoftPrettytimeLocaleAware_class_())))) setLocaleWithJavaUtilLocale:JreLoadVolatileId(&locale_)];
+  if ([OrgOcpsoftPrettytimeLocaleAware_class_() isInstance:format]) [((id<OrgOcpsoftPrettytimeLocaleAware>) nil_chk(((id<OrgOcpsoftPrettytimeLocaleAware>) check_protocol_cast(format, OrgOcpsoftPrettytimeLocaleAware_class_())))) setLocaleWithJavaUtilLocale:JreLoadVolatileId(&locale_)];
   return self;
 }
 
 - (id<OrgOcpsoftPrettytimeTimeFormat>)removeUnitWithIOSClass:(IOSClass *)unitType {
   if (unitType == nil) @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Unit type to remove must not be null.") autorelease];
-  for (id<OrgOcpsoftPrettytimeTimeUnit> __strong unit in nil_chk([((id<JavaUtilMap>) nil_chk(units_)) keySet])) {
+  for (id<OrgOcpsoftPrettytimeTimeUnit> __strong unit in nil_chk([((id<JavaUtilMap>) nil_chk(JreLoadVolatileId(&units_))) keySet])) {
     if ([((IOSClass *) nil_chk(unitType)) isAssignableFrom:[((id<OrgOcpsoftPrettytimeTimeUnit>) nil_chk(unit)) getClass]]) {
-      OrgOcpsoftPrettytimePrettyTime_set_mCachedUnits_(self, nil);
-      return [units_ removeWithId:unit];
+      JreStrongAssign(&mCachedUnits_, nil);
+      return [((id<JavaUtilMap>) JreLoadVolatileId(&units_)) removeWithId:unit];
     }
   }
   return nil;
@@ -257,42 +259,49 @@ __attribute__((unused)) static jlong OrgOcpsoftPrettytimePrettyTime_getSignWithL
 
 - (id<OrgOcpsoftPrettytimeTimeFormat>)removeUnitWithOrgOcpsoftPrettytimeTimeUnit:(id<OrgOcpsoftPrettytimeTimeUnit>)unit {
   if (unit == nil) @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Unit to remove must not be null.") autorelease];
-  OrgOcpsoftPrettytimePrettyTime_set_mCachedUnits_(self, nil);
-  return [((id<JavaUtilMap>) nil_chk(units_)) removeWithId:unit];
+  JreStrongAssign(&mCachedUnits_, nil);
+  return [((id<JavaUtilMap>) nil_chk(JreLoadVolatileId(&units_))) removeWithId:unit];
 }
 
 - (JavaUtilLocale *)getLocale {
-  return locale_;
+  return JreLoadVolatileId(&locale_);
 }
 
 - (OrgOcpsoftPrettytimePrettyTime *)setLocaleWithJavaUtilLocale:(JavaUtilLocale *)locale {
-  OrgOcpsoftPrettytimePrettyTime_set_locale_(self, locale);
-  for (id<OrgOcpsoftPrettytimeTimeUnit> __strong unit in nil_chk([((id<JavaUtilMap>) nil_chk(units_)) keySet])) {
-    if ([OrgOcpsoftPrettytimeLocaleAware_class_() isInstance:unit]) [((id<OrgOcpsoftPrettytimeLocaleAware>) nil_chk(((id<OrgOcpsoftPrettytimeLocaleAware>) check_protocol_cast(unit, @protocol(OrgOcpsoftPrettytimeLocaleAware))))) setLocaleWithJavaUtilLocale:locale];
+  JreVolatileStrongAssign(&self->locale_, locale);
+  for (id<OrgOcpsoftPrettytimeTimeUnit> __strong unit in nil_chk([((id<JavaUtilMap>) nil_chk(JreLoadVolatileId(&units_))) keySet])) {
+    if ([OrgOcpsoftPrettytimeLocaleAware_class_() isInstance:unit]) [((id<OrgOcpsoftPrettytimeLocaleAware>) nil_chk(((id<OrgOcpsoftPrettytimeLocaleAware>) check_protocol_cast(unit, OrgOcpsoftPrettytimeLocaleAware_class_())))) setLocaleWithJavaUtilLocale:locale];
   }
-  for (id<OrgOcpsoftPrettytimeTimeFormat> __strong format in nil_chk([units_ values])) {
-    if ([OrgOcpsoftPrettytimeLocaleAware_class_() isInstance:format]) [((id<OrgOcpsoftPrettytimeLocaleAware>) nil_chk(((id<OrgOcpsoftPrettytimeLocaleAware>) check_protocol_cast(format, @protocol(OrgOcpsoftPrettytimeLocaleAware))))) setLocaleWithJavaUtilLocale:locale];
+  for (id<OrgOcpsoftPrettytimeTimeFormat> __strong format in nil_chk([((id<JavaUtilMap>) JreLoadVolatileId(&units_)) values])) {
+    if ([OrgOcpsoftPrettytimeLocaleAware_class_() isInstance:format]) [((id<OrgOcpsoftPrettytimeLocaleAware>) nil_chk(((id<OrgOcpsoftPrettytimeLocaleAware>) check_protocol_cast(format, OrgOcpsoftPrettytimeLocaleAware_class_())))) setLocaleWithJavaUtilLocale:locale];
   }
   return self;
 }
 
 - (NSString *)description {
-  return JreStrcat("$@$@C", @"PrettyTime [reference=", reference_, @", locale=", locale_, ']');
+  return JreStrcat("$@$@C", @"PrettyTime [reference=", JreLoadVolatileId(&reference_), @", locale=", JreLoadVolatileId(&locale_), ']');
 }
 
 - (id<JavaUtilList>)clearUnits {
   id<JavaUtilList> result = [self getUnits];
-  OrgOcpsoftPrettytimePrettyTime_set_mCachedUnits_(self, nil);
-  [((id<JavaUtilMap>) nil_chk(units_)) clear];
+  JreStrongAssign(&mCachedUnits_, nil);
+  [((id<JavaUtilMap>) nil_chk(JreLoadVolatileId(&units_))) clear];
   return result;
 }
 
 - (void)dealloc {
-  RELEASE_(reference_);
-  RELEASE_(locale_);
-  RELEASE_(units_);
+  JreReleaseVolatile(&reference_);
+  JreReleaseVolatile(&locale_);
+  JreReleaseVolatile(&units_);
   RELEASE_(mCachedUnits_);
   [super dealloc];
+}
+
+- (void)__javaClone {
+  [super __javaClone];
+  JreRetainVolatile(&reference_);
+  JreRetainVolatile(&locale_);
+  JreRetainVolatile(&units_);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -329,10 +338,10 @@ __attribute__((unused)) static jlong OrgOcpsoftPrettytimePrettyTime_getSignWithL
     { "clearUnits", NULL, "Ljava.util.List;", 0x1, NULL, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
-    { "reference_", NULL, 0x42, "Ljava.util.Date;", NULL, NULL,  },
-    { "locale_", NULL, 0x42, "Ljava.util.Locale;", NULL, NULL,  },
-    { "units_", NULL, 0x42, "Ljava.util.Map;", NULL, "Ljava/util/Map<Lorg/ocpsoft/prettytime/TimeUnit;Lorg/ocpsoft/prettytime/TimeFormat;>;",  },
-    { "mCachedUnits_", NULL, 0x2, "Ljava.util.List;", NULL, "Ljava/util/List<Lorg/ocpsoft/prettytime/TimeUnit;>;",  },
+    { "reference_", NULL, 0x42, "Ljava.util.Date;", NULL, NULL, .constantValue.asLong = 0 },
+    { "locale_", NULL, 0x42, "Ljava.util.Locale;", NULL, NULL, .constantValue.asLong = 0 },
+    { "units_", NULL, 0x42, "Ljava.util.Map;", NULL, "Ljava/util/Map<Lorg/ocpsoft/prettytime/TimeUnit;Lorg/ocpsoft/prettytime/TimeFormat;>;", .constantValue.asLong = 0 },
+    { "mCachedUnits_", NULL, 0x2, "Ljava.util.List;", NULL, "Ljava/util/List<Lorg/ocpsoft/prettytime/TimeUnit;>;", .constantValue.asLong = 0 },
   };
   static const J2ObjcClassInfo _OrgOcpsoftPrettytimePrettyTime = { 2, "PrettyTime", "org.ocpsoft.prettytime", NULL, 0x1, 30, methods, 4, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_OrgOcpsoftPrettytimePrettyTime;
@@ -342,8 +351,8 @@ __attribute__((unused)) static jlong OrgOcpsoftPrettytimePrettyTime_getSignWithL
 
 void OrgOcpsoftPrettytimePrettyTime_init(OrgOcpsoftPrettytimePrettyTime *self) {
   NSObject_init(self);
-  OrgOcpsoftPrettytimePrettyTime_set_locale_(self, JavaUtilLocale_getDefault());
-  OrgOcpsoftPrettytimePrettyTime_setAndConsume_units_(self, new_JavaUtilLinkedHashMap_init());
+  JreVolatileStrongAssign(&self->locale_, JavaUtilLocale_getDefault());
+  JreVolatileStrongAssignAndConsume(&self->units_, new_JavaUtilLinkedHashMap_init());
   OrgOcpsoftPrettytimePrettyTime_initTimeUnits(self);
 }
 
@@ -366,8 +375,8 @@ OrgOcpsoftPrettytimePrettyTime *new_OrgOcpsoftPrettytimePrettyTime_initWithJavaU
 
 void OrgOcpsoftPrettytimePrettyTime_initWithJavaUtilLocale_(OrgOcpsoftPrettytimePrettyTime *self, JavaUtilLocale *locale) {
   NSObject_init(self);
-  OrgOcpsoftPrettytimePrettyTime_set_locale_(self, JavaUtilLocale_getDefault());
-  OrgOcpsoftPrettytimePrettyTime_setAndConsume_units_(self, new_JavaUtilLinkedHashMap_init());
+  JreVolatileStrongAssign(&self->locale_, JavaUtilLocale_getDefault());
+  JreVolatileStrongAssignAndConsume(&self->units_, new_JavaUtilLinkedHashMap_init());
   [self setLocaleWithJavaUtilLocale:locale];
   OrgOcpsoftPrettytimePrettyTime_initTimeUnits(self);
 }

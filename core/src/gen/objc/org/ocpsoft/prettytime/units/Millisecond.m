@@ -9,10 +9,12 @@
 
 @implementation OrgOcpsoftPrettytimeUnitsMillisecond
 
+J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
   OrgOcpsoftPrettytimeUnitsMillisecond_init(self);
   return self;
 }
+J2OBJC_IGNORE_DESIGNATED_END
 
 - (NSString *)getResourceKeyPrefix {
   return @"Millisecond";

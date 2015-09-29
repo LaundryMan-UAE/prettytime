@@ -14,7 +14,7 @@
 @protocol OrgOcpsoftPrettytimeTimeFormat;
 @protocol OrgOcpsoftPrettytimeTimeUnit;
 
-/**
+/*!
  @author Martin Kouba
  */
 @interface OrgOcpsoftPrettytimeI18nResources_cs : JavaUtilListResourceBundle < OrgOcpsoftPrettytimeImplTimeFormatProvider >

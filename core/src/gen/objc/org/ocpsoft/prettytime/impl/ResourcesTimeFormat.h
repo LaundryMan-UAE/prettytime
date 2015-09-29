@@ -15,8 +15,8 @@
 @class OrgOcpsoftPrettytimeImplResourcesTimeUnit;
 @protocol OrgOcpsoftPrettytimeDuration;
 
-/**
- @brief Represents a simple method of formatting a specific Duration of time
+/*!
+ @brief Represents a simple method of formatting a specific <code>Duration</code> of time
  @author lb3
  */
 @interface OrgOcpsoftPrettytimeImplResourcesTimeFormat : OrgOcpsoftPrettytimeFormatSimpleTimeFormat < OrgOcpsoftPrettytimeTimeFormat, OrgOcpsoftPrettytimeLocaleAware >

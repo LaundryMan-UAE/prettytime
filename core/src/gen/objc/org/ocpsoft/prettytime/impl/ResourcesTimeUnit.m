@@ -42,10 +42,12 @@
   self->millisPerUnit_ = millisPerUnit;
 }
 
+J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
   OrgOcpsoftPrettytimeImplResourcesTimeUnit_init(self);
   return self;
 }
+J2OBJC_IGNORE_DESIGNATED_END
 
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
@@ -58,8 +60,8 @@
     { "init", NULL, NULL, 0x1, NULL, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
-    { "maxQuantity_", NULL, 0x2, "J", NULL, NULL,  },
-    { "millisPerUnit_", NULL, 0x2, "J", NULL, NULL,  },
+    { "maxQuantity_", NULL, 0x2, "J", NULL, NULL, .constantValue.asLong = 0 },
+    { "millisPerUnit_", NULL, 0x2, "J", NULL, NULL, .constantValue.asLong = 0 },
   };
   static const J2ObjcClassInfo _OrgOcpsoftPrettytimeImplResourcesTimeUnit = { 2, "ResourcesTimeUnit", "org.ocpsoft.prettytime.impl", NULL, 0x401, 7, methods, 2, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_OrgOcpsoftPrettytimeImplResourcesTimeUnit;

@@ -11,7 +11,7 @@
 
 @class IOSObjectArray;
 
-/**
+/*!
  @brief Resource for Indonesian language.
  @author xsalefter (xsalefter[at]gmail.com)
  */

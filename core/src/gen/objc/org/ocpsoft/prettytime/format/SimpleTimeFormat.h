@@ -11,8 +11,8 @@
 
 @protocol OrgOcpsoftPrettytimeDuration;
 
-/**
- @brief Represents a simple method of formatting a specific Duration of time
+/*!
+ @brief Represents a simple method of formatting a specific <code>Duration</code> of time
  @author <a href="mailto:lincolnbaxter@@gmail.com">Lincoln Baxter, III</a>
  */
 @interface OrgOcpsoftPrettytimeFormatSimpleTimeFormat : NSObject < OrgOcpsoftPrettytimeTimeFormat >
@@ -53,10 +53,9 @@
 
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setPluralNameWithNSString:(NSString *)pluralName;
 
-/**
- @brief The percentage of the current TimeUnit .getMillisPerUnit() for which the quantity may be rounded up by one.
+/*!
+ @brief The percentage of the current <code>TimeUnit</code>.getMillisPerUnit() for which the quantity may be rounded up by one.
  @param roundingTolerance
- @return 
  */
 - (OrgOcpsoftPrettytimeFormatSimpleTimeFormat *)setRoundingToleranceWithInt:(jint)roundingTolerance;
 

@@ -12,8 +12,8 @@
 
 @protocol OrgOcpsoftPrettytimeTimeUnit;
 
-/**
- @brief Compares two TimeUnit objects
+/*!
+ @brief Compares two <code>TimeUnit</code> objects
  @author lb3
  */
 @interface OrgOcpsoftPrettytimeUnitsTimeUnitComparator : NSObject < JavaUtilComparator, JavaIoSerializable >

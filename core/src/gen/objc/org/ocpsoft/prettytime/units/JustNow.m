@@ -9,10 +9,12 @@
 
 @implementation OrgOcpsoftPrettytimeUnitsJustNow
 
+J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
   OrgOcpsoftPrettytimeUnitsJustNow_init(self);
   return self;
 }
+J2OBJC_IGNORE_DESIGNATED_END
 
 - (NSString *)getResourceKeyPrefix {
   return @"JustNow";

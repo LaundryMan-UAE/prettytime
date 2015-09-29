@@ -36,15 +36,15 @@ J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeImplResourcesTimeFormat, override_, id<O
 }
 
 - (OrgOcpsoftPrettytimeImplResourcesTimeFormat *)setLocaleWithJavaUtilLocale:(JavaUtilLocale *)locale {
-  OrgOcpsoftPrettytimeImplResourcesTimeFormat_set_bundle_(self, JavaUtilResourceBundle_getBundleWithNSString_withJavaUtilLocale_([((OrgOcpsoftPrettytimeImplResourcesTimeUnit *) nil_chk(unit_)) getResourceBundleName], locale));
+  JreStrongAssign(&bundle_, JavaUtilResourceBundle_getBundleWithNSString_withJavaUtilLocale_([((OrgOcpsoftPrettytimeImplResourcesTimeUnit *) nil_chk(unit_)) getResourceBundleName], locale));
   if ([OrgOcpsoftPrettytimeImplTimeFormatProvider_class_() isInstance:bundle_]) {
-    id<OrgOcpsoftPrettytimeTimeFormat> format = [((id<OrgOcpsoftPrettytimeImplTimeFormatProvider>) nil_chk(((id<OrgOcpsoftPrettytimeImplTimeFormatProvider>) check_protocol_cast(bundle_, @protocol(OrgOcpsoftPrettytimeImplTimeFormatProvider))))) getFormatForWithOrgOcpsoftPrettytimeTimeUnit:unit_];
+    id<OrgOcpsoftPrettytimeTimeFormat> format = [((id<OrgOcpsoftPrettytimeImplTimeFormatProvider>) nil_chk(((id<OrgOcpsoftPrettytimeImplTimeFormatProvider>) check_protocol_cast(bundle_, OrgOcpsoftPrettytimeImplTimeFormatProvider_class_())))) getFormatForWithOrgOcpsoftPrettytimeTimeUnit:unit_];
     if (format != nil) {
-      OrgOcpsoftPrettytimeImplResourcesTimeFormat_set_override_(self, format);
+      JreStrongAssign(&self->override_, format);
     }
   }
   else {
-    OrgOcpsoftPrettytimeImplResourcesTimeFormat_set_override_(self, nil);
+    JreStrongAssign(&override_, nil);
   }
   if (override_ == nil) {
     [self setPatternWithNSString:[((JavaUtilResourceBundle *) nil_chk(bundle_)) getStringWithNSString:JreStrcat("$$", [unit_ getResourceKeyPrefix], @"Pattern")]];
@@ -99,7 +99,7 @@ J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeImplResourcesTimeFormat, override_, id<O
 - (void)dealloc {
   RELEASE_(bundle_);
   RELEASE_(unit_);
-  if (override_ != self) RELEASE_(override_);
+  RELEASE_(override_);
   [super dealloc];
 }
 
@@ -113,9 +113,9 @@ J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeImplResourcesTimeFormat, override_, id<O
     { "formatUnroundedWithOrgOcpsoftPrettytimeDuration:", "formatUnrounded", "Ljava.lang.String;", 0x1, NULL, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
-    { "bundle_", NULL, 0x2, "Ljava.util.ResourceBundle;", NULL, NULL,  },
-    { "unit_", NULL, 0x12, "Lorg.ocpsoft.prettytime.impl.ResourcesTimeUnit;", NULL, NULL,  },
-    { "override_", NULL, 0x2, "Lorg.ocpsoft.prettytime.TimeFormat;", NULL, NULL,  },
+    { "bundle_", NULL, 0x2, "Ljava.util.ResourceBundle;", NULL, NULL, .constantValue.asLong = 0 },
+    { "unit_", NULL, 0x12, "Lorg.ocpsoft.prettytime.impl.ResourcesTimeUnit;", NULL, NULL, .constantValue.asLong = 0 },
+    { "override_", NULL, 0x2, "Lorg.ocpsoft.prettytime.TimeFormat;", NULL, NULL, .constantValue.asLong = 0 },
   };
   static const J2ObjcClassInfo _OrgOcpsoftPrettytimeImplResourcesTimeFormat = { 2, "ResourcesTimeFormat", "org.ocpsoft.prettytime.impl", NULL, 0x1, 6, methods, 3, fields, 0, NULL, 0, NULL, NULL, "Lorg/ocpsoft/prettytime/format/SimpleTimeFormat;Lorg/ocpsoft/prettytime/TimeFormat;Lorg/ocpsoft/prettytime/LocaleAware<Lorg/ocpsoft/prettytime/impl/ResourcesTimeFormat;>;" };
   return &_OrgOcpsoftPrettytimeImplResourcesTimeFormat;
@@ -125,7 +125,7 @@ J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeImplResourcesTimeFormat, override_, id<O
 
 void OrgOcpsoftPrettytimeImplResourcesTimeFormat_initWithOrgOcpsoftPrettytimeImplResourcesTimeUnit_(OrgOcpsoftPrettytimeImplResourcesTimeFormat *self, OrgOcpsoftPrettytimeImplResourcesTimeUnit *unit) {
   OrgOcpsoftPrettytimeFormatSimpleTimeFormat_init(self);
-  OrgOcpsoftPrettytimeImplResourcesTimeFormat_set_unit_(self, unit);
+  JreStrongAssign(&self->unit_, unit);
 }
 
 OrgOcpsoftPrettytimeImplResourcesTimeFormat *new_OrgOcpsoftPrettytimeImplResourcesTimeFormat_initWithOrgOcpsoftPrettytimeImplResourcesTimeUnit_(OrgOcpsoftPrettytimeImplResourcesTimeUnit *unit) {

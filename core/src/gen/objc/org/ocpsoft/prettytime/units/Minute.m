@@ -9,10 +9,12 @@
 
 @implementation OrgOcpsoftPrettytimeUnitsMinute
 
+J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
   OrgOcpsoftPrettytimeUnitsMinute_init(self);
   return self;
 }
+J2OBJC_IGNORE_DESIGNATED_END
 
 - (NSString *)getResourceKeyPrefix {
   return @"Minute";

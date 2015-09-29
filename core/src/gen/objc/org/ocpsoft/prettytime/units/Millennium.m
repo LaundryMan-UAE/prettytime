@@ -9,10 +9,12 @@
 
 @implementation OrgOcpsoftPrettytimeUnitsMillennium
 
+J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
   OrgOcpsoftPrettytimeUnitsMillennium_init(self);
   return self;
 }
+J2OBJC_IGNORE_DESIGNATED_END
 
 - (NSString *)getResourceKeyPrefix {
   return @"Millennium";

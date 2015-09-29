@@ -3,7 +3,6 @@
 //  source: /Users/marcussmith/HambroPerks/hambroperks_org/prettytime/core/src/main/java/org/ocpsoft/prettytime/i18n/Resources_ru.java
 //
 
-#include "IOSClass.h"
 #include "IOSObjectArray.h"
 #include "IOSPrimitiveArray.h"
 #include "J2ObjC_source.h"
@@ -150,14 +149,16 @@ J2OBJC_INITIALIZED_DEFN(OrgOcpsoftPrettytimeI18nResources_ru)
   return nil;
 }
 
+J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
   OrgOcpsoftPrettytimeI18nResources_ru_init(self);
   return self;
 }
+J2OBJC_IGNORE_DESIGNATED_END
 
 + (void)initialize {
   if (self == [OrgOcpsoftPrettytimeI18nResources_ru class]) {
-    JreStrongAssignAndConsume(&OrgOcpsoftPrettytimeI18nResources_ru_OBJECTS_, nil, [IOSObjectArray newArrayWithDimensions:2 lengths:(jint[]){ 0, 0 } type:NSObject_class_()]);
+    JreStrongAssignAndConsume(&OrgOcpsoftPrettytimeI18nResources_ru_OBJECTS_, [IOSObjectArray newArrayWithDimensions:2 lengths:(jint[]){ 0, 0 } type:NSObject_class_()]);
     J2OBJC_SET_INITIALIZED(OrgOcpsoftPrettytimeI18nResources_ru)
   }
 }
@@ -169,7 +170,7 @@ J2OBJC_INITIALIZED_DEFN(OrgOcpsoftPrettytimeI18nResources_ru)
     { "init", NULL, NULL, 0x1, NULL, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
-    { "OBJECTS_", NULL, 0x1a, "[[Ljava.lang.Object;", &OrgOcpsoftPrettytimeI18nResources_ru_OBJECTS_, NULL,  },
+    { "OBJECTS_", NULL, 0x1a, "[[Ljava.lang.Object;", &OrgOcpsoftPrettytimeI18nResources_ru_OBJECTS_, NULL, .constantValue.asLong = 0 },
     { "tolerance", "tolerance", 0x1a, "I", NULL, NULL, .constantValue.asInt = OrgOcpsoftPrettytimeI18nResources_ru_tolerance },
     { "russianPluralForms", "russianPluralForms", 0x1a, "I", NULL, NULL, .constantValue.asInt = OrgOcpsoftPrettytimeI18nResources_ru_russianPluralForms },
   };
@@ -245,7 +246,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeI18nResources_ru)
     { "performDecorationWithBoolean:withBoolean:withLong:withNSString:", "performDecoration", "Ljava.lang.String;", 0x2, NULL, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
-    { "pluarls_", NULL, 0x12, "[Ljava.lang.String;", NULL, NULL,  },
+    { "pluarls_", NULL, 0x12, "[Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
   };
   static const J2ObjcClassInfo _OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided = { 2, "TimeFormatAided", "org.ocpsoft.prettytime.i18n", "Resources_ru", 0xa, 6, methods, 1, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided;
@@ -258,7 +259,7 @@ void OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided_initWithNSStringArray_
   if (((IOSObjectArray *) nil_chk(plurals))->size_ != OrgOcpsoftPrettytimeI18nResources_ru_russianPluralForms) {
     @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Wrong plural forms number for russian language!") autorelease];
   }
-  OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided_set_pluarls_(self, plurals);
+  JreStrongAssign(&self->pluarls_, plurals);
 }
 
 OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided *new_OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided_initWithNSStringArray_(IOSObjectArray *plurals) {
@@ -311,10 +312,12 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeI18nResources_ru_TimeFormat
   return time;
 }
 
+J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
   OrgOcpsoftPrettytimeI18nResources_ru_$1_init(self);
   return self;
 }
+J2OBJC_IGNORE_DESIGNATED_END
 
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {

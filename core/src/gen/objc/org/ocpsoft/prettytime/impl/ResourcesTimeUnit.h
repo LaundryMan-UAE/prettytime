@@ -9,7 +9,7 @@
 #include "J2ObjC_header.h"
 #include "org/ocpsoft/prettytime/TimeUnit.h"
 
-/**
+/*!
  @author <a href="mailto:lincolnbaxter@@gmail.com">Lincoln Baxter, III</a>
  */
 @interface OrgOcpsoftPrettytimeImplResourcesTimeUnit : NSObject < OrgOcpsoftPrettytimeTimeUnit >
@@ -30,7 +30,7 @@
 
 - (NSString *)getResourceBundleName;
 
-/**
+/*!
  @brief Return the name of the resource bundle from which this unit's format should be loaded.
  */
 - (NSString *)getResourceKeyPrefix;

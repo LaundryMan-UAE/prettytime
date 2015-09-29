@@ -11,7 +11,7 @@
 
 @class IOSObjectArray;
 
-/**
+/*!
  @brief Created by edward_chiang on 13/6/27.
  */
 @interface OrgOcpsoftPrettytimeI18nResources_zh_TW : JavaUtilListResourceBundle
@@ -22,9 +22,12 @@
 
 #pragma mark Protected
 
-/**
- @brief Returns an <code>Object</code> array containing the resources of this <code>ListResourceBundle</code> .
- Each element in the array is an array of two elements, the first is the resource key string and the second is the resource.
+/*!
+ @brief Returns an <code>Object</code> array containing the resources of this
+ <code>ListResourceBundle</code>.
+ Each element in the array is an array of two
+ elements, the first is the resource key string and the second is the
+ resource.
  @return a <code>Object</code> array containing the resources.
  */
 - (IOSObjectArray *)getContents;
