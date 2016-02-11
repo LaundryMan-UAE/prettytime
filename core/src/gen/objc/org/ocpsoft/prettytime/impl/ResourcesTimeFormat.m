@@ -134,4 +134,10 @@ OrgOcpsoftPrettytimeImplResourcesTimeFormat *new_OrgOcpsoftPrettytimeImplResourc
   return self;
 }
 
+OrgOcpsoftPrettytimeImplResourcesTimeFormat *create_OrgOcpsoftPrettytimeImplResourcesTimeFormat_initWithOrgOcpsoftPrettytimeImplResourcesTimeUnit_(OrgOcpsoftPrettytimeImplResourcesTimeUnit *unit) {
+  OrgOcpsoftPrettytimeImplResourcesTimeFormat *self = [[OrgOcpsoftPrettytimeImplResourcesTimeFormat alloc] autorelease];
+  OrgOcpsoftPrettytimeImplResourcesTimeFormat_initWithOrgOcpsoftPrettytimeImplResourcesTimeUnit_(self, unit);
+  return self;
+}
+
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeImplResourcesTimeFormat)

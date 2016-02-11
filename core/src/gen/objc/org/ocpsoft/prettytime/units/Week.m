@@ -42,4 +42,10 @@ OrgOcpsoftPrettytimeUnitsWeek *new_OrgOcpsoftPrettytimeUnitsWeek_init() {
   return self;
 }
 
+OrgOcpsoftPrettytimeUnitsWeek *create_OrgOcpsoftPrettytimeUnitsWeek_init() {
+  OrgOcpsoftPrettytimeUnitsWeek *self = [[OrgOcpsoftPrettytimeUnitsWeek alloc] autorelease];
+  OrgOcpsoftPrettytimeUnitsWeek_init(self);
+  return self;
+}
+
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeUnitsWeek)

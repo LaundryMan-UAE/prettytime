@@ -42,4 +42,10 @@ OrgOcpsoftPrettytimeUnitsYear *new_OrgOcpsoftPrettytimeUnitsYear_init() {
   return self;
 }
 
+OrgOcpsoftPrettytimeUnitsYear *create_OrgOcpsoftPrettytimeUnitsYear_init() {
+  OrgOcpsoftPrettytimeUnitsYear *self = [[OrgOcpsoftPrettytimeUnitsYear alloc] autorelease];
+  OrgOcpsoftPrettytimeUnitsYear_init(self);
+  return self;
+}
+
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeUnitsYear)

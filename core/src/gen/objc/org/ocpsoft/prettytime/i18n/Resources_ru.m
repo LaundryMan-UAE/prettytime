@@ -71,6 +71,8 @@ __attribute__((unused)) static void OrgOcpsoftPrettytimeI18nResources_ru_TimeFor
 
 __attribute__((unused)) static OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided *new_OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided_initWithNSStringArray_(IOSObjectArray *plurals) NS_RETURNS_RETAINED;
 
+__attribute__((unused)) static OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided *create_OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided_initWithNSStringArray_(IOSObjectArray *plurals);
+
 __attribute__((unused)) static NSString *OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided_performDecorationWithBoolean_withBoolean_withLong_withNSString_(OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided *self, jboolean past, jboolean future, jlong n, NSString *time);
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided)
@@ -100,6 +102,8 @@ __attribute__((unused)) static NSString *OrgOcpsoftPrettytimeI18nResources_ru_$1
 __attribute__((unused)) static void OrgOcpsoftPrettytimeI18nResources_ru_$1_init(OrgOcpsoftPrettytimeI18nResources_ru_$1 *self);
 
 __attribute__((unused)) static OrgOcpsoftPrettytimeI18nResources_ru_$1 *new_OrgOcpsoftPrettytimeI18nResources_ru_$1_init() NS_RETURNS_RETAINED;
+
+__attribute__((unused)) static OrgOcpsoftPrettytimeI18nResources_ru_$1 *create_OrgOcpsoftPrettytimeI18nResources_ru_$1_init();
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeI18nResources_ru_$1)
 
@@ -193,6 +197,12 @@ OrgOcpsoftPrettytimeI18nResources_ru *new_OrgOcpsoftPrettytimeI18nResources_ru_i
   return self;
 }
 
+OrgOcpsoftPrettytimeI18nResources_ru *create_OrgOcpsoftPrettytimeI18nResources_ru_init() {
+  OrgOcpsoftPrettytimeI18nResources_ru *self = [[OrgOcpsoftPrettytimeI18nResources_ru alloc] autorelease];
+  OrgOcpsoftPrettytimeI18nResources_ru_init(self);
+  return self;
+}
+
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeI18nResources_ru)
 
 @implementation OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided
@@ -266,6 +276,12 @@ void OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided_initWithNSStringArray_
 
 OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided *new_OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided_initWithNSStringArray_(IOSObjectArray *plurals) {
   OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided *self = [OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided alloc];
+  OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided_initWithNSStringArray_(self, plurals);
+  return self;
+}
+
+OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided *create_OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided_initWithNSStringArray_(IOSObjectArray *plurals) {
+  OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided *self = [[OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided alloc] autorelease];
   OrgOcpsoftPrettytimeI18nResources_ru_TimeFormatAided_initWithNSStringArray_(self, plurals);
   return self;
 }
@@ -353,6 +369,12 @@ void OrgOcpsoftPrettytimeI18nResources_ru_$1_init(OrgOcpsoftPrettytimeI18nResour
 
 OrgOcpsoftPrettytimeI18nResources_ru_$1 *new_OrgOcpsoftPrettytimeI18nResources_ru_$1_init() {
   OrgOcpsoftPrettytimeI18nResources_ru_$1 *self = [OrgOcpsoftPrettytimeI18nResources_ru_$1 alloc];
+  OrgOcpsoftPrettytimeI18nResources_ru_$1_init(self);
+  return self;
+}
+
+OrgOcpsoftPrettytimeI18nResources_ru_$1 *create_OrgOcpsoftPrettytimeI18nResources_ru_$1_init() {
+  OrgOcpsoftPrettytimeI18nResources_ru_$1 *self = [[OrgOcpsoftPrettytimeI18nResources_ru_$1 alloc] autorelease];
   OrgOcpsoftPrettytimeI18nResources_ru_$1_init(self);
   return self;
 }

@@ -110,4 +110,10 @@ OrgOcpsoftPrettytimeImplDurationImpl *new_OrgOcpsoftPrettytimeImplDurationImpl_i
   return self;
 }
 
+OrgOcpsoftPrettytimeImplDurationImpl *create_OrgOcpsoftPrettytimeImplDurationImpl_init() {
+  OrgOcpsoftPrettytimeImplDurationImpl *self = [[OrgOcpsoftPrettytimeImplDurationImpl alloc] autorelease];
+  OrgOcpsoftPrettytimeImplDurationImpl_init(self);
+  return self;
+}
+
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeImplDurationImpl)

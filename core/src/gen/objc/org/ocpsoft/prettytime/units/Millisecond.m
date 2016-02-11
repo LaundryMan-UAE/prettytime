@@ -42,4 +42,10 @@ OrgOcpsoftPrettytimeUnitsMillisecond *new_OrgOcpsoftPrettytimeUnitsMillisecond_i
   return self;
 }
 
+OrgOcpsoftPrettytimeUnitsMillisecond *create_OrgOcpsoftPrettytimeUnitsMillisecond_init() {
+  OrgOcpsoftPrettytimeUnitsMillisecond *self = [[OrgOcpsoftPrettytimeUnitsMillisecond alloc] autorelease];
+  OrgOcpsoftPrettytimeUnitsMillisecond_init(self);
+  return self;
+}
+
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeUnitsMillisecond)

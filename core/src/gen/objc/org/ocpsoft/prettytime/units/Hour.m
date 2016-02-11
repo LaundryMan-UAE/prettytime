@@ -42,4 +42,10 @@ OrgOcpsoftPrettytimeUnitsHour *new_OrgOcpsoftPrettytimeUnitsHour_init() {
   return self;
 }
 
+OrgOcpsoftPrettytimeUnitsHour *create_OrgOcpsoftPrettytimeUnitsHour_init() {
+  OrgOcpsoftPrettytimeUnitsHour *self = [[OrgOcpsoftPrettytimeUnitsHour alloc] autorelease];
+  OrgOcpsoftPrettytimeUnitsHour_init(self);
+  return self;
+}
+
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeUnitsHour)

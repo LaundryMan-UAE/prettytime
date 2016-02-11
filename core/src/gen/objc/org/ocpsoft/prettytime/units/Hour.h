@@ -42,6 +42,8 @@ FOUNDATION_EXPORT void OrgOcpsoftPrettytimeUnitsHour_init(OrgOcpsoftPrettytimeUn
 
 FOUNDATION_EXPORT OrgOcpsoftPrettytimeUnitsHour *new_OrgOcpsoftPrettytimeUnitsHour_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgOcpsoftPrettytimeUnitsHour *create_OrgOcpsoftPrettytimeUnitsHour_init();
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeUnitsHour)
 
 #endif

@@ -362,6 +362,12 @@ OrgOcpsoftPrettytimePrettyTime *new_OrgOcpsoftPrettytimePrettyTime_init() {
   return self;
 }
 
+OrgOcpsoftPrettytimePrettyTime *create_OrgOcpsoftPrettytimePrettyTime_init() {
+  OrgOcpsoftPrettytimePrettyTime *self = [[OrgOcpsoftPrettytimePrettyTime alloc] autorelease];
+  OrgOcpsoftPrettytimePrettyTime_init(self);
+  return self;
+}
+
 void OrgOcpsoftPrettytimePrettyTime_initWithJavaUtilDate_(OrgOcpsoftPrettytimePrettyTime *self, JavaUtilDate *reference) {
   OrgOcpsoftPrettytimePrettyTime_init(self);
   [self setReferenceWithJavaUtilDate:reference];
@@ -369,6 +375,12 @@ void OrgOcpsoftPrettytimePrettyTime_initWithJavaUtilDate_(OrgOcpsoftPrettytimePr
 
 OrgOcpsoftPrettytimePrettyTime *new_OrgOcpsoftPrettytimePrettyTime_initWithJavaUtilDate_(JavaUtilDate *reference) {
   OrgOcpsoftPrettytimePrettyTime *self = [OrgOcpsoftPrettytimePrettyTime alloc];
+  OrgOcpsoftPrettytimePrettyTime_initWithJavaUtilDate_(self, reference);
+  return self;
+}
+
+OrgOcpsoftPrettytimePrettyTime *create_OrgOcpsoftPrettytimePrettyTime_initWithJavaUtilDate_(JavaUtilDate *reference) {
+  OrgOcpsoftPrettytimePrettyTime *self = [[OrgOcpsoftPrettytimePrettyTime alloc] autorelease];
   OrgOcpsoftPrettytimePrettyTime_initWithJavaUtilDate_(self, reference);
   return self;
 }
@@ -387,6 +399,12 @@ OrgOcpsoftPrettytimePrettyTime *new_OrgOcpsoftPrettytimePrettyTime_initWithJavaU
   return self;
 }
 
+OrgOcpsoftPrettytimePrettyTime *create_OrgOcpsoftPrettytimePrettyTime_initWithJavaUtilLocale_(JavaUtilLocale *locale) {
+  OrgOcpsoftPrettytimePrettyTime *self = [[OrgOcpsoftPrettytimePrettyTime alloc] autorelease];
+  OrgOcpsoftPrettytimePrettyTime_initWithJavaUtilLocale_(self, locale);
+  return self;
+}
+
 void OrgOcpsoftPrettytimePrettyTime_initWithJavaUtilDate_withJavaUtilLocale_(OrgOcpsoftPrettytimePrettyTime *self, JavaUtilDate *reference, JavaUtilLocale *locale) {
   OrgOcpsoftPrettytimePrettyTime_initWithJavaUtilLocale_(self, locale);
   [self setReferenceWithJavaUtilDate:reference];
@@ -394,6 +412,12 @@ void OrgOcpsoftPrettytimePrettyTime_initWithJavaUtilDate_withJavaUtilLocale_(Org
 
 OrgOcpsoftPrettytimePrettyTime *new_OrgOcpsoftPrettytimePrettyTime_initWithJavaUtilDate_withJavaUtilLocale_(JavaUtilDate *reference, JavaUtilLocale *locale) {
   OrgOcpsoftPrettytimePrettyTime *self = [OrgOcpsoftPrettytimePrettyTime alloc];
+  OrgOcpsoftPrettytimePrettyTime_initWithJavaUtilDate_withJavaUtilLocale_(self, reference, locale);
+  return self;
+}
+
+OrgOcpsoftPrettytimePrettyTime *create_OrgOcpsoftPrettytimePrettyTime_initWithJavaUtilDate_withJavaUtilLocale_(JavaUtilDate *reference, JavaUtilLocale *locale) {
+  OrgOcpsoftPrettytimePrettyTime *self = [[OrgOcpsoftPrettytimePrettyTime alloc] autorelease];
   OrgOcpsoftPrettytimePrettyTime_initWithJavaUtilDate_withJavaUtilLocale_(self, reference, locale);
   return self;
 }

@@ -38,6 +38,8 @@ FOUNDATION_EXPORT void OrgOcpsoftPrettytimeI18nResources_vi_init(OrgOcpsoftPrett
 
 FOUNDATION_EXPORT OrgOcpsoftPrettytimeI18nResources_vi *new_OrgOcpsoftPrettytimeI18nResources_vi_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgOcpsoftPrettytimeI18nResources_vi *create_OrgOcpsoftPrettytimeI18nResources_vi_init();
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeI18nResources_vi)
 
 #endif

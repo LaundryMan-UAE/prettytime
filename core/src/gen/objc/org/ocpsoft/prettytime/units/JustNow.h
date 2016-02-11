@@ -42,6 +42,8 @@ FOUNDATION_EXPORT void OrgOcpsoftPrettytimeUnitsJustNow_init(OrgOcpsoftPrettytim
 
 FOUNDATION_EXPORT OrgOcpsoftPrettytimeUnitsJustNow *new_OrgOcpsoftPrettytimeUnitsJustNow_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgOcpsoftPrettytimeUnitsJustNow *create_OrgOcpsoftPrettytimeUnitsJustNow_init();
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeUnitsJustNow)
 
 #endif

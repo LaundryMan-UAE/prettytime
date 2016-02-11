@@ -42,4 +42,10 @@ OrgOcpsoftPrettytimeUnitsJustNow *new_OrgOcpsoftPrettytimeUnitsJustNow_init() {
   return self;
 }
 
+OrgOcpsoftPrettytimeUnitsJustNow *create_OrgOcpsoftPrettytimeUnitsJustNow_init() {
+  OrgOcpsoftPrettytimeUnitsJustNow *self = [[OrgOcpsoftPrettytimeUnitsJustNow alloc] autorelease];
+  OrgOcpsoftPrettytimeUnitsJustNow_init(self);
+  return self;
+}
+
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeUnitsJustNow)

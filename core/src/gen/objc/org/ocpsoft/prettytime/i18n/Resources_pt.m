@@ -59,4 +59,10 @@ OrgOcpsoftPrettytimeI18nResources_pt *new_OrgOcpsoftPrettytimeI18nResources_pt_i
   return self;
 }
 
+OrgOcpsoftPrettytimeI18nResources_pt *create_OrgOcpsoftPrettytimeI18nResources_pt_init() {
+  OrgOcpsoftPrettytimeI18nResources_pt *self = [[OrgOcpsoftPrettytimeI18nResources_pt alloc] autorelease];
+  OrgOcpsoftPrettytimeI18nResources_pt_init(self);
+  return self;
+}
+
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeI18nResources_pt)

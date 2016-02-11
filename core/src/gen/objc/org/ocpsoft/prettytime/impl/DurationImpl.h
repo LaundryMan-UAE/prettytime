@@ -54,6 +54,8 @@ FOUNDATION_EXPORT void OrgOcpsoftPrettytimeImplDurationImpl_init(OrgOcpsoftPrett
 
 FOUNDATION_EXPORT OrgOcpsoftPrettytimeImplDurationImpl *new_OrgOcpsoftPrettytimeImplDurationImpl_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgOcpsoftPrettytimeImplDurationImpl *create_OrgOcpsoftPrettytimeImplDurationImpl_init();
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeImplDurationImpl)
 
 #endif

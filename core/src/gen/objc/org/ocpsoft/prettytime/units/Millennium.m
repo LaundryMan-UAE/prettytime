@@ -42,4 +42,10 @@ OrgOcpsoftPrettytimeUnitsMillennium *new_OrgOcpsoftPrettytimeUnitsMillennium_ini
   return self;
 }
 
+OrgOcpsoftPrettytimeUnitsMillennium *create_OrgOcpsoftPrettytimeUnitsMillennium_init() {
+  OrgOcpsoftPrettytimeUnitsMillennium *self = [[OrgOcpsoftPrettytimeUnitsMillennium alloc] autorelease];
+  OrgOcpsoftPrettytimeUnitsMillennium_init(self);
+  return self;
+}
+
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeUnitsMillennium)

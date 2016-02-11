@@ -337,4 +337,10 @@ OrgOcpsoftPrettytimeFormatSimpleTimeFormat *new_OrgOcpsoftPrettytimeFormatSimple
   return self;
 }
 
+OrgOcpsoftPrettytimeFormatSimpleTimeFormat *create_OrgOcpsoftPrettytimeFormatSimpleTimeFormat_init() {
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat *self = [[OrgOcpsoftPrettytimeFormatSimpleTimeFormat alloc] autorelease];
+  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_init(self);
+  return self;
+}
+
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeFormatSimpleTimeFormat)

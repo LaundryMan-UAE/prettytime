@@ -42,4 +42,10 @@ OrgOcpsoftPrettytimeUnitsCentury *new_OrgOcpsoftPrettytimeUnitsCentury_init() {
   return self;
 }
 
+OrgOcpsoftPrettytimeUnitsCentury *create_OrgOcpsoftPrettytimeUnitsCentury_init() {
+  OrgOcpsoftPrettytimeUnitsCentury *self = [[OrgOcpsoftPrettytimeUnitsCentury alloc] autorelease];
+  OrgOcpsoftPrettytimeUnitsCentury_init(self);
+  return self;
+}
+
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeUnitsCentury)

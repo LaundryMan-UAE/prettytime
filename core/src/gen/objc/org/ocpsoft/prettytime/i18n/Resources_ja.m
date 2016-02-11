@@ -153,6 +153,8 @@ __attribute__((unused)) static void OrgOcpsoftPrettytimeI18nResources_ja_JaTimeF
 
 __attribute__((unused)) static OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat *new_OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_initWithJavaUtilResourceBundle_withOrgOcpsoftPrettytimeTimeUnit_(JavaUtilResourceBundle *bundle, id<OrgOcpsoftPrettytimeTimeUnit> unit) NS_RETURNS_RETAINED;
 
+__attribute__((unused)) static OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat *create_OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_initWithJavaUtilResourceBundle_withOrgOcpsoftPrettytimeTimeUnit_(JavaUtilResourceBundle *bundle, id<OrgOcpsoftPrettytimeTimeUnit> unit);
+
 __attribute__((unused)) static NSString *OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_getUnitNameWithOrgOcpsoftPrettytimeTimeUnit_(OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat *self, id<OrgOcpsoftPrettytimeTimeUnit> unit);
 
 __attribute__((unused)) static NSString *OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_formatWithOrgOcpsoftPrettytimeDuration_withBoolean_(OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat *self, id<OrgOcpsoftPrettytimeDuration> duration, jboolean round);
@@ -230,6 +232,12 @@ void OrgOcpsoftPrettytimeI18nResources_ja_init(OrgOcpsoftPrettytimeI18nResources
 
 OrgOcpsoftPrettytimeI18nResources_ja *new_OrgOcpsoftPrettytimeI18nResources_ja_init() {
   OrgOcpsoftPrettytimeI18nResources_ja *self = [OrgOcpsoftPrettytimeI18nResources_ja alloc];
+  OrgOcpsoftPrettytimeI18nResources_ja_init(self);
+  return self;
+}
+
+OrgOcpsoftPrettytimeI18nResources_ja *create_OrgOcpsoftPrettytimeI18nResources_ja_init() {
+  OrgOcpsoftPrettytimeI18nResources_ja *self = [[OrgOcpsoftPrettytimeI18nResources_ja alloc] autorelease];
   OrgOcpsoftPrettytimeI18nResources_ja_init(self);
   return self;
 }
@@ -500,6 +508,12 @@ void OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_initWithJavaUtilResourceB
 
 OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat *new_OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_initWithJavaUtilResourceBundle_withOrgOcpsoftPrettytimeTimeUnit_(JavaUtilResourceBundle *bundle, id<OrgOcpsoftPrettytimeTimeUnit> unit) {
   OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat *self = [OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat alloc];
+  OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_initWithJavaUtilResourceBundle_withOrgOcpsoftPrettytimeTimeUnit_(self, bundle, unit);
+  return self;
+}
+
+OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat *create_OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_initWithJavaUtilResourceBundle_withOrgOcpsoftPrettytimeTimeUnit_(JavaUtilResourceBundle *bundle, id<OrgOcpsoftPrettytimeTimeUnit> unit) {
+  OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat *self = [[OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat alloc] autorelease];
   OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_initWithJavaUtilResourceBundle_withOrgOcpsoftPrettytimeTimeUnit_(self, bundle, unit);
   return self;
 }

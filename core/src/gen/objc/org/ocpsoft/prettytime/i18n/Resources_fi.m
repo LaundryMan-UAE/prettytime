@@ -94,6 +94,8 @@ __attribute__((unused)) static void OrgOcpsoftPrettytimeI18nResources_fi_FiTimeF
 
 __attribute__((unused)) static OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat *new_OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat_initWithJavaUtilResourceBundle_withOrgOcpsoftPrettytimeTimeUnit_(JavaUtilResourceBundle *rb, id<OrgOcpsoftPrettytimeTimeUnit> unit) NS_RETURNS_RETAINED;
 
+__attribute__((unused)) static OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat *create_OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat_initWithJavaUtilResourceBundle_withOrgOcpsoftPrettytimeTimeUnit_(JavaUtilResourceBundle *rb, id<OrgOcpsoftPrettytimeTimeUnit> unit);
+
 __attribute__((unused)) static NSString *OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat_getUnitNameWithOrgOcpsoftPrettytimeTimeUnit_(OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat *self, id<OrgOcpsoftPrettytimeTimeUnit> unit);
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat)
@@ -162,6 +164,12 @@ void OrgOcpsoftPrettytimeI18nResources_fi_init(OrgOcpsoftPrettytimeI18nResources
 
 OrgOcpsoftPrettytimeI18nResources_fi *new_OrgOcpsoftPrettytimeI18nResources_fi_init() {
   OrgOcpsoftPrettytimeI18nResources_fi *self = [OrgOcpsoftPrettytimeI18nResources_fi alloc];
+  OrgOcpsoftPrettytimeI18nResources_fi_init(self);
+  return self;
+}
+
+OrgOcpsoftPrettytimeI18nResources_fi *create_OrgOcpsoftPrettytimeI18nResources_fi_init() {
+  OrgOcpsoftPrettytimeI18nResources_fi *self = [[OrgOcpsoftPrettytimeI18nResources_fi alloc] autorelease];
   OrgOcpsoftPrettytimeI18nResources_fi_init(self);
   return self;
 }
@@ -320,6 +328,12 @@ void OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat_initWithJavaUtilResourceB
 
 OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat *new_OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat_initWithJavaUtilResourceBundle_withOrgOcpsoftPrettytimeTimeUnit_(JavaUtilResourceBundle *rb, id<OrgOcpsoftPrettytimeTimeUnit> unit) {
   OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat *self = [OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat alloc];
+  OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat_initWithJavaUtilResourceBundle_withOrgOcpsoftPrettytimeTimeUnit_(self, rb, unit);
+  return self;
+}
+
+OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat *create_OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat_initWithJavaUtilResourceBundle_withOrgOcpsoftPrettytimeTimeUnit_(JavaUtilResourceBundle *rb, id<OrgOcpsoftPrettytimeTimeUnit> unit) {
+  OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat *self = [[OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat alloc] autorelease];
   OrgOcpsoftPrettytimeI18nResources_fi_FiTimeFormat_initWithJavaUtilResourceBundle_withOrgOcpsoftPrettytimeTimeUnit_(self, rb, unit);
   return self;
 }

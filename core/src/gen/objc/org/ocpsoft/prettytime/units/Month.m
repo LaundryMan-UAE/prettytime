@@ -42,4 +42,10 @@ OrgOcpsoftPrettytimeUnitsMonth *new_OrgOcpsoftPrettytimeUnitsMonth_init() {
   return self;
 }
 
+OrgOcpsoftPrettytimeUnitsMonth *create_OrgOcpsoftPrettytimeUnitsMonth_init() {
+  OrgOcpsoftPrettytimeUnitsMonth *self = [[OrgOcpsoftPrettytimeUnitsMonth alloc] autorelease];
+  OrgOcpsoftPrettytimeUnitsMonth_init(self);
+  return self;
+}
+
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeUnitsMonth)

@@ -67,6 +67,8 @@ __attribute__((unused)) static void OrgOcpsoftPrettytimeI18nResources_cs_CsTimeF
 
 __attribute__((unused)) static OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *new_OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder_initWithNSString_(NSString *resourceKeyPrefix) NS_RETURNS_RETAINED;
 
+__attribute__((unused)) static OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *create_OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder_initWithNSString_(NSString *resourceKeyPrefix);
+
 __attribute__((unused)) static OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder_addNameWithBoolean_withNSString_withLong_(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *self, jboolean isFuture, NSString *name, jlong limit);
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder)
@@ -97,6 +99,8 @@ J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat, pastNames
 __attribute__((unused)) static void OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat_initWithNSString_withJavaUtilResourceBundle_withJavaUtilCollection_(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat *self, NSString *resourceKeyPrefix, JavaUtilResourceBundle *bundle, id<JavaUtilCollection> names);
 
 __attribute__((unused)) static OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat *new_OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat_initWithNSString_withJavaUtilResourceBundle_withJavaUtilCollection_(NSString *resourceKeyPrefix, JavaUtilResourceBundle *bundle, id<JavaUtilCollection> names) NS_RETURNS_RETAINED;
+
+__attribute__((unused)) static OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat *create_OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat_initWithNSString_withJavaUtilResourceBundle_withJavaUtilCollection_(NSString *resourceKeyPrefix, JavaUtilResourceBundle *bundle, id<JavaUtilCollection> names);
 
 __attribute__((unused)) static NSString *OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat_getGramaticallyCorrectNameWithLong_withJavaUtilList_(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat *self, jlong quantity, id<JavaUtilList> names);
 
@@ -131,6 +135,8 @@ J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeI18nResources_cs_CsName, threshold_, Jav
 __attribute__((unused)) static void OrgOcpsoftPrettytimeI18nResources_cs_CsName_initWithBoolean_withNSString_withJavaLangLong_(OrgOcpsoftPrettytimeI18nResources_cs_CsName *self, jboolean isFuture, NSString *value, JavaLangLong *threshold);
 
 __attribute__((unused)) static OrgOcpsoftPrettytimeI18nResources_cs_CsName *new_OrgOcpsoftPrettytimeI18nResources_cs_CsName_initWithBoolean_withNSString_withJavaLangLong_(jboolean isFuture, NSString *value, JavaLangLong *threshold) NS_RETURNS_RETAINED;
+
+__attribute__((unused)) static OrgOcpsoftPrettytimeI18nResources_cs_CsName *create_OrgOcpsoftPrettytimeI18nResources_cs_CsName_initWithBoolean_withNSString_withJavaLangLong_(jboolean isFuture, NSString *value, JavaLangLong *threshold);
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeI18nResources_cs_CsName)
 
@@ -204,6 +210,12 @@ OrgOcpsoftPrettytimeI18nResources_cs *new_OrgOcpsoftPrettytimeI18nResources_cs_i
   return self;
 }
 
+OrgOcpsoftPrettytimeI18nResources_cs *create_OrgOcpsoftPrettytimeI18nResources_cs_init() {
+  OrgOcpsoftPrettytimeI18nResources_cs *self = [[OrgOcpsoftPrettytimeI18nResources_cs alloc] autorelease];
+  OrgOcpsoftPrettytimeI18nResources_cs_init(self);
+  return self;
+}
+
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeI18nResources_cs)
 
 @implementation OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder
@@ -265,6 +277,12 @@ void OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder_initWithNSString_(
 
 OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *new_OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder_initWithNSString_(NSString *resourceKeyPrefix) {
   OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *self = [OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder alloc];
+  OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder_initWithNSString_(self, resourceKeyPrefix);
+  return self;
+}
+
+OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *create_OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder_initWithNSString_(NSString *resourceKeyPrefix) {
+  OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder *self = [[OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder alloc] autorelease];
   OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormatBuilder_initWithNSString_(self, resourceKeyPrefix);
   return self;
 }
@@ -373,6 +391,12 @@ OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat *new_OrgOcpsoftPrettytimeI18nR
   return self;
 }
 
+OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat *create_OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat_initWithNSString_withJavaUtilResourceBundle_withJavaUtilCollection_(NSString *resourceKeyPrefix, JavaUtilResourceBundle *bundle, id<JavaUtilCollection> names) {
+  OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat *self = [[OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat alloc] autorelease];
+  OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat_initWithNSString_withJavaUtilResourceBundle_withJavaUtilCollection_(self, resourceKeyPrefix, bundle, names);
+  return self;
+}
+
 NSString *OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat_getGramaticallyCorrectNameWithLong_withJavaUtilList_(OrgOcpsoftPrettytimeI18nResources_cs_CsTimeFormat *self, jlong quantity, id<JavaUtilList> names) {
   for (OrgOcpsoftPrettytimeI18nResources_cs_CsName * __strong name in nil_chk(names)) {
     if ([((OrgOcpsoftPrettytimeI18nResources_cs_CsName *) nil_chk(name)) getThreshold] >= quantity) {
@@ -444,6 +468,12 @@ void OrgOcpsoftPrettytimeI18nResources_cs_CsName_initWithBoolean_withNSString_wi
 
 OrgOcpsoftPrettytimeI18nResources_cs_CsName *new_OrgOcpsoftPrettytimeI18nResources_cs_CsName_initWithBoolean_withNSString_withJavaLangLong_(jboolean isFuture, NSString *value, JavaLangLong *threshold) {
   OrgOcpsoftPrettytimeI18nResources_cs_CsName *self = [OrgOcpsoftPrettytimeI18nResources_cs_CsName alloc];
+  OrgOcpsoftPrettytimeI18nResources_cs_CsName_initWithBoolean_withNSString_withJavaLangLong_(self, isFuture, value, threshold);
+  return self;
+}
+
+OrgOcpsoftPrettytimeI18nResources_cs_CsName *create_OrgOcpsoftPrettytimeI18nResources_cs_CsName_initWithBoolean_withNSString_withJavaLangLong_(jboolean isFuture, NSString *value, JavaLangLong *threshold) {
+  OrgOcpsoftPrettytimeI18nResources_cs_CsName *self = [[OrgOcpsoftPrettytimeI18nResources_cs_CsName alloc] autorelease];
   OrgOcpsoftPrettytimeI18nResources_cs_CsName_initWithBoolean_withNSString_withJavaLangLong_(self, isFuture, value, threshold);
   return self;
 }

@@ -42,6 +42,8 @@ FOUNDATION_EXPORT void OrgOcpsoftPrettytimeUnitsMillennium_init(OrgOcpsoftPretty
 
 FOUNDATION_EXPORT OrgOcpsoftPrettytimeUnitsMillennium *new_OrgOcpsoftPrettytimeUnitsMillennium_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgOcpsoftPrettytimeUnitsMillennium *create_OrgOcpsoftPrettytimeUnitsMillennium_init();
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeUnitsMillennium)
 
 #endif

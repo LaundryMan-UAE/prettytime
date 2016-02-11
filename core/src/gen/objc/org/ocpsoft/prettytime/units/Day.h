@@ -42,6 +42,8 @@ FOUNDATION_EXPORT void OrgOcpsoftPrettytimeUnitsDay_init(OrgOcpsoftPrettytimeUni
 
 FOUNDATION_EXPORT OrgOcpsoftPrettytimeUnitsDay *new_OrgOcpsoftPrettytimeUnitsDay_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgOcpsoftPrettytimeUnitsDay *create_OrgOcpsoftPrettytimeUnitsDay_init();
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeUnitsDay)
 
 #endif

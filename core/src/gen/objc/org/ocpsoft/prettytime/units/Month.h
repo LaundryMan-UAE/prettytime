@@ -42,6 +42,8 @@ FOUNDATION_EXPORT void OrgOcpsoftPrettytimeUnitsMonth_init(OrgOcpsoftPrettytimeU
 
 FOUNDATION_EXPORT OrgOcpsoftPrettytimeUnitsMonth *new_OrgOcpsoftPrettytimeUnitsMonth_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgOcpsoftPrettytimeUnitsMonth *create_OrgOcpsoftPrettytimeUnitsMonth_init();
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeUnitsMonth)
 
 #endif

@@ -42,6 +42,8 @@ FOUNDATION_EXPORT void OrgOcpsoftPrettytimeUnitsYear_init(OrgOcpsoftPrettytimeUn
 
 FOUNDATION_EXPORT OrgOcpsoftPrettytimeUnitsYear *new_OrgOcpsoftPrettytimeUnitsYear_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgOcpsoftPrettytimeUnitsYear *create_OrgOcpsoftPrettytimeUnitsYear_init();
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeUnitsYear)
 
 #endif

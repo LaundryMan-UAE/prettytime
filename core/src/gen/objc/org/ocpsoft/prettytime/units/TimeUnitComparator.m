@@ -55,4 +55,10 @@ OrgOcpsoftPrettytimeUnitsTimeUnitComparator *new_OrgOcpsoftPrettytimeUnitsTimeUn
   return self;
 }
 
+OrgOcpsoftPrettytimeUnitsTimeUnitComparator *create_OrgOcpsoftPrettytimeUnitsTimeUnitComparator_init() {
+  OrgOcpsoftPrettytimeUnitsTimeUnitComparator *self = [[OrgOcpsoftPrettytimeUnitsTimeUnitComparator alloc] autorelease];
+  OrgOcpsoftPrettytimeUnitsTimeUnitComparator_init(self);
+  return self;
+}
+
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeUnitsTimeUnitComparator)

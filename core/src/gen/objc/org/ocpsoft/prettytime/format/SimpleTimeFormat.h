@@ -107,6 +107,8 @@ FOUNDATION_EXPORT void OrgOcpsoftPrettytimeFormatSimpleTimeFormat_init(OrgOcpsof
 
 FOUNDATION_EXPORT OrgOcpsoftPrettytimeFormatSimpleTimeFormat *new_OrgOcpsoftPrettytimeFormatSimpleTimeFormat_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgOcpsoftPrettytimeFormatSimpleTimeFormat *create_OrgOcpsoftPrettytimeFormatSimpleTimeFormat_init();
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat)
 
 #endif

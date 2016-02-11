@@ -47,6 +47,8 @@ FOUNDATION_EXPORT void OrgOcpsoftPrettytimeUnitsTimeUnitComparator_init(OrgOcpso
 
 FOUNDATION_EXPORT OrgOcpsoftPrettytimeUnitsTimeUnitComparator *new_OrgOcpsoftPrettytimeUnitsTimeUnitComparator_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgOcpsoftPrettytimeUnitsTimeUnitComparator *create_OrgOcpsoftPrettytimeUnitsTimeUnitComparator_init();
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeUnitsTimeUnitComparator)
 
 #endif
