@@ -13,11 +13,16 @@
 @implementation OrgOcpsoftPrettytimeTimeUnit
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "getMillisPerUnit", NULL, "J", 0x401, NULL, NULL },
-    { "getMaxQuantity", NULL, "J", 0x401, NULL, NULL },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, "J", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "J", 0x401, -1, -1, -1, -1, -1, -1 },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeTimeUnit = { 2, "TimeUnit", "org.ocpsoft.prettytime", NULL, 0x609, 2, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(getMillisPerUnit);
+  methods[1].selector = @selector(getMaxQuantity);
+  #pragma clang diagnostic pop
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeTimeUnit = { "TimeUnit", "org.ocpsoft.prettytime", NULL, methods, NULL, 7, 0x609, 2, 0, -1, -1, -1, -1, -1 };
   return &_OrgOcpsoftPrettytimeTimeUnit;
 }
 

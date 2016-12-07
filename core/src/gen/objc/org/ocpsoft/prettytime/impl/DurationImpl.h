@@ -5,19 +5,19 @@
 
 #include "J2ObjC_header.h"
 
-#pragma push_macro("OrgOcpsoftPrettytimeImplDurationImpl_INCLUDE_ALL")
-#ifdef OrgOcpsoftPrettytimeImplDurationImpl_RESTRICT
-#define OrgOcpsoftPrettytimeImplDurationImpl_INCLUDE_ALL 0
+#pragma push_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeImplDurationImpl")
+#ifdef RESTRICT_OrgOcpsoftPrettytimeImplDurationImpl
+#define INCLUDE_ALL_OrgOcpsoftPrettytimeImplDurationImpl 0
 #else
-#define OrgOcpsoftPrettytimeImplDurationImpl_INCLUDE_ALL 1
+#define INCLUDE_ALL_OrgOcpsoftPrettytimeImplDurationImpl 1
 #endif
-#undef OrgOcpsoftPrettytimeImplDurationImpl_RESTRICT
+#undef RESTRICT_OrgOcpsoftPrettytimeImplDurationImpl
 
-#if !defined (OrgOcpsoftPrettytimeImplDurationImpl_) && (OrgOcpsoftPrettytimeImplDurationImpl_INCLUDE_ALL || defined(OrgOcpsoftPrettytimeImplDurationImpl_INCLUDE))
+#if !defined (OrgOcpsoftPrettytimeImplDurationImpl_) && (INCLUDE_ALL_OrgOcpsoftPrettytimeImplDurationImpl || defined(INCLUDE_OrgOcpsoftPrettytimeImplDurationImpl))
 #define OrgOcpsoftPrettytimeImplDurationImpl_
 
-#define OrgOcpsoftPrettytimeDuration_RESTRICT 1
-#define OrgOcpsoftPrettytimeDuration_INCLUDE 1
+#define RESTRICT_OrgOcpsoftPrettytimeDuration 1
+#define INCLUDE_OrgOcpsoftPrettytimeDuration 1
 #include "org/ocpsoft/prettytime/Duration.h"
 
 @protocol OrgOcpsoftPrettytimeTimeUnit;
@@ -60,4 +60,4 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeImplDurationImpl)
 
 #endif
 
-#pragma pop_macro("OrgOcpsoftPrettytimeImplDurationImpl_INCLUDE_ALL")
+#pragma pop_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeImplDurationImpl")

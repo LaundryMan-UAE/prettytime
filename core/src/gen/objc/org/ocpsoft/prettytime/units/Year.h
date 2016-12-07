@@ -5,23 +5,23 @@
 
 #include "J2ObjC_header.h"
 
-#pragma push_macro("OrgOcpsoftPrettytimeUnitsYear_INCLUDE_ALL")
-#ifdef OrgOcpsoftPrettytimeUnitsYear_RESTRICT
-#define OrgOcpsoftPrettytimeUnitsYear_INCLUDE_ALL 0
+#pragma push_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeUnitsYear")
+#ifdef RESTRICT_OrgOcpsoftPrettytimeUnitsYear
+#define INCLUDE_ALL_OrgOcpsoftPrettytimeUnitsYear 0
 #else
-#define OrgOcpsoftPrettytimeUnitsYear_INCLUDE_ALL 1
+#define INCLUDE_ALL_OrgOcpsoftPrettytimeUnitsYear 1
 #endif
-#undef OrgOcpsoftPrettytimeUnitsYear_RESTRICT
+#undef RESTRICT_OrgOcpsoftPrettytimeUnitsYear
 
-#if !defined (OrgOcpsoftPrettytimeUnitsYear_) && (OrgOcpsoftPrettytimeUnitsYear_INCLUDE_ALL || defined(OrgOcpsoftPrettytimeUnitsYear_INCLUDE))
+#if !defined (OrgOcpsoftPrettytimeUnitsYear_) && (INCLUDE_ALL_OrgOcpsoftPrettytimeUnitsYear || defined(INCLUDE_OrgOcpsoftPrettytimeUnitsYear))
 #define OrgOcpsoftPrettytimeUnitsYear_
 
-#define OrgOcpsoftPrettytimeImplResourcesTimeUnit_RESTRICT 1
-#define OrgOcpsoftPrettytimeImplResourcesTimeUnit_INCLUDE 1
+#define RESTRICT_OrgOcpsoftPrettytimeImplResourcesTimeUnit 1
+#define INCLUDE_OrgOcpsoftPrettytimeImplResourcesTimeUnit 1
 #include "org/ocpsoft/prettytime/impl/ResourcesTimeUnit.h"
 
-#define OrgOcpsoftPrettytimeTimeUnit_RESTRICT 1
-#define OrgOcpsoftPrettytimeTimeUnit_INCLUDE 1
+#define RESTRICT_OrgOcpsoftPrettytimeTimeUnit 1
+#define INCLUDE_OrgOcpsoftPrettytimeTimeUnit 1
 #include "org/ocpsoft/prettytime/TimeUnit.h"
 
 @interface OrgOcpsoftPrettytimeUnitsYear : OrgOcpsoftPrettytimeImplResourcesTimeUnit < OrgOcpsoftPrettytimeTimeUnit >
@@ -48,4 +48,4 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeUnitsYear)
 
 #endif
 
-#pragma pop_macro("OrgOcpsoftPrettytimeUnitsYear_INCLUDE_ALL")
+#pragma pop_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeUnitsYear")

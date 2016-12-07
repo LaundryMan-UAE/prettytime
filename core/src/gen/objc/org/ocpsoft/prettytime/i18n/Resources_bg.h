@@ -5,19 +5,19 @@
 
 #include "J2ObjC_header.h"
 
-#pragma push_macro("OrgOcpsoftPrettytimeI18nResources_bg_INCLUDE_ALL")
-#ifdef OrgOcpsoftPrettytimeI18nResources_bg_RESTRICT
-#define OrgOcpsoftPrettytimeI18nResources_bg_INCLUDE_ALL 0
+#pragma push_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeI18nResources_bg")
+#ifdef RESTRICT_OrgOcpsoftPrettytimeI18nResources_bg
+#define INCLUDE_ALL_OrgOcpsoftPrettytimeI18nResources_bg 0
 #else
-#define OrgOcpsoftPrettytimeI18nResources_bg_INCLUDE_ALL 1
+#define INCLUDE_ALL_OrgOcpsoftPrettytimeI18nResources_bg 1
 #endif
-#undef OrgOcpsoftPrettytimeI18nResources_bg_RESTRICT
+#undef RESTRICT_OrgOcpsoftPrettytimeI18nResources_bg
 
-#if !defined (OrgOcpsoftPrettytimeI18nResources_bg_) && (OrgOcpsoftPrettytimeI18nResources_bg_INCLUDE_ALL || defined(OrgOcpsoftPrettytimeI18nResources_bg_INCLUDE))
+#if !defined (OrgOcpsoftPrettytimeI18nResources_bg_) && (INCLUDE_ALL_OrgOcpsoftPrettytimeI18nResources_bg || defined(INCLUDE_OrgOcpsoftPrettytimeI18nResources_bg))
 #define OrgOcpsoftPrettytimeI18nResources_bg_
 
-#define JavaUtilListResourceBundle_RESTRICT 1
-#define JavaUtilListResourceBundle_INCLUDE 1
+#define RESTRICT_JavaUtilListResourceBundle 1
+#define INCLUDE_JavaUtilListResourceBundle 1
 #include "java/util/ListResourceBundle.h"
 
 @class IOSObjectArray;
@@ -44,4 +44,4 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeI18nResources_bg)
 
 #endif
 
-#pragma pop_macro("OrgOcpsoftPrettytimeI18nResources_bg_INCLUDE_ALL")
+#pragma pop_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeI18nResources_bg")

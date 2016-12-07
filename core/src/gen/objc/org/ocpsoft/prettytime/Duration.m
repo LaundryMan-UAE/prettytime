@@ -5,7 +5,6 @@
 
 #include "J2ObjC_source.h"
 #include "org/ocpsoft/prettytime/Duration.h"
-#include "org/ocpsoft/prettytime/TimeUnit.h"
 
 @interface OrgOcpsoftPrettytimeDuration : NSObject
 
@@ -14,15 +13,25 @@
 @implementation OrgOcpsoftPrettytimeDuration
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "getQuantity", NULL, "J", 0x401, NULL, NULL },
-    { "getQuantityRoundedWithInt:", "getQuantityRounded", "J", 0x401, NULL, NULL },
-    { "getUnit", NULL, "Lorg.ocpsoft.prettytime.TimeUnit;", 0x401, NULL, NULL },
-    { "getDelta", NULL, "J", 0x401, NULL, NULL },
-    { "isInPast", NULL, "Z", 0x401, NULL, NULL },
-    { "isInFuture", NULL, "Z", 0x401, NULL, NULL },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, "J", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "J", 0x401, 0, 1, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeTimeUnit;", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "J", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "Z", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "Z", 0x401, -1, -1, -1, -1, -1, -1 },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeDuration = { 2, "Duration", "org.ocpsoft.prettytime", NULL, 0x609, 6, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(getQuantity);
+  methods[1].selector = @selector(getQuantityRoundedWithInt:);
+  methods[2].selector = @selector(getUnit);
+  methods[3].selector = @selector(getDelta);
+  methods[4].selector = @selector(isInPast);
+  methods[5].selector = @selector(isInFuture);
+  #pragma clang diagnostic pop
+  static const void *ptrTable[] = { "getQuantityRounded", "I" };
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeDuration = { "Duration", "org.ocpsoft.prettytime", ptrTable, methods, NULL, 7, 0x609, 6, 0, -1, -1, -1, -1, -1 };
   return &_OrgOcpsoftPrettytimeDuration;
 }
 

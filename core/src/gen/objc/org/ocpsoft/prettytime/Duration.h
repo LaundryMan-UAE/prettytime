@@ -5,15 +5,15 @@
 
 #include "J2ObjC_header.h"
 
-#pragma push_macro("OrgOcpsoftPrettytimeDuration_INCLUDE_ALL")
-#ifdef OrgOcpsoftPrettytimeDuration_RESTRICT
-#define OrgOcpsoftPrettytimeDuration_INCLUDE_ALL 0
+#pragma push_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeDuration")
+#ifdef RESTRICT_OrgOcpsoftPrettytimeDuration
+#define INCLUDE_ALL_OrgOcpsoftPrettytimeDuration 0
 #else
-#define OrgOcpsoftPrettytimeDuration_INCLUDE_ALL 1
+#define INCLUDE_ALL_OrgOcpsoftPrettytimeDuration 1
 #endif
-#undef OrgOcpsoftPrettytimeDuration_RESTRICT
+#undef RESTRICT_OrgOcpsoftPrettytimeDuration
 
-#if !defined (OrgOcpsoftPrettytimeDuration_) && (OrgOcpsoftPrettytimeDuration_INCLUDE_ALL || defined(OrgOcpsoftPrettytimeDuration_INCLUDE))
+#if !defined (OrgOcpsoftPrettytimeDuration_) && (INCLUDE_ALL_OrgOcpsoftPrettytimeDuration || defined(INCLUDE_OrgOcpsoftPrettytimeDuration))
 #define OrgOcpsoftPrettytimeDuration_
 
 @protocol OrgOcpsoftPrettytimeTimeUnit;
@@ -22,7 +22,7 @@
  @brief Represents a quantity of any given <code>TimeUnit</code>
  @author <a href="mailto:lincolnbaxter@@gmail.com">Lincoln Baxter, III</a>
  */
-@protocol OrgOcpsoftPrettytimeDuration < NSObject, JavaObject >
+@protocol OrgOcpsoftPrettytimeDuration < JavaObject >
 
 /*!
  @brief Return the calculated quantity of <code>TimeUnit</code> instances.
@@ -64,4 +64,4 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeDuration)
 
 #endif
 
-#pragma pop_macro("OrgOcpsoftPrettytimeDuration_INCLUDE_ALL")
+#pragma pop_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeDuration")

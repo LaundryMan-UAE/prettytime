@@ -179,9 +179,9 @@ J2OBJC_INITIALIZED_DEFN(OrgOcpsoftPrettytimeI18nResources_ja)
 
 - (id<OrgOcpsoftPrettytimeTimeFormat>)getFormatForWithOrgOcpsoftPrettytimeTimeUnit:(id<OrgOcpsoftPrettytimeTimeUnit>)t {
   if (![((id<JavaUtilConcurrentConcurrentMap>) nil_chk(JreLoadVolatileId(&formatMap_))) containsKeyWithId:t]) {
-    [((id<JavaUtilConcurrentConcurrentMap>) JreLoadVolatileId(&formatMap_)) putIfAbsentWithId:t withId:[new_OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_initWithJavaUtilResourceBundle_withOrgOcpsoftPrettytimeTimeUnit_(self, t) autorelease]];
+    [((id<JavaUtilConcurrentConcurrentMap>) nil_chk(JreLoadVolatileId(&formatMap_))) putIfAbsentWithId:t withId:create_OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_initWithJavaUtilResourceBundle_withOrgOcpsoftPrettytimeTimeUnit_(self, t)];
   }
-  return [((id<JavaUtilConcurrentConcurrentMap>) JreLoadVolatileId(&formatMap_)) getWithId:t];
+  return [((id<JavaUtilConcurrentConcurrentMap>) nil_chk(JreLoadVolatileId(&formatMap_))) getWithId:t];
 }
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
@@ -191,14 +191,35 @@ J2OBJC_IGNORE_DESIGNATED_BEGIN
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
+- (void)__javaClone:(OrgOcpsoftPrettytimeI18nResources_ja *)original {
+  [super __javaClone:original];
+  JreCloneVolatileStrong(&formatMap_, &original->formatMap_);
+}
+
 - (void)dealloc {
   JreReleaseVolatile(&formatMap_);
   [super dealloc];
 }
 
-- (void)__javaClone:(OrgOcpsoftPrettytimeI18nResources_ja *)original {
-  [super __javaClone:original];
-  JreCloneVolatileStrong(&formatMap_, &original->formatMap_);
++ (const J2ObjcClassInfo *)__metadata {
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, "[[LNSObject;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeTimeFormat;", 0x1, 0, 1, -1, -1, -1, -1 },
+    { NULL, NULL, 0x1, -1, -1, -1, -1, -1, -1 },
+  };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(getContents);
+  methods[1].selector = @selector(getFormatForWithOrgOcpsoftPrettytimeTimeUnit:);
+  methods[2].selector = @selector(init);
+  #pragma clang diagnostic pop
+  static const J2ObjcFieldInfo fields[] = {
+    { "OBJECTS", "[[LNSObject;", .constantValue.asLong = 0, 0x1a, -1, 2, -1, -1 },
+    { "formatMap_", "LJavaUtilConcurrentConcurrentMap;", .constantValue.asLong = 0, 0x42, -1, -1, 3, -1 },
+  };
+  static const void *ptrTable[] = { "getFormatFor", "LOrgOcpsoftPrettytimeTimeUnit;", &OrgOcpsoftPrettytimeI18nResources_ja_OBJECTS, "Ljava/util/concurrent/ConcurrentMap<Lorg/ocpsoft/prettytime/TimeUnit;Lorg/ocpsoft/prettytime/TimeFormat;>;", "LOrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat;" };
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeI18nResources_ja = { "Resources_ja", "org.ocpsoft.prettytime.i18n", ptrTable, methods, fields, 7, 0x1, 3, 2, -1, 4, -1, -1, -1 };
+  return &_OrgOcpsoftPrettytimeI18nResources_ja;
 }
 
 + (void)initialize {
@@ -206,21 +227,6 @@ J2OBJC_IGNORE_DESIGNATED_END
     JreStrongAssignAndConsume(&OrgOcpsoftPrettytimeI18nResources_ja_OBJECTS, [IOSObjectArray newArrayWithObjects:(id[]){ [IOSObjectArray arrayWithObjects:(id[]){ @"CenturyPattern", @"%n%u" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"CenturyFuturePrefix", @"\u4eca\u304b\u3089" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"CenturyFutureSuffix", @"\u4e16\u7d00\u306b\u3082\u308f\u305f\u3063" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"CenturyPastPrefix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"CenturyPastSuffix", @"\u4e16\u7d00\u524d" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"CenturySingularName", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"CenturyPluralName", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DayPattern", @"%n%u" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DayFuturePrefix", @"\u4eca\u304b\u3089" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DayFutureSuffix", @"\u9593" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DayPastPrefix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DayPastSuffix", @"\u524d" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DaySingularName", @"\u65e5" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DayPluralName", @"\u65e5" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadePattern", @"%n%u" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadeFuturePrefix", @"\u4eca\u304b\u3089" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadeFutureSuffix", @"\u5e74\u9593" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadePastPrefix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadePastSuffix", @"\u5e74\u524d" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadeSingularName", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"DecadePluralName", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"HourPattern", @"%n%u" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"HourFuturePrefix", @"\u4eca\u304b\u3089" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"HourFutureSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"HourPastPrefix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"HourPastSuffix", @"\u524d" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"HourSingularName", @"\u6642\u9593" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"HourPluralName", @"\u6642\u9593" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"JustNowPattern", @"%u" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"JustNowFuturePrefix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"JustNowFutureSuffix", @"\u4eca\u304b\u3089\u3059\u3050" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"JustNowPastPrefix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"JustNowPastSuffix", @"\u3055\u3063\u304d" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"JustNowSingularName", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"JustNowPluralName", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillenniumPattern", @"%n %u" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillenniumFuturePrefix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillenniumFutureSuffix", @"\u4eca\u304b\u3089" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillenniumPastPrefix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillenniumPastSuffix", @"\u524d" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillenniumSingularName", @"\u5343\u5e74" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillenniumPluralName", @"\u5343\u5e74" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondPattern", @"%n%u" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondFuturePrefix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondFutureSuffix", @"\u4eca\u304b\u3089" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondPastPrefix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondPastSuffix", @"\u524d" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondSingularName", @"\u30df\u30ea\u79d2" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MillisecondPluralName", @"\u30df\u30ea\u79d2" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MinutePattern", @"%n%u" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MinuteFuturePrefix", @"\u4eca\u304b\u3089" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MinuteFutureSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MinutePastPrefix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MinutePastSuffix", @"\u524d" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MinuteSingularName", @"\u5206" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MinutePluralName", @"\u5206" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MonthPattern", @"%n%u" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MonthFuturePrefix", @"\u4eca\u304b\u3089" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MonthFutureSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MonthPastPrefix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MonthPastSuffix", @"\u524d" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MonthSingularName", @"\u30f6\u6708" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"MonthPluralName", @"\u30f6\u6708" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"SecondPattern", @"%n%u" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"SecondFuturePrefix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"SecondFutureSuffix", @"\u4eca\u304b\u3089" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"SecondPastPrefix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"SecondPastSuffix", @"\u524d" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"SecondSingularName", @"\u79d2" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"SecondPluralName", @"\u79d2" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"WeekPattern", @"%n%u" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"WeekFuturePrefix", @"\u4eca\u304b\u3089" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"WeekFutureSuffix", @"\u9031\u9593" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"WeekPastPrefix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"WeekPastSuffix", @"\u9031\u9593\u524d" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"WeekSingularName", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"WeekPluralName", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"YearPattern", @"%n%u" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"YearFuturePrefix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"YearFutureSuffix", @"\u5e74\u5f8c\u306e" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"YearPastPrefix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"YearPastSuffix", @"\u5e74\u524d" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"YearSingularName", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"YearPluralName", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"AbstractTimeUnitPattern", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"AbstractTimeUnitFuturePrefix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"AbstractTimeUnitFutureSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"AbstractTimeUnitPastPrefix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"AbstractTimeUnitPastSuffix", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"AbstractTimeUnitSingularName", @"" } count:2 type:NSObject_class_()], [IOSObjectArray arrayWithObjects:(id[]){ @"AbstractTimeUnitPluralName", @"" } count:2 type:NSObject_class_()] } count:91 type:IOSClass_arrayType(NSObject_class_(), 1)]);
     J2OBJC_SET_INITIALIZED(OrgOcpsoftPrettytimeI18nResources_ja)
   }
-}
-
-+ (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "getContents", NULL, "[[Ljava.lang.Object;", 0x1, NULL, NULL },
-    { "getFormatForWithOrgOcpsoftPrettytimeTimeUnit:", "getFormatFor", "Lorg.ocpsoft.prettytime.TimeFormat;", 0x1, NULL, NULL },
-    { "init", NULL, NULL, 0x1, NULL, NULL },
-  };
-  static const J2ObjcFieldInfo fields[] = {
-    { "OBJECTS", "OBJECTS", 0x1a, "[[Ljava.lang.Object;", &OrgOcpsoftPrettytimeI18nResources_ja_OBJECTS, NULL, .constantValue.asLong = 0 },
-    { "formatMap_", NULL, 0x42, "Ljava.util.concurrent.ConcurrentMap;", NULL, "Ljava/util/concurrent/ConcurrentMap<Lorg/ocpsoft/prettytime/TimeUnit;Lorg/ocpsoft/prettytime/TimeFormat;>;", .constantValue.asLong = 0 },
-  };
-  static const char *inner_classes[] = {"Lorg.ocpsoft.prettytime.i18n.Resources_ja$JaTimeFormat;"};
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeI18nResources_ja = { 2, "Resources_ja", "org.ocpsoft.prettytime.i18n", NULL, 0x1, 3, methods, 2, fields, 0, NULL, 1, inner_classes, NULL, NULL };
-  return &_OrgOcpsoftPrettytimeI18nResources_ja;
 }
 
 @end
@@ -231,15 +237,11 @@ void OrgOcpsoftPrettytimeI18nResources_ja_init(OrgOcpsoftPrettytimeI18nResources
 }
 
 OrgOcpsoftPrettytimeI18nResources_ja *new_OrgOcpsoftPrettytimeI18nResources_ja_init() {
-  OrgOcpsoftPrettytimeI18nResources_ja *self = [OrgOcpsoftPrettytimeI18nResources_ja alloc];
-  OrgOcpsoftPrettytimeI18nResources_ja_init(self);
-  return self;
+  J2OBJC_NEW_IMPL(OrgOcpsoftPrettytimeI18nResources_ja, init)
 }
 
 OrgOcpsoftPrettytimeI18nResources_ja *create_OrgOcpsoftPrettytimeI18nResources_ja_init() {
-  OrgOcpsoftPrettytimeI18nResources_ja *self = [[OrgOcpsoftPrettytimeI18nResources_ja alloc] autorelease];
-  OrgOcpsoftPrettytimeI18nResources_ja_init(self);
-  return self;
+  J2OBJC_CREATE_IMPL(OrgOcpsoftPrettytimeI18nResources_ja, init)
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeI18nResources_ja)
@@ -311,7 +313,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeI18nResources_ja)
 
 - (NSString *)decorateWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration
                                           withNSString:(NSString *)time {
-  JavaLangStringBuilder *result = [new_JavaLangStringBuilder_init() autorelease];
+  JavaLangStringBuilder *result = create_JavaLangStringBuilder_init();
   if ([((id<OrgOcpsoftPrettytimeDuration>) nil_chk(duration)) isInPast]) {
     [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([result appendWithNSString:pastPrefix_])) appendWithNSString:time])) appendWithNSString:pastSuffix_];
   }
@@ -407,56 +409,88 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeI18nResources_ja)
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "initWithJavaUtilResourceBundle:withOrgOcpsoftPrettytimeTimeUnit:", "JaTimeFormat", NULL, 0x1, NULL, NULL },
-    { "getUnitNameWithOrgOcpsoftPrettytimeTimeUnit:", "getUnitName", "Ljava.lang.String;", 0x2, NULL, NULL },
-    { "formatWithOrgOcpsoftPrettytimeDuration:", "format", "Ljava.lang.String;", 0x1, NULL, NULL },
-    { "formatUnroundedWithOrgOcpsoftPrettytimeDuration:", "formatUnrounded", "Ljava.lang.String;", 0x1, NULL, NULL },
-    { "formatWithOrgOcpsoftPrettytimeDuration:withBoolean:", "format", "Ljava.lang.String;", 0x2, NULL, NULL },
-    { "applyPatternWithNSString:withNSString:withLong:", "applyPattern", "Ljava.lang.String;", 0x2, NULL, NULL },
-    { "getPatternWithLong:", "getPattern", "Ljava.lang.String;", 0x4, NULL, NULL },
-    { "getPattern", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
-    { "getQuantityWithOrgOcpsoftPrettytimeDuration:withBoolean:", "getQuantity", "J", 0x4, NULL, NULL },
-    { "getGramaticallyCorrectNameWithOrgOcpsoftPrettytimeDuration:withBoolean:", "getGramaticallyCorrectName", "Ljava.lang.String;", 0x4, NULL, NULL },
-    { "getSignWithOrgOcpsoftPrettytimeDuration:", "getSign", "Ljava.lang.String;", 0x2, NULL, NULL },
-    { "getSingularNameWithOrgOcpsoftPrettytimeDuration:", "getSingularName", "Ljava.lang.String;", 0x2, NULL, NULL },
-    { "getPluralNameWithOrgOcpsoftPrettytimeDuration:", "getPluralName", "Ljava.lang.String;", 0x2, NULL, NULL },
-    { "decorateWithOrgOcpsoftPrettytimeDuration:withNSString:", "decorate", "Ljava.lang.String;", 0x1, NULL, NULL },
-    { "decorateUnroundedWithOrgOcpsoftPrettytimeDuration:withNSString:", "decorateUnrounded", "Ljava.lang.String;", 0x1, NULL, NULL },
-    { "setPatternWithNSString:", "setPattern", "Lorg.ocpsoft.prettytime.i18n.Resources_ja$JaTimeFormat;", 0x1, NULL, NULL },
-    { "setFuturePrefixWithNSString:", "setFuturePrefix", "Lorg.ocpsoft.prettytime.i18n.Resources_ja$JaTimeFormat;", 0x1, NULL, NULL },
-    { "setFutureSuffixWithNSString:", "setFutureSuffix", "Lorg.ocpsoft.prettytime.i18n.Resources_ja$JaTimeFormat;", 0x1, NULL, NULL },
-    { "setPastPrefixWithNSString:", "setPastPrefix", "Lorg.ocpsoft.prettytime.i18n.Resources_ja$JaTimeFormat;", 0x1, NULL, NULL },
-    { "setPastSuffixWithNSString:", "setPastSuffix", "Lorg.ocpsoft.prettytime.i18n.Resources_ja$JaTimeFormat;", 0x1, NULL, NULL },
-    { "setRoundingToleranceWithInt:", "setRoundingTolerance", "Lorg.ocpsoft.prettytime.i18n.Resources_ja$JaTimeFormat;", 0x1, NULL, NULL },
-    { "setSingularNameWithNSString:", "setSingularName", "Lorg.ocpsoft.prettytime.i18n.Resources_ja$JaTimeFormat;", 0x1, NULL, NULL },
-    { "setPluralNameWithNSString:", "setPluralName", "Lorg.ocpsoft.prettytime.i18n.Resources_ja$JaTimeFormat;", 0x1, NULL, NULL },
-    { "setFutureSingularNameWithNSString:", "setFutureSingularName", "Lorg.ocpsoft.prettytime.i18n.Resources_ja$JaTimeFormat;", 0x1, NULL, NULL },
-    { "setFuturePluralNameWithNSString:", "setFuturePluralName", "Lorg.ocpsoft.prettytime.i18n.Resources_ja$JaTimeFormat;", 0x1, NULL, NULL },
-    { "setPastSingularNameWithNSString:", "setPastSingularName", "Lorg.ocpsoft.prettytime.i18n.Resources_ja$JaTimeFormat;", 0x1, NULL, NULL },
-    { "setPastPluralNameWithNSString:", "setPastPluralName", "Lorg.ocpsoft.prettytime.i18n.Resources_ja$JaTimeFormat;", 0x1, NULL, NULL },
-    { "description", "toString", "Ljava.lang.String;", 0x1, NULL, NULL },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x2, 1, 2, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x1, 3, 4, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x1, 5, 4, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x2, 3, 6, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x2, 7, 8, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x4, 9, 10, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "J", 0x4, 11, 6, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x4, 12, 6, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x2, 13, 4, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x2, 14, 4, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x2, 15, 4, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x1, 16, 17, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x1, 18, 17, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat;", 0x1, 19, 20, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat;", 0x1, 21, 20, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat;", 0x1, 22, 20, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat;", 0x1, 23, 20, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat;", 0x1, 24, 20, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat;", 0x1, 25, 26, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat;", 0x1, 27, 20, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat;", 0x1, 28, 20, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat;", 0x1, 29, 20, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat;", 0x1, 30, 20, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat;", 0x1, 31, 20, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat;", 0x1, 32, 20, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x1, 33, -1, -1, -1, -1, -1 },
   };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(initWithJavaUtilResourceBundle:withOrgOcpsoftPrettytimeTimeUnit:);
+  methods[1].selector = @selector(getUnitNameWithOrgOcpsoftPrettytimeTimeUnit:);
+  methods[2].selector = @selector(formatWithOrgOcpsoftPrettytimeDuration:);
+  methods[3].selector = @selector(formatUnroundedWithOrgOcpsoftPrettytimeDuration:);
+  methods[4].selector = @selector(formatWithOrgOcpsoftPrettytimeDuration:withBoolean:);
+  methods[5].selector = @selector(applyPatternWithNSString:withNSString:withLong:);
+  methods[6].selector = @selector(getPatternWithLong:);
+  methods[7].selector = @selector(getPattern);
+  methods[8].selector = @selector(getQuantityWithOrgOcpsoftPrettytimeDuration:withBoolean:);
+  methods[9].selector = @selector(getGramaticallyCorrectNameWithOrgOcpsoftPrettytimeDuration:withBoolean:);
+  methods[10].selector = @selector(getSignWithOrgOcpsoftPrettytimeDuration:);
+  methods[11].selector = @selector(getSingularNameWithOrgOcpsoftPrettytimeDuration:);
+  methods[12].selector = @selector(getPluralNameWithOrgOcpsoftPrettytimeDuration:);
+  methods[13].selector = @selector(decorateWithOrgOcpsoftPrettytimeDuration:withNSString:);
+  methods[14].selector = @selector(decorateUnroundedWithOrgOcpsoftPrettytimeDuration:withNSString:);
+  methods[15].selector = @selector(setPatternWithNSString:);
+  methods[16].selector = @selector(setFuturePrefixWithNSString:);
+  methods[17].selector = @selector(setFutureSuffixWithNSString:);
+  methods[18].selector = @selector(setPastPrefixWithNSString:);
+  methods[19].selector = @selector(setPastSuffixWithNSString:);
+  methods[20].selector = @selector(setRoundingToleranceWithInt:);
+  methods[21].selector = @selector(setSingularNameWithNSString:);
+  methods[22].selector = @selector(setPluralNameWithNSString:);
+  methods[23].selector = @selector(setFutureSingularNameWithNSString:);
+  methods[24].selector = @selector(setFuturePluralNameWithNSString:);
+  methods[25].selector = @selector(setPastSingularNameWithNSString:);
+  methods[26].selector = @selector(setPastPluralNameWithNSString:);
+  methods[27].selector = @selector(description);
+  #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "NEGATIVE", "NEGATIVE", 0x1a, "Ljava.lang.String;", &OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_NEGATIVE, NULL, .constantValue.asLong = 0 },
-    { "SIGN", "SIGN", 0x19, "Ljava.lang.String;", &OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_SIGN, NULL, .constantValue.asLong = 0 },
-    { "QUANTITY", "QUANTITY", 0x19, "Ljava.lang.String;", &OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_QUANTITY, NULL, .constantValue.asLong = 0 },
-    { "UNIT", "UNIT", 0x19, "Ljava.lang.String;", &OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_UNIT, NULL, .constantValue.asLong = 0 },
-    { "bundle_", NULL, 0x12, "Ljava.util.ResourceBundle;", NULL, NULL, .constantValue.asLong = 0 },
-    { "singularName_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
-    { "pluralName_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
-    { "futureSingularName_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
-    { "futurePluralName_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
-    { "pastSingularName_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
-    { "pastPluralName_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
-    { "pattern_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
-    { "futurePrefix_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
-    { "futureSuffix_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
-    { "pastPrefix_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
-    { "pastSuffix_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
-    { "roundingTolerance_", NULL, 0x2, "I", NULL, NULL, .constantValue.asLong = 0 },
+    { "NEGATIVE", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 34, -1, -1 },
+    { "SIGN", "LNSString;", .constantValue.asLong = 0, 0x19, -1, 35, -1, -1 },
+    { "QUANTITY", "LNSString;", .constantValue.asLong = 0, 0x19, -1, 36, -1, -1 },
+    { "UNIT", "LNSString;", .constantValue.asLong = 0, 0x19, -1, 37, -1, -1 },
+    { "bundle_", "LJavaUtilResourceBundle;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "singularName_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "pluralName_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "futureSingularName_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "futurePluralName_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "pastSingularName_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "pastPluralName_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "pattern_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "futurePrefix_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "futureSuffix_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "pastPrefix_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "pastSuffix_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "roundingTolerance_", "I", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat = { 2, "JaTimeFormat", "org.ocpsoft.prettytime.i18n", "Resources_ja", 0xa, 28, methods, 17, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const void *ptrTable[] = { "LJavaUtilResourceBundle;LOrgOcpsoftPrettytimeTimeUnit;", "getUnitName", "LOrgOcpsoftPrettytimeTimeUnit;", "format", "LOrgOcpsoftPrettytimeDuration;", "formatUnrounded", "LOrgOcpsoftPrettytimeDuration;Z", "applyPattern", "LNSString;LNSString;J", "getPattern", "J", "getQuantity", "getGramaticallyCorrectName", "getSign", "getSingularName", "getPluralName", "decorate", "LOrgOcpsoftPrettytimeDuration;LNSString;", "decorateUnrounded", "setPattern", "LNSString;", "setFuturePrefix", "setFutureSuffix", "setPastPrefix", "setPastSuffix", "setRoundingTolerance", "I", "setSingularName", "setPluralName", "setFutureSingularName", "setFuturePluralName", "setPastSingularName", "setPastPluralName", "toString", &OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_NEGATIVE, &OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_SIGN, &OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_QUANTITY, &OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_UNIT, "LOrgOcpsoftPrettytimeI18nResources_ja;" };
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat = { "JaTimeFormat", "org.ocpsoft.prettytime.i18n", ptrTable, methods, fields, 7, 0xa, 28, 17, 38, -1, -1, -1, -1 };
   return &_OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat;
 }
 
@@ -507,15 +541,11 @@ void OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_initWithJavaUtilResourceB
 }
 
 OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat *new_OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_initWithJavaUtilResourceBundle_withOrgOcpsoftPrettytimeTimeUnit_(JavaUtilResourceBundle *bundle, id<OrgOcpsoftPrettytimeTimeUnit> unit) {
-  OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat *self = [OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat alloc];
-  OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_initWithJavaUtilResourceBundle_withOrgOcpsoftPrettytimeTimeUnit_(self, bundle, unit);
-  return self;
+  J2OBJC_NEW_IMPL(OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat, initWithJavaUtilResourceBundle_withOrgOcpsoftPrettytimeTimeUnit_, bundle, unit)
 }
 
 OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat *create_OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_initWithJavaUtilResourceBundle_withOrgOcpsoftPrettytimeTimeUnit_(JavaUtilResourceBundle *bundle, id<OrgOcpsoftPrettytimeTimeUnit> unit) {
-  OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat *self = [[OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat alloc] autorelease];
-  OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_initWithJavaUtilResourceBundle_withOrgOcpsoftPrettytimeTimeUnit_(self, bundle, unit);
-  return self;
+  J2OBJC_CREATE_IMPL(OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat, initWithJavaUtilResourceBundle_withOrgOcpsoftPrettytimeTimeUnit_, bundle, unit)
 }
 
 NSString *OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat_getUnitNameWithOrgOcpsoftPrettytimeTimeUnit_(OrgOcpsoftPrettytimeI18nResources_ja_JaTimeFormat *self, id<OrgOcpsoftPrettytimeTimeUnit> unit) {

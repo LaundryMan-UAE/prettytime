@@ -5,19 +5,19 @@
 
 #include "J2ObjC_header.h"
 
-#pragma push_macro("OrgOcpsoftPrettytimeFormatSimpleTimeFormat_INCLUDE_ALL")
-#ifdef OrgOcpsoftPrettytimeFormatSimpleTimeFormat_RESTRICT
-#define OrgOcpsoftPrettytimeFormatSimpleTimeFormat_INCLUDE_ALL 0
+#pragma push_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeFormatSimpleTimeFormat")
+#ifdef RESTRICT_OrgOcpsoftPrettytimeFormatSimpleTimeFormat
+#define INCLUDE_ALL_OrgOcpsoftPrettytimeFormatSimpleTimeFormat 0
 #else
-#define OrgOcpsoftPrettytimeFormatSimpleTimeFormat_INCLUDE_ALL 1
+#define INCLUDE_ALL_OrgOcpsoftPrettytimeFormatSimpleTimeFormat 1
 #endif
-#undef OrgOcpsoftPrettytimeFormatSimpleTimeFormat_RESTRICT
+#undef RESTRICT_OrgOcpsoftPrettytimeFormatSimpleTimeFormat
 
-#if !defined (OrgOcpsoftPrettytimeFormatSimpleTimeFormat_) && (OrgOcpsoftPrettytimeFormatSimpleTimeFormat_INCLUDE_ALL || defined(OrgOcpsoftPrettytimeFormatSimpleTimeFormat_INCLUDE))
+#if !defined (OrgOcpsoftPrettytimeFormatSimpleTimeFormat_) && (INCLUDE_ALL_OrgOcpsoftPrettytimeFormatSimpleTimeFormat || defined(INCLUDE_OrgOcpsoftPrettytimeFormatSimpleTimeFormat))
 #define OrgOcpsoftPrettytimeFormatSimpleTimeFormat_
 
-#define OrgOcpsoftPrettytimeTimeFormat_RESTRICT 1
-#define OrgOcpsoftPrettytimeTimeFormat_INCLUDE 1
+#define RESTRICT_OrgOcpsoftPrettytimeTimeFormat 1
+#define INCLUDE_OrgOcpsoftPrettytimeTimeFormat 1
 #include "org/ocpsoft/prettytime/TimeFormat.h"
 
 @protocol OrgOcpsoftPrettytimeDuration;
@@ -113,4 +113,4 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat)
 
 #endif
 
-#pragma pop_macro("OrgOcpsoftPrettytimeFormatSimpleTimeFormat_INCLUDE_ALL")
+#pragma pop_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeFormatSimpleTimeFormat")

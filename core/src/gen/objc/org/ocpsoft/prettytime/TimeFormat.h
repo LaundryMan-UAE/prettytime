@@ -5,15 +5,15 @@
 
 #include "J2ObjC_header.h"
 
-#pragma push_macro("OrgOcpsoftPrettytimeTimeFormat_INCLUDE_ALL")
-#ifdef OrgOcpsoftPrettytimeTimeFormat_RESTRICT
-#define OrgOcpsoftPrettytimeTimeFormat_INCLUDE_ALL 0
+#pragma push_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeTimeFormat")
+#ifdef RESTRICT_OrgOcpsoftPrettytimeTimeFormat
+#define INCLUDE_ALL_OrgOcpsoftPrettytimeTimeFormat 0
 #else
-#define OrgOcpsoftPrettytimeTimeFormat_INCLUDE_ALL 1
+#define INCLUDE_ALL_OrgOcpsoftPrettytimeTimeFormat 1
 #endif
-#undef OrgOcpsoftPrettytimeTimeFormat_RESTRICT
+#undef RESTRICT_OrgOcpsoftPrettytimeTimeFormat
 
-#if !defined (OrgOcpsoftPrettytimeTimeFormat_) && (OrgOcpsoftPrettytimeTimeFormat_INCLUDE_ALL || defined(OrgOcpsoftPrettytimeTimeFormat_INCLUDE))
+#if !defined (OrgOcpsoftPrettytimeTimeFormat_) && (INCLUDE_ALL_OrgOcpsoftPrettytimeTimeFormat || defined(INCLUDE_OrgOcpsoftPrettytimeTimeFormat))
 #define OrgOcpsoftPrettytimeTimeFormat_
 
 @protocol OrgOcpsoftPrettytimeDuration;
@@ -22,7 +22,7 @@
  @brief Format a Duration object.
  @author <a href="mailto:lincolnbaxter@@gmail.com">Lincoln Baxter, III</a>
  */
-@protocol OrgOcpsoftPrettytimeTimeFormat < NSObject, JavaObject >
+@protocol OrgOcpsoftPrettytimeTimeFormat < JavaObject >
 
 /*!
  @brief Given a populated <code>Duration</code> object.
@@ -62,4 +62,4 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeTimeFormat)
 
 #endif
 
-#pragma pop_macro("OrgOcpsoftPrettytimeTimeFormat_INCLUDE_ALL")
+#pragma pop_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeTimeFormat")

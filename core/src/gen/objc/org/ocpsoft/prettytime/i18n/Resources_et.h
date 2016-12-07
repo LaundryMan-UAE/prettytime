@@ -5,19 +5,19 @@
 
 #include "J2ObjC_header.h"
 
-#pragma push_macro("OrgOcpsoftPrettytimeI18nResources_et_INCLUDE_ALL")
-#ifdef OrgOcpsoftPrettytimeI18nResources_et_RESTRICT
-#define OrgOcpsoftPrettytimeI18nResources_et_INCLUDE_ALL 0
+#pragma push_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeI18nResources_et")
+#ifdef RESTRICT_OrgOcpsoftPrettytimeI18nResources_et
+#define INCLUDE_ALL_OrgOcpsoftPrettytimeI18nResources_et 0
 #else
-#define OrgOcpsoftPrettytimeI18nResources_et_INCLUDE_ALL 1
+#define INCLUDE_ALL_OrgOcpsoftPrettytimeI18nResources_et 1
 #endif
-#undef OrgOcpsoftPrettytimeI18nResources_et_RESTRICT
+#undef RESTRICT_OrgOcpsoftPrettytimeI18nResources_et
 
-#if !defined (OrgOcpsoftPrettytimeI18nResources_et_) && (OrgOcpsoftPrettytimeI18nResources_et_INCLUDE_ALL || defined(OrgOcpsoftPrettytimeI18nResources_et_INCLUDE))
+#if !defined (OrgOcpsoftPrettytimeI18nResources_et_) && (INCLUDE_ALL_OrgOcpsoftPrettytimeI18nResources_et || defined(INCLUDE_OrgOcpsoftPrettytimeI18nResources_et))
 #define OrgOcpsoftPrettytimeI18nResources_et_
 
-#define OrgOcpsoftPrettytimeI18nResources_fi_RESTRICT 1
-#define OrgOcpsoftPrettytimeI18nResources_fi_INCLUDE 1
+#define RESTRICT_OrgOcpsoftPrettytimeI18nResources_fi 1
+#define INCLUDE_OrgOcpsoftPrettytimeI18nResources_fi 1
 #include "org/ocpsoft/prettytime/i18n/Resources_fi.h"
 
 @class IOSObjectArray;
@@ -46,4 +46,4 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeI18nResources_et)
 
 #endif
 
-#pragma pop_macro("OrgOcpsoftPrettytimeI18nResources_et_INCLUDE_ALL")
+#pragma pop_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeI18nResources_et")

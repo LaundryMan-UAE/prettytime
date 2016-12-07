@@ -5,27 +5,27 @@
 
 #include "J2ObjC_header.h"
 
-#pragma push_macro("OrgOcpsoftPrettytimeImplResourcesTimeFormat_INCLUDE_ALL")
-#ifdef OrgOcpsoftPrettytimeImplResourcesTimeFormat_RESTRICT
-#define OrgOcpsoftPrettytimeImplResourcesTimeFormat_INCLUDE_ALL 0
+#pragma push_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeImplResourcesTimeFormat")
+#ifdef RESTRICT_OrgOcpsoftPrettytimeImplResourcesTimeFormat
+#define INCLUDE_ALL_OrgOcpsoftPrettytimeImplResourcesTimeFormat 0
 #else
-#define OrgOcpsoftPrettytimeImplResourcesTimeFormat_INCLUDE_ALL 1
+#define INCLUDE_ALL_OrgOcpsoftPrettytimeImplResourcesTimeFormat 1
 #endif
-#undef OrgOcpsoftPrettytimeImplResourcesTimeFormat_RESTRICT
+#undef RESTRICT_OrgOcpsoftPrettytimeImplResourcesTimeFormat
 
-#if !defined (OrgOcpsoftPrettytimeImplResourcesTimeFormat_) && (OrgOcpsoftPrettytimeImplResourcesTimeFormat_INCLUDE_ALL || defined(OrgOcpsoftPrettytimeImplResourcesTimeFormat_INCLUDE))
+#if !defined (OrgOcpsoftPrettytimeImplResourcesTimeFormat_) && (INCLUDE_ALL_OrgOcpsoftPrettytimeImplResourcesTimeFormat || defined(INCLUDE_OrgOcpsoftPrettytimeImplResourcesTimeFormat))
 #define OrgOcpsoftPrettytimeImplResourcesTimeFormat_
 
-#define OrgOcpsoftPrettytimeFormatSimpleTimeFormat_RESTRICT 1
-#define OrgOcpsoftPrettytimeFormatSimpleTimeFormat_INCLUDE 1
+#define RESTRICT_OrgOcpsoftPrettytimeFormatSimpleTimeFormat 1
+#define INCLUDE_OrgOcpsoftPrettytimeFormatSimpleTimeFormat 1
 #include "org/ocpsoft/prettytime/format/SimpleTimeFormat.h"
 
-#define OrgOcpsoftPrettytimeTimeFormat_RESTRICT 1
-#define OrgOcpsoftPrettytimeTimeFormat_INCLUDE 1
+#define RESTRICT_OrgOcpsoftPrettytimeTimeFormat 1
+#define INCLUDE_OrgOcpsoftPrettytimeTimeFormat 1
 #include "org/ocpsoft/prettytime/TimeFormat.h"
 
-#define OrgOcpsoftPrettytimeLocaleAware_RESTRICT 1
-#define OrgOcpsoftPrettytimeLocaleAware_INCLUDE 1
+#define RESTRICT_OrgOcpsoftPrettytimeLocaleAware 1
+#define INCLUDE_OrgOcpsoftPrettytimeLocaleAware 1
 #include "org/ocpsoft/prettytime/LocaleAware.h"
 
 @class JavaUtilLocale;
@@ -68,4 +68,4 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeImplResourcesTimeFormat)
 
 #endif
 
-#pragma pop_macro("OrgOcpsoftPrettytimeImplResourcesTimeFormat_INCLUDE_ALL")
+#pragma pop_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeImplResourcesTimeFormat")

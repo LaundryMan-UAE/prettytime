@@ -4,7 +4,6 @@
 //
 
 #include "J2ObjC_source.h"
-#include "java/util/Locale.h"
 #include "org/ocpsoft/prettytime/LocaleAware.h"
 
 @interface OrgOcpsoftPrettytimeLocaleAware : NSObject
@@ -14,10 +13,15 @@
 @implementation OrgOcpsoftPrettytimeLocaleAware
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "setLocaleWithJavaUtilLocale:", "setLocale", "TTYPE;", 0x401, NULL, "(Ljava/util/Locale;)TTYPE;" },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, "LNSObject;", 0x401, 0, 1, -1, 2, -1, -1 },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeLocaleAware = { 2, "LocaleAware", "org.ocpsoft.prettytime", NULL, 0x609, 1, methods, 0, NULL, 0, NULL, 0, NULL, NULL, "<TYPE:Ljava/lang/Object;>Ljava/lang/Object;" };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(setLocaleWithJavaUtilLocale:);
+  #pragma clang diagnostic pop
+  static const void *ptrTable[] = { "setLocale", "LJavaUtilLocale;", "(Ljava/util/Locale;)TTYPE;", "<TYPE:Ljava/lang/Object;>Ljava/lang/Object;" };
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeLocaleAware = { "LocaleAware", "org.ocpsoft.prettytime", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, 3, -1 };
   return &_OrgOcpsoftPrettytimeLocaleAware;
 }
 

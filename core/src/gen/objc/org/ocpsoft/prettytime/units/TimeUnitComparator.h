@@ -5,25 +5,29 @@
 
 #include "J2ObjC_header.h"
 
-#pragma push_macro("OrgOcpsoftPrettytimeUnitsTimeUnitComparator_INCLUDE_ALL")
-#ifdef OrgOcpsoftPrettytimeUnitsTimeUnitComparator_RESTRICT
-#define OrgOcpsoftPrettytimeUnitsTimeUnitComparator_INCLUDE_ALL 0
+#pragma push_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeUnitsTimeUnitComparator")
+#ifdef RESTRICT_OrgOcpsoftPrettytimeUnitsTimeUnitComparator
+#define INCLUDE_ALL_OrgOcpsoftPrettytimeUnitsTimeUnitComparator 0
 #else
-#define OrgOcpsoftPrettytimeUnitsTimeUnitComparator_INCLUDE_ALL 1
+#define INCLUDE_ALL_OrgOcpsoftPrettytimeUnitsTimeUnitComparator 1
 #endif
-#undef OrgOcpsoftPrettytimeUnitsTimeUnitComparator_RESTRICT
+#undef RESTRICT_OrgOcpsoftPrettytimeUnitsTimeUnitComparator
 
-#if !defined (OrgOcpsoftPrettytimeUnitsTimeUnitComparator_) && (OrgOcpsoftPrettytimeUnitsTimeUnitComparator_INCLUDE_ALL || defined(OrgOcpsoftPrettytimeUnitsTimeUnitComparator_INCLUDE))
+#if !defined (OrgOcpsoftPrettytimeUnitsTimeUnitComparator_) && (INCLUDE_ALL_OrgOcpsoftPrettytimeUnitsTimeUnitComparator || defined(INCLUDE_OrgOcpsoftPrettytimeUnitsTimeUnitComparator))
 #define OrgOcpsoftPrettytimeUnitsTimeUnitComparator_
 
-#define JavaUtilComparator_RESTRICT 1
-#define JavaUtilComparator_INCLUDE 1
+#define RESTRICT_JavaUtilComparator 1
+#define INCLUDE_JavaUtilComparator 1
 #include "java/util/Comparator.h"
 
-#define JavaIoSerializable_RESTRICT 1
-#define JavaIoSerializable_INCLUDE 1
+#define RESTRICT_JavaIoSerializable 1
+#define INCLUDE_JavaIoSerializable 1
 #include "java/io/Serializable.h"
 
+@protocol JavaUtilFunctionFunction;
+@protocol JavaUtilFunctionToDoubleFunction;
+@protocol JavaUtilFunctionToIntFunction;
+@protocol JavaUtilFunctionToLongFunction;
 @protocol OrgOcpsoftPrettytimeTimeUnit;
 
 /*!
@@ -53,4 +57,4 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeUnitsTimeUnitComparator)
 
 #endif
 
-#pragma pop_macro("OrgOcpsoftPrettytimeUnitsTimeUnitComparator_INCLUDE_ALL")
+#pragma pop_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeUnitsTimeUnitComparator")

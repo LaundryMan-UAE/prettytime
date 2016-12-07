@@ -5,22 +5,22 @@
 
 #include "J2ObjC_header.h"
 
-#pragma push_macro("OrgOcpsoftPrettytimeTimeUnit_INCLUDE_ALL")
-#ifdef OrgOcpsoftPrettytimeTimeUnit_RESTRICT
-#define OrgOcpsoftPrettytimeTimeUnit_INCLUDE_ALL 0
+#pragma push_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeTimeUnit")
+#ifdef RESTRICT_OrgOcpsoftPrettytimeTimeUnit
+#define INCLUDE_ALL_OrgOcpsoftPrettytimeTimeUnit 0
 #else
-#define OrgOcpsoftPrettytimeTimeUnit_INCLUDE_ALL 1
+#define INCLUDE_ALL_OrgOcpsoftPrettytimeTimeUnit 1
 #endif
-#undef OrgOcpsoftPrettytimeTimeUnit_RESTRICT
+#undef RESTRICT_OrgOcpsoftPrettytimeTimeUnit
 
-#if !defined (OrgOcpsoftPrettytimeTimeUnit_) && (OrgOcpsoftPrettytimeTimeUnit_INCLUDE_ALL || defined(OrgOcpsoftPrettytimeTimeUnit_INCLUDE))
+#if !defined (OrgOcpsoftPrettytimeTimeUnit_) && (INCLUDE_ALL_OrgOcpsoftPrettytimeTimeUnit || defined(INCLUDE_OrgOcpsoftPrettytimeTimeUnit))
 #define OrgOcpsoftPrettytimeTimeUnit_
 
 /*!
  @brief Defines a Unit of time (e.g. seconds, minutes, hours) and its conversion to milliseconds.
  @author <a href="mailto:lincolnbaxter@@gmail.com">Lincoln Baxter, III</a>
  */
-@protocol OrgOcpsoftPrettytimeTimeUnit < NSObject, JavaObject >
+@protocol OrgOcpsoftPrettytimeTimeUnit < JavaObject >
 
 /*!
  @brief The number of milliseconds represented by each instance of this TimeUnit.
@@ -53,4 +53,4 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeTimeUnit)
 
 #endif
 
-#pragma pop_macro("OrgOcpsoftPrettytimeTimeUnit_INCLUDE_ALL")
+#pragma pop_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeTimeUnit")

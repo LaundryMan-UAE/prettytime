@@ -5,15 +5,15 @@
 
 #include "J2ObjC_header.h"
 
-#pragma push_macro("OrgOcpsoftPrettytimePrettyTime_INCLUDE_ALL")
-#ifdef OrgOcpsoftPrettytimePrettyTime_RESTRICT
-#define OrgOcpsoftPrettytimePrettyTime_INCLUDE_ALL 0
+#pragma push_macro("INCLUDE_ALL_OrgOcpsoftPrettytimePrettyTime")
+#ifdef RESTRICT_OrgOcpsoftPrettytimePrettyTime
+#define INCLUDE_ALL_OrgOcpsoftPrettytimePrettyTime 0
 #else
-#define OrgOcpsoftPrettytimePrettyTime_INCLUDE_ALL 1
+#define INCLUDE_ALL_OrgOcpsoftPrettytimePrettyTime 1
 #endif
-#undef OrgOcpsoftPrettytimePrettyTime_RESTRICT
+#undef RESTRICT_OrgOcpsoftPrettytimePrettyTime
 
-#if !defined (OrgOcpsoftPrettytimePrettyTime_) && (OrgOcpsoftPrettytimePrettyTime_INCLUDE_ALL || defined(OrgOcpsoftPrettytimePrettyTime_INCLUDE))
+#if !defined (OrgOcpsoftPrettytimePrettyTime_) && (INCLUDE_ALL_OrgOcpsoftPrettytimePrettyTime || defined(INCLUDE_OrgOcpsoftPrettytimePrettyTime))
 #define OrgOcpsoftPrettytimePrettyTime_
 
 @class IOSClass;
@@ -190,7 +190,7 @@
 /*!
  @brief Get the registered <code>TimeUnit</code> for the given <code>TimeUnit</code> type or null if none exists.
  */
-- (id)getUnitWithIOSClass:(IOSClass *)unitType;
+- (id<OrgOcpsoftPrettytimeTimeUnit>)getUnitWithIOSClass:(IOSClass *)unitType;
 
 /*!
  @brief Get a <code>List</code> of the current configured <code>TimeUnit</code> instances in calculations.
@@ -272,4 +272,4 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimePrettyTime)
 
 #endif
 
-#pragma pop_macro("OrgOcpsoftPrettytimePrettyTime_INCLUDE_ALL")
+#pragma pop_macro("INCLUDE_ALL_OrgOcpsoftPrettytimePrettyTime")

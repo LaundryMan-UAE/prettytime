@@ -5,15 +5,15 @@
 
 #include "J2ObjC_header.h"
 
-#pragma push_macro("OrgOcpsoftPrettytimeImplTimeFormatProvider_INCLUDE_ALL")
-#ifdef OrgOcpsoftPrettytimeImplTimeFormatProvider_RESTRICT
-#define OrgOcpsoftPrettytimeImplTimeFormatProvider_INCLUDE_ALL 0
+#pragma push_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeImplTimeFormatProvider")
+#ifdef RESTRICT_OrgOcpsoftPrettytimeImplTimeFormatProvider
+#define INCLUDE_ALL_OrgOcpsoftPrettytimeImplTimeFormatProvider 0
 #else
-#define OrgOcpsoftPrettytimeImplTimeFormatProvider_INCLUDE_ALL 1
+#define INCLUDE_ALL_OrgOcpsoftPrettytimeImplTimeFormatProvider 1
 #endif
-#undef OrgOcpsoftPrettytimeImplTimeFormatProvider_RESTRICT
+#undef RESTRICT_OrgOcpsoftPrettytimeImplTimeFormatProvider
 
-#if !defined (OrgOcpsoftPrettytimeImplTimeFormatProvider_) && (OrgOcpsoftPrettytimeImplTimeFormatProvider_INCLUDE_ALL || defined(OrgOcpsoftPrettytimeImplTimeFormatProvider_INCLUDE))
+#if !defined (OrgOcpsoftPrettytimeImplTimeFormatProvider_) && (INCLUDE_ALL_OrgOcpsoftPrettytimeImplTimeFormatProvider || defined(INCLUDE_OrgOcpsoftPrettytimeImplTimeFormatProvider))
 #define OrgOcpsoftPrettytimeImplTimeFormatProvider_
 
 @protocol OrgOcpsoftPrettytimeTimeFormat;
@@ -25,7 +25,7 @@
  <code>ResourcesTimeFormat</code> instances..
  @author <a href="mailto:lincolnbaxter@@gmail.com">Lincoln Baxter, III</a>
  */
-@protocol OrgOcpsoftPrettytimeImplTimeFormatProvider < NSObject, JavaObject >
+@protocol OrgOcpsoftPrettytimeImplTimeFormatProvider < JavaObject >
 
 /*!
  @brief Return the appropriate <code>TimeFormat</code> for the given <code>TimeUnit</code>
@@ -40,4 +40,4 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeImplTimeFormatProvider)
 
 #endif
 
-#pragma pop_macro("OrgOcpsoftPrettytimeImplTimeFormatProvider_INCLUDE_ALL")
+#pragma pop_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeImplTimeFormatProvider")

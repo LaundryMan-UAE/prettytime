@@ -4,8 +4,6 @@
 //
 
 #include "J2ObjC_source.h"
-#include "org/ocpsoft/prettytime/TimeFormat.h"
-#include "org/ocpsoft/prettytime/TimeUnit.h"
 #include "org/ocpsoft/prettytime/impl/TimeFormatProvider.h"
 
 @interface OrgOcpsoftPrettytimeImplTimeFormatProvider : NSObject
@@ -15,10 +13,15 @@
 @implementation OrgOcpsoftPrettytimeImplTimeFormatProvider
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "getFormatForWithOrgOcpsoftPrettytimeTimeUnit:", "getFormatFor", "Lorg.ocpsoft.prettytime.TimeFormat;", 0x401, NULL, NULL },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, "LOrgOcpsoftPrettytimeTimeFormat;", 0x401, 0, 1, -1, -1, -1, -1 },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeImplTimeFormatProvider = { 2, "TimeFormatProvider", "org.ocpsoft.prettytime.impl", NULL, 0x609, 1, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(getFormatForWithOrgOcpsoftPrettytimeTimeUnit:);
+  #pragma clang diagnostic pop
+  static const void *ptrTable[] = { "getFormatFor", "LOrgOcpsoftPrettytimeTimeUnit;" };
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeImplTimeFormatProvider = { "TimeFormatProvider", "org.ocpsoft.prettytime.impl", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
   return &_OrgOcpsoftPrettytimeImplTimeFormatProvider;
 }
 

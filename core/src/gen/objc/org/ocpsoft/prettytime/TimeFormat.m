@@ -4,7 +4,6 @@
 //
 
 #include "J2ObjC_source.h"
-#include "org/ocpsoft/prettytime/Duration.h"
 #include "org/ocpsoft/prettytime/TimeFormat.h"
 
 @interface OrgOcpsoftPrettytimeTimeFormat : NSObject
@@ -14,13 +13,21 @@
 @implementation OrgOcpsoftPrettytimeTimeFormat
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "formatWithOrgOcpsoftPrettytimeDuration:", "format", "Ljava.lang.String;", 0x401, NULL, NULL },
-    { "formatUnroundedWithOrgOcpsoftPrettytimeDuration:", "formatUnrounded", "Ljava.lang.String;", 0x401, NULL, NULL },
-    { "decorateWithOrgOcpsoftPrettytimeDuration:withNSString:", "decorate", "Ljava.lang.String;", 0x401, NULL, NULL },
-    { "decorateUnroundedWithOrgOcpsoftPrettytimeDuration:withNSString:", "decorateUnrounded", "Ljava.lang.String;", 0x401, NULL, NULL },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, "LNSString;", 0x401, 0, 1, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x401, 2, 1, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x401, 3, 4, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x401, 5, 4, -1, -1, -1, -1 },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeTimeFormat = { 2, "TimeFormat", "org.ocpsoft.prettytime", NULL, 0x609, 4, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(formatWithOrgOcpsoftPrettytimeDuration:);
+  methods[1].selector = @selector(formatUnroundedWithOrgOcpsoftPrettytimeDuration:);
+  methods[2].selector = @selector(decorateWithOrgOcpsoftPrettytimeDuration:withNSString:);
+  methods[3].selector = @selector(decorateUnroundedWithOrgOcpsoftPrettytimeDuration:withNSString:);
+  #pragma clang diagnostic pop
+  static const void *ptrTable[] = { "format", "LOrgOcpsoftPrettytimeDuration;", "formatUnrounded", "decorate", "LOrgOcpsoftPrettytimeDuration;LNSString;", "decorateUnrounded" };
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeTimeFormat = { "TimeFormat", "org.ocpsoft.prettytime", ptrTable, methods, NULL, 7, 0x609, 4, 0, -1, -1, -1, -1, -1 };
   return &_OrgOcpsoftPrettytimeTimeFormat;
 }
 

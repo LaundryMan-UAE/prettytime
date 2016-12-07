@@ -82,7 +82,7 @@ NSString *OrgOcpsoftPrettytimeFormatSimpleTimeFormat_UNIT = @"%u";
 
 - (NSString *)decorateWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration
                                           withNSString:(NSString *)time {
-  JavaLangStringBuilder *result = [new_JavaLangStringBuilder_init() autorelease];
+  JavaLangStringBuilder *result = create_JavaLangStringBuilder_init();
   if ([((id<OrgOcpsoftPrettytimeDuration>) nil_chk(duration)) isInPast]) {
     [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([result appendWithNSString:pastPrefix_])) appendWithNSString:@" "])) appendWithNSString:time])) appendWithNSString:@" "])) appendWithNSString:pastSuffix_];
   }
@@ -229,54 +229,85 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "formatWithOrgOcpsoftPrettytimeDuration:", "format", "Ljava.lang.String;", 0x1, NULL, NULL },
-    { "formatUnroundedWithOrgOcpsoftPrettytimeDuration:", "formatUnrounded", "Ljava.lang.String;", 0x1, NULL, NULL },
-    { "decorateWithOrgOcpsoftPrettytimeDuration:withNSString:", "decorate", "Ljava.lang.String;", 0x1, NULL, NULL },
-    { "decorateUnroundedWithOrgOcpsoftPrettytimeDuration:withNSString:", "decorateUnrounded", "Ljava.lang.String;", 0x1, NULL, NULL },
-    { "formatWithOrgOcpsoftPrettytimeDuration:withBoolean:", "format", "Ljava.lang.String;", 0x2, NULL, NULL },
-    { "applyPatternWithNSString:withNSString:withLong:", "applyPattern", "Ljava.lang.String;", 0x2, NULL, NULL },
-    { "getPatternWithLong:", "getPattern", "Ljava.lang.String;", 0x4, NULL, NULL },
-    { "getPattern", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
-    { "getQuantityWithOrgOcpsoftPrettytimeDuration:withBoolean:", "getQuantity", "J", 0x4, NULL, NULL },
-    { "getGramaticallyCorrectNameWithOrgOcpsoftPrettytimeDuration:withBoolean:", "getGramaticallyCorrectName", "Ljava.lang.String;", 0x4, NULL, NULL },
-    { "getSignWithOrgOcpsoftPrettytimeDuration:", "getSign", "Ljava.lang.String;", 0x2, NULL, NULL },
-    { "getSingularNameWithOrgOcpsoftPrettytimeDuration:", "getSingularName", "Ljava.lang.String;", 0x2, NULL, NULL },
-    { "getPluralNameWithOrgOcpsoftPrettytimeDuration:", "getPluralName", "Ljava.lang.String;", 0x2, NULL, NULL },
-    { "setPatternWithNSString:", "setPattern", "Lorg.ocpsoft.prettytime.format.SimpleTimeFormat;", 0x1, NULL, NULL },
-    { "setFuturePrefixWithNSString:", "setFuturePrefix", "Lorg.ocpsoft.prettytime.format.SimpleTimeFormat;", 0x1, NULL, NULL },
-    { "setFutureSuffixWithNSString:", "setFutureSuffix", "Lorg.ocpsoft.prettytime.format.SimpleTimeFormat;", 0x1, NULL, NULL },
-    { "setPastPrefixWithNSString:", "setPastPrefix", "Lorg.ocpsoft.prettytime.format.SimpleTimeFormat;", 0x1, NULL, NULL },
-    { "setPastSuffixWithNSString:", "setPastSuffix", "Lorg.ocpsoft.prettytime.format.SimpleTimeFormat;", 0x1, NULL, NULL },
-    { "setRoundingToleranceWithInt:", "setRoundingTolerance", "Lorg.ocpsoft.prettytime.format.SimpleTimeFormat;", 0x1, NULL, NULL },
-    { "setSingularNameWithNSString:", "setSingularName", "Lorg.ocpsoft.prettytime.format.SimpleTimeFormat;", 0x1, NULL, NULL },
-    { "setPluralNameWithNSString:", "setPluralName", "Lorg.ocpsoft.prettytime.format.SimpleTimeFormat;", 0x1, NULL, NULL },
-    { "setFutureSingularNameWithNSString:", "setFutureSingularName", "Lorg.ocpsoft.prettytime.format.SimpleTimeFormat;", 0x1, NULL, NULL },
-    { "setFuturePluralNameWithNSString:", "setFuturePluralName", "Lorg.ocpsoft.prettytime.format.SimpleTimeFormat;", 0x1, NULL, NULL },
-    { "setPastSingularNameWithNSString:", "setPastSingularName", "Lorg.ocpsoft.prettytime.format.SimpleTimeFormat;", 0x1, NULL, NULL },
-    { "setPastPluralNameWithNSString:", "setPastPluralName", "Lorg.ocpsoft.prettytime.format.SimpleTimeFormat;", 0x1, NULL, NULL },
-    { "description", "toString", "Ljava.lang.String;", 0x1, NULL, NULL },
-    { "init", NULL, NULL, 0x1, NULL, NULL },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, "LNSString;", 0x1, 0, 1, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x1, 2, 1, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x1, 3, 4, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x1, 5, 4, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x2, 0, 6, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x2, 7, 8, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x4, 9, 10, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "J", 0x4, 11, 6, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x4, 12, 6, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x2, 13, 1, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x2, 14, 1, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x2, 15, 1, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeFormatSimpleTimeFormat;", 0x1, 16, 17, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeFormatSimpleTimeFormat;", 0x1, 18, 17, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeFormatSimpleTimeFormat;", 0x1, 19, 17, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeFormatSimpleTimeFormat;", 0x1, 20, 17, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeFormatSimpleTimeFormat;", 0x1, 21, 17, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeFormatSimpleTimeFormat;", 0x1, 22, 23, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeFormatSimpleTimeFormat;", 0x1, 24, 17, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeFormatSimpleTimeFormat;", 0x1, 25, 17, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeFormatSimpleTimeFormat;", 0x1, 26, 17, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeFormatSimpleTimeFormat;", 0x1, 27, 17, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeFormatSimpleTimeFormat;", 0x1, 28, 17, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeFormatSimpleTimeFormat;", 0x1, 29, 17, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x1, 30, -1, -1, -1, -1, -1 },
+    { NULL, NULL, 0x1, -1, -1, -1, -1, -1, -1 },
   };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(formatWithOrgOcpsoftPrettytimeDuration:);
+  methods[1].selector = @selector(formatUnroundedWithOrgOcpsoftPrettytimeDuration:);
+  methods[2].selector = @selector(decorateWithOrgOcpsoftPrettytimeDuration:withNSString:);
+  methods[3].selector = @selector(decorateUnroundedWithOrgOcpsoftPrettytimeDuration:withNSString:);
+  methods[4].selector = @selector(formatWithOrgOcpsoftPrettytimeDuration:withBoolean:);
+  methods[5].selector = @selector(applyPatternWithNSString:withNSString:withLong:);
+  methods[6].selector = @selector(getPatternWithLong:);
+  methods[7].selector = @selector(getPattern);
+  methods[8].selector = @selector(getQuantityWithOrgOcpsoftPrettytimeDuration:withBoolean:);
+  methods[9].selector = @selector(getGramaticallyCorrectNameWithOrgOcpsoftPrettytimeDuration:withBoolean:);
+  methods[10].selector = @selector(getSignWithOrgOcpsoftPrettytimeDuration:);
+  methods[11].selector = @selector(getSingularNameWithOrgOcpsoftPrettytimeDuration:);
+  methods[12].selector = @selector(getPluralNameWithOrgOcpsoftPrettytimeDuration:);
+  methods[13].selector = @selector(setPatternWithNSString:);
+  methods[14].selector = @selector(setFuturePrefixWithNSString:);
+  methods[15].selector = @selector(setFutureSuffixWithNSString:);
+  methods[16].selector = @selector(setPastPrefixWithNSString:);
+  methods[17].selector = @selector(setPastSuffixWithNSString:);
+  methods[18].selector = @selector(setRoundingToleranceWithInt:);
+  methods[19].selector = @selector(setSingularNameWithNSString:);
+  methods[20].selector = @selector(setPluralNameWithNSString:);
+  methods[21].selector = @selector(setFutureSingularNameWithNSString:);
+  methods[22].selector = @selector(setFuturePluralNameWithNSString:);
+  methods[23].selector = @selector(setPastSingularNameWithNSString:);
+  methods[24].selector = @selector(setPastPluralNameWithNSString:);
+  methods[25].selector = @selector(description);
+  methods[26].selector = @selector(init);
+  #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "NEGATIVE", "NEGATIVE", 0x1a, "Ljava.lang.String;", &OrgOcpsoftPrettytimeFormatSimpleTimeFormat_NEGATIVE, NULL, .constantValue.asLong = 0 },
-    { "SIGN", "SIGN", 0x19, "Ljava.lang.String;", &OrgOcpsoftPrettytimeFormatSimpleTimeFormat_SIGN, NULL, .constantValue.asLong = 0 },
-    { "QUANTITY", "QUANTITY", 0x19, "Ljava.lang.String;", &OrgOcpsoftPrettytimeFormatSimpleTimeFormat_QUANTITY, NULL, .constantValue.asLong = 0 },
-    { "UNIT", "UNIT", 0x19, "Ljava.lang.String;", &OrgOcpsoftPrettytimeFormatSimpleTimeFormat_UNIT, NULL, .constantValue.asLong = 0 },
-    { "singularName_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
-    { "pluralName_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
-    { "futureSingularName_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
-    { "futurePluralName_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
-    { "pastSingularName_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
-    { "pastPluralName_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
-    { "pattern_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
-    { "futurePrefix_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
-    { "futureSuffix_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
-    { "pastPrefix_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
-    { "pastSuffix_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
-    { "roundingTolerance_", NULL, 0x2, "I", NULL, NULL, .constantValue.asLong = 0 },
+    { "NEGATIVE", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 31, -1, -1 },
+    { "SIGN", "LNSString;", .constantValue.asLong = 0, 0x19, -1, 32, -1, -1 },
+    { "QUANTITY", "LNSString;", .constantValue.asLong = 0, 0x19, -1, 33, -1, -1 },
+    { "UNIT", "LNSString;", .constantValue.asLong = 0, 0x19, -1, 34, -1, -1 },
+    { "singularName_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "pluralName_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "futureSingularName_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "futurePluralName_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "pastSingularName_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "pastPluralName_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "pattern_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "futurePrefix_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "futureSuffix_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "pastPrefix_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "pastSuffix_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "roundingTolerance_", "I", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeFormatSimpleTimeFormat = { 2, "SimpleTimeFormat", "org.ocpsoft.prettytime.format", NULL, 0x1, 27, methods, 16, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const void *ptrTable[] = { "format", "LOrgOcpsoftPrettytimeDuration;", "formatUnrounded", "decorate", "LOrgOcpsoftPrettytimeDuration;LNSString;", "decorateUnrounded", "LOrgOcpsoftPrettytimeDuration;Z", "applyPattern", "LNSString;LNSString;J", "getPattern", "J", "getQuantity", "getGramaticallyCorrectName", "getSign", "getSingularName", "getPluralName", "setPattern", "LNSString;", "setFuturePrefix", "setFutureSuffix", "setPastPrefix", "setPastSuffix", "setRoundingTolerance", "I", "setSingularName", "setPluralName", "setFutureSingularName", "setFuturePluralName", "setPastSingularName", "setPastPluralName", "toString", &OrgOcpsoftPrettytimeFormatSimpleTimeFormat_NEGATIVE, &OrgOcpsoftPrettytimeFormatSimpleTimeFormat_SIGN, &OrgOcpsoftPrettytimeFormatSimpleTimeFormat_QUANTITY, &OrgOcpsoftPrettytimeFormatSimpleTimeFormat_UNIT };
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeFormatSimpleTimeFormat = { "SimpleTimeFormat", "org.ocpsoft.prettytime.format", ptrTable, methods, fields, 7, 0x1, 27, 16, -1, -1, -1, -1, -1 };
   return &_OrgOcpsoftPrettytimeFormatSimpleTimeFormat;
 }
 
@@ -332,15 +363,11 @@ void OrgOcpsoftPrettytimeFormatSimpleTimeFormat_init(OrgOcpsoftPrettytimeFormatS
 }
 
 OrgOcpsoftPrettytimeFormatSimpleTimeFormat *new_OrgOcpsoftPrettytimeFormatSimpleTimeFormat_init() {
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat *self = [OrgOcpsoftPrettytimeFormatSimpleTimeFormat alloc];
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_init(self);
-  return self;
+  J2OBJC_NEW_IMPL(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, init)
 }
 
 OrgOcpsoftPrettytimeFormatSimpleTimeFormat *create_OrgOcpsoftPrettytimeFormatSimpleTimeFormat_init() {
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat *self = [[OrgOcpsoftPrettytimeFormatSimpleTimeFormat alloc] autorelease];
-  OrgOcpsoftPrettytimeFormatSimpleTimeFormat_init(self);
-  return self;
+  J2OBJC_CREATE_IMPL(OrgOcpsoftPrettytimeFormatSimpleTimeFormat, init)
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeFormatSimpleTimeFormat)

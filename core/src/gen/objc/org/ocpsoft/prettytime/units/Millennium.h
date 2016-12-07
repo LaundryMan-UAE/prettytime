@@ -5,23 +5,23 @@
 
 #include "J2ObjC_header.h"
 
-#pragma push_macro("OrgOcpsoftPrettytimeUnitsMillennium_INCLUDE_ALL")
-#ifdef OrgOcpsoftPrettytimeUnitsMillennium_RESTRICT
-#define OrgOcpsoftPrettytimeUnitsMillennium_INCLUDE_ALL 0
+#pragma push_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeUnitsMillennium")
+#ifdef RESTRICT_OrgOcpsoftPrettytimeUnitsMillennium
+#define INCLUDE_ALL_OrgOcpsoftPrettytimeUnitsMillennium 0
 #else
-#define OrgOcpsoftPrettytimeUnitsMillennium_INCLUDE_ALL 1
+#define INCLUDE_ALL_OrgOcpsoftPrettytimeUnitsMillennium 1
 #endif
-#undef OrgOcpsoftPrettytimeUnitsMillennium_RESTRICT
+#undef RESTRICT_OrgOcpsoftPrettytimeUnitsMillennium
 
-#if !defined (OrgOcpsoftPrettytimeUnitsMillennium_) && (OrgOcpsoftPrettytimeUnitsMillennium_INCLUDE_ALL || defined(OrgOcpsoftPrettytimeUnitsMillennium_INCLUDE))
+#if !defined (OrgOcpsoftPrettytimeUnitsMillennium_) && (INCLUDE_ALL_OrgOcpsoftPrettytimeUnitsMillennium || defined(INCLUDE_OrgOcpsoftPrettytimeUnitsMillennium))
 #define OrgOcpsoftPrettytimeUnitsMillennium_
 
-#define OrgOcpsoftPrettytimeImplResourcesTimeUnit_RESTRICT 1
-#define OrgOcpsoftPrettytimeImplResourcesTimeUnit_INCLUDE 1
+#define RESTRICT_OrgOcpsoftPrettytimeImplResourcesTimeUnit 1
+#define INCLUDE_OrgOcpsoftPrettytimeImplResourcesTimeUnit 1
 #include "org/ocpsoft/prettytime/impl/ResourcesTimeUnit.h"
 
-#define OrgOcpsoftPrettytimeTimeUnit_RESTRICT 1
-#define OrgOcpsoftPrettytimeTimeUnit_INCLUDE 1
+#define RESTRICT_OrgOcpsoftPrettytimeTimeUnit 1
+#define INCLUDE_OrgOcpsoftPrettytimeTimeUnit 1
 #include "org/ocpsoft/prettytime/TimeUnit.h"
 
 @interface OrgOcpsoftPrettytimeUnitsMillennium : OrgOcpsoftPrettytimeImplResourcesTimeUnit < OrgOcpsoftPrettytimeTimeUnit >
@@ -48,4 +48,4 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeUnitsMillennium)
 
 #endif
 
-#pragma pop_macro("OrgOcpsoftPrettytimeUnitsMillennium_INCLUDE_ALL")
+#pragma pop_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeUnitsMillennium")

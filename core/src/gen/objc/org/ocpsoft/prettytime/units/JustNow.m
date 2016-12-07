@@ -21,11 +21,16 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "init", "JustNow", NULL, 0x1, NULL, NULL },
-    { "getResourceKeyPrefix", NULL, "Ljava.lang.String;", 0x4, NULL, NULL },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, NULL, 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x4, -1, -1, -1, -1, -1, -1 },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeUnitsJustNow = { 2, "JustNow", "org.ocpsoft.prettytime.units", NULL, 0x1, 2, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(init);
+  methods[1].selector = @selector(getResourceKeyPrefix);
+  #pragma clang diagnostic pop
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeUnitsJustNow = { "JustNow", "org.ocpsoft.prettytime.units", NULL, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
   return &_OrgOcpsoftPrettytimeUnitsJustNow;
 }
 
@@ -37,15 +42,11 @@ void OrgOcpsoftPrettytimeUnitsJustNow_init(OrgOcpsoftPrettytimeUnitsJustNow *sel
 }
 
 OrgOcpsoftPrettytimeUnitsJustNow *new_OrgOcpsoftPrettytimeUnitsJustNow_init() {
-  OrgOcpsoftPrettytimeUnitsJustNow *self = [OrgOcpsoftPrettytimeUnitsJustNow alloc];
-  OrgOcpsoftPrettytimeUnitsJustNow_init(self);
-  return self;
+  J2OBJC_NEW_IMPL(OrgOcpsoftPrettytimeUnitsJustNow, init)
 }
 
 OrgOcpsoftPrettytimeUnitsJustNow *create_OrgOcpsoftPrettytimeUnitsJustNow_init() {
-  OrgOcpsoftPrettytimeUnitsJustNow *self = [[OrgOcpsoftPrettytimeUnitsJustNow alloc] autorelease];
-  OrgOcpsoftPrettytimeUnitsJustNow_init(self);
-  return self;
+  J2OBJC_CREATE_IMPL(OrgOcpsoftPrettytimeUnitsJustNow, init)
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeUnitsJustNow)

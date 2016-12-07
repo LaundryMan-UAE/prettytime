@@ -77,24 +77,38 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "getQuantity", NULL, "J", 0x1, NULL, NULL },
-    { "setQuantityWithLong:", "setQuantity", "V", 0x1, NULL, NULL },
-    { "getUnit", NULL, "Lorg.ocpsoft.prettytime.TimeUnit;", 0x1, NULL, NULL },
-    { "setUnitWithOrgOcpsoftPrettytimeTimeUnit:", "setUnit", "V", 0x1, NULL, NULL },
-    { "getDelta", NULL, "J", 0x1, NULL, NULL },
-    { "setDeltaWithLong:", "setDelta", "V", 0x1, NULL, NULL },
-    { "isInPast", NULL, "Z", 0x1, NULL, NULL },
-    { "isInFuture", NULL, "Z", 0x1, NULL, NULL },
-    { "getQuantityRoundedWithInt:", "getQuantityRounded", "J", 0x1, NULL, NULL },
-    { "init", NULL, NULL, 0x1, NULL, NULL },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, "J", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 0, 1, -1, -1, -1, -1 },
+    { NULL, "LOrgOcpsoftPrettytimeTimeUnit;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 2, 3, -1, -1, -1, -1 },
+    { NULL, "J", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 4, 1, -1, -1, -1, -1 },
+    { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "J", 0x1, 5, 6, -1, -1, -1, -1 },
+    { NULL, NULL, 0x1, -1, -1, -1, -1, -1, -1 },
   };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(getQuantity);
+  methods[1].selector = @selector(setQuantityWithLong:);
+  methods[2].selector = @selector(getUnit);
+  methods[3].selector = @selector(setUnitWithOrgOcpsoftPrettytimeTimeUnit:);
+  methods[4].selector = @selector(getDelta);
+  methods[5].selector = @selector(setDeltaWithLong:);
+  methods[6].selector = @selector(isInPast);
+  methods[7].selector = @selector(isInFuture);
+  methods[8].selector = @selector(getQuantityRoundedWithInt:);
+  methods[9].selector = @selector(init);
+  #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "quantity_", NULL, 0x2, "J", NULL, NULL, .constantValue.asLong = 0 },
-    { "delta_", NULL, 0x2, "J", NULL, NULL, .constantValue.asLong = 0 },
-    { "unit_", NULL, 0x2, "Lorg.ocpsoft.prettytime.TimeUnit;", NULL, NULL, .constantValue.asLong = 0 },
+    { "quantity_", "J", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "delta_", "J", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "unit_", "LOrgOcpsoftPrettytimeTimeUnit;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeImplDurationImpl = { 2, "DurationImpl", "org.ocpsoft.prettytime.impl", NULL, 0x1, 10, methods, 3, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const void *ptrTable[] = { "setQuantity", "J", "setUnit", "LOrgOcpsoftPrettytimeTimeUnit;", "setDelta", "getQuantityRounded", "I" };
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeImplDurationImpl = { "DurationImpl", "org.ocpsoft.prettytime.impl", ptrTable, methods, fields, 7, 0x1, 10, 3, -1, -1, -1, -1, -1 };
   return &_OrgOcpsoftPrettytimeImplDurationImpl;
 }
 
@@ -105,15 +119,11 @@ void OrgOcpsoftPrettytimeImplDurationImpl_init(OrgOcpsoftPrettytimeImplDurationI
 }
 
 OrgOcpsoftPrettytimeImplDurationImpl *new_OrgOcpsoftPrettytimeImplDurationImpl_init() {
-  OrgOcpsoftPrettytimeImplDurationImpl *self = [OrgOcpsoftPrettytimeImplDurationImpl alloc];
-  OrgOcpsoftPrettytimeImplDurationImpl_init(self);
-  return self;
+  J2OBJC_NEW_IMPL(OrgOcpsoftPrettytimeImplDurationImpl, init)
 }
 
 OrgOcpsoftPrettytimeImplDurationImpl *create_OrgOcpsoftPrettytimeImplDurationImpl_init() {
-  OrgOcpsoftPrettytimeImplDurationImpl *self = [[OrgOcpsoftPrettytimeImplDurationImpl alloc] autorelease];
-  OrgOcpsoftPrettytimeImplDurationImpl_init(self);
-  return self;
+  J2OBJC_CREATE_IMPL(OrgOcpsoftPrettytimeImplDurationImpl, init)
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(OrgOcpsoftPrettytimeImplDurationImpl)

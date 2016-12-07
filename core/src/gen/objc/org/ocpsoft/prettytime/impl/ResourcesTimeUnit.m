@@ -50,20 +50,31 @@ J2OBJC_IGNORE_DESIGNATED_BEGIN
 J2OBJC_IGNORE_DESIGNATED_END
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "getResourceKeyPrefix", NULL, "Ljava.lang.String;", 0x404, NULL, NULL },
-    { "getResourceBundleName", NULL, "Ljava.lang.String;", 0x4, NULL, NULL },
-    { "getMaxQuantity", NULL, "J", 0x1, NULL, NULL },
-    { "setMaxQuantityWithLong:", "setMaxQuantity", "V", 0x1, NULL, NULL },
-    { "getMillisPerUnit", NULL, "J", 0x1, NULL, NULL },
-    { "setMillisPerUnitWithLong:", "setMillisPerUnit", "V", 0x1, NULL, NULL },
-    { "init", NULL, NULL, 0x1, NULL, NULL },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, "LNSString;", 0x404, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x4, -1, -1, -1, -1, -1, -1 },
+    { NULL, "J", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 0, 1, -1, -1, -1, -1 },
+    { NULL, "J", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 2, 1, -1, -1, -1, -1 },
+    { NULL, NULL, 0x1, -1, -1, -1, -1, -1, -1 },
   };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(getResourceKeyPrefix);
+  methods[1].selector = @selector(getResourceBundleName);
+  methods[2].selector = @selector(getMaxQuantity);
+  methods[3].selector = @selector(setMaxQuantityWithLong:);
+  methods[4].selector = @selector(getMillisPerUnit);
+  methods[5].selector = @selector(setMillisPerUnitWithLong:);
+  methods[6].selector = @selector(init);
+  #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "maxQuantity_", NULL, 0x2, "J", NULL, NULL, .constantValue.asLong = 0 },
-    { "millisPerUnit_", NULL, 0x2, "J", NULL, NULL, .constantValue.asLong = 0 },
+    { "maxQuantity_", "J", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "millisPerUnit_", "J", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
-  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeImplResourcesTimeUnit = { 2, "ResourcesTimeUnit", "org.ocpsoft.prettytime.impl", NULL, 0x401, 7, methods, 2, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const void *ptrTable[] = { "setMaxQuantity", "J", "setMillisPerUnit" };
+  static const J2ObjcClassInfo _OrgOcpsoftPrettytimeImplResourcesTimeUnit = { "ResourcesTimeUnit", "org.ocpsoft.prettytime.impl", ptrTable, methods, fields, 7, 0x401, 7, 2, -1, -1, -1, -1, -1 };
   return &_OrgOcpsoftPrettytimeImplResourcesTimeUnit;
 }
 
