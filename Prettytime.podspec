@@ -23,6 +23,7 @@ Pod::Spec.new do |s|
 
   s.public_header_files = 'core/src/gen/objc/**/*.h'
   s.header_mappings_dir = 'core/src/gen/objc'
+  s.compiler_flags = '-Wno-nullability-completeness'
 
   s.xcconfig = { 'HEADER_SEARCH_PATHS' => "\"${PODS_ROOT}/J2ObjC/dist/include\"" }
 
