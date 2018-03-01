@@ -16,15 +16,23 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '7.0'
   s.osx.deployment_target = '10.7'
   s.requires_arc = false
+  s.preserve_paths = 'src/gen/objc/org'
 
-  s.source_files = 'core/src/gen/objc/**/*.{h,m}'
-  s.exclude_files = 'core/src/gen/objc/*Test.{h,m}'
-  s.resources = 'core/src/main/resources/*'
 
-  s.public_header_files = 'core/src/gen/objc/**/*.h'
-  s.header_mappings_dir = 'core/src/gen/objc'
-  s.compiler_flags = '-Wno-nullability-completeness'
+  s.subspec 'org' do |o|
+    o.preserve_paths = 'src/gen/objc/org/ocpsoft'
+    o.subspec 'ocpsoft' do |t|
+      t.preserve_paths = 'src/gen/objc/org/ocpsoft/prettytime'
+      t.subspec 'prettytime' do |p|
+        p.source_files = 'core/src/gen/objc/**/*.{h,m}'
+        p.exclude_files = 'core/src/gen/objc/*Test.{h,m}'
+        p.resources = 'core/src/main/resources/*'
+        p.public_header_files = 'core/src/gen/objc/**/*.h'
+        p.header_mappings_dir = 'core/src/gen/objc'
+      end
+    end
+  end
 
-  s.xcconfig = { 'HEADER_SEARCH_PATHS' => "\"${PODS_ROOT}/J2ObjC/dist/include\"" }
+#  s.xcconfig = { 'HEADER_SEARCH_PATHS' => "\"${PODS_ROOT}/J2ObjC/dist/include\"" }
 
 end
