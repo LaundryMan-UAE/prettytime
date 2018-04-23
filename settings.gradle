@@ -1,0 +1,14 @@
+rootProject.name = 'prettytime-parent'
+include ':prettytime'
+include ':prettytime-integration-jsf'
+include ':prettytime-integration-jstl'
+include ':prettytime-nlp'
+include ':prettytime-samples:sample-jstl'
+include ':prettytime-samples'
+
+project(':prettytime').projectDir = "$rootDir/core" as File
+project(':prettytime-integration-jsf').projectDir = "$rootDir/jsf" as File
+project(':prettytime-integration-jstl').projectDir = "$rootDir/jstl" as File
+project(':prettytime-nlp').projectDir = "$rootDir/nlp" as File
+project(':prettytime-samples:sample-jstl').projectDir = "$rootDir/samples/jstl" as File
+project(':prettytime-samples').projectDir = "$rootDir/samples" as File
