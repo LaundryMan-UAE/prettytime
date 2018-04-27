@@ -12,3 +12,7 @@ bin/
 docs/reference/src/main/docbook/en-US/version_info.xml
 .idea
 Pods
+/.gradle/4.6/taskHistory/taskHistory.lock
+/.gradle/4.6/taskHistory/taskHistory.bin
+/.gradle/4.6/fileHashes/fileHashes.lock
+/.gradle/4.6/fileHashes/fileHashes.bin
