@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgOcpsoftPrettytimeFormatSimpleTimeFormat
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgOcpsoftPrettytimeFormatSimpleTimeFormat_) && (INCLUDE_ALL_OrgOcpsoftPrettytimeFormatSimpleTimeFormat || defined(INCLUDE_OrgOcpsoftPrettytimeFormatSimpleTimeFormat))
 #define OrgOcpsoftPrettytimeFormatSimpleTimeFormat_
 
@@ -30,7 +35,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (NSString *)decorateWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration
                                           withNSString:(NSString *)time;
@@ -113,4 +118,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeFormatSimpleTimeFormat)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeFormatSimpleTimeFormat")

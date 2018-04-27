@@ -18,7 +18,7 @@ J2OBJC_INITIALIZED_DEFN(OrgOcpsoftPrettytimeI18nResources_ko)
 @implementation OrgOcpsoftPrettytimeI18nResources_ko
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgOcpsoftPrettytimeI18nResources_ko_init(self);
   return self;
 }

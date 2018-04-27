@@ -60,7 +60,7 @@ NSString *OrgOcpsoftPrettytimeFormatSimpleTimeFormat_UNIT = @"%u";
 @implementation OrgOcpsoftPrettytimeFormatSimpleTimeFormat
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgOcpsoftPrettytimeFormatSimpleTimeFormat_init(self);
   return self;
 }

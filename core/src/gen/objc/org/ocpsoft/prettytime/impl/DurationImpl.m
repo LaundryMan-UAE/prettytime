@@ -22,7 +22,7 @@ J2OBJC_FIELD_SETTER(OrgOcpsoftPrettytimeImplDurationImpl, unit_, id<OrgOcpsoftPr
 @implementation OrgOcpsoftPrettytimeImplDurationImpl
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgOcpsoftPrettytimeImplDurationImpl_init(self);
   return self;
 }

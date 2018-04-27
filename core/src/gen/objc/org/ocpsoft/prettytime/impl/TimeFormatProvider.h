@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgOcpsoftPrettytimeImplTimeFormatProvider
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgOcpsoftPrettytimeImplTimeFormatProvider_) && (INCLUDE_ALL_OrgOcpsoftPrettytimeImplTimeFormatProvider || defined(INCLUDE_OrgOcpsoftPrettytimeImplTimeFormatProvider))
 #define OrgOcpsoftPrettytimeImplTimeFormatProvider_
 
@@ -39,4 +44,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeImplTimeFormatProvider)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeImplTimeFormatProvider")

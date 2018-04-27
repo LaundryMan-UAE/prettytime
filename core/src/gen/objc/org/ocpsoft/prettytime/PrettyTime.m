@@ -66,24 +66,24 @@ __attribute__((unused)) static jlong OrgOcpsoftPrettytimePrettyTime_getSignWithL
 @implementation OrgOcpsoftPrettytimePrettyTime
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgOcpsoftPrettytimePrettyTime_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (instancetype)initWithJavaUtilDate:(JavaUtilDate *)reference {
+- (instancetype __nonnull)initWithJavaUtilDate:(JavaUtilDate *)reference {
   OrgOcpsoftPrettytimePrettyTime_initWithJavaUtilDate_(self, reference);
   return self;
 }
 
-- (instancetype)initWithJavaUtilLocale:(JavaUtilLocale *)locale {
+- (instancetype __nonnull)initWithJavaUtilLocale:(JavaUtilLocale *)locale {
   OrgOcpsoftPrettytimePrettyTime_initWithJavaUtilLocale_(self, locale);
   return self;
 }
 
-- (instancetype)initWithJavaUtilDate:(JavaUtilDate *)reference
-                  withJavaUtilLocale:(JavaUtilLocale *)locale {
+- (instancetype __nonnull)initWithJavaUtilDate:(JavaUtilDate *)reference
+                            withJavaUtilLocale:(JavaUtilLocale *)locale {
   OrgOcpsoftPrettytimePrettyTime_initWithJavaUtilDate_withJavaUtilLocale_(self, reference, locale);
   return self;
 }

@@ -10,7 +10,7 @@
 @implementation OrgOcpsoftPrettytimeUnitsJustNow
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgOcpsoftPrettytimeUnitsJustNow_init(self);
   return self;
 }

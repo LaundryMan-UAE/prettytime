@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgOcpsoftPrettytimeLocaleAware
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgOcpsoftPrettytimeLocaleAware_) && (INCLUDE_ALL_OrgOcpsoftPrettytimeLocaleAware || defined(INCLUDE_OrgOcpsoftPrettytimeLocaleAware))
 #define OrgOcpsoftPrettytimeLocaleAware_
 
@@ -37,4 +42,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeLocaleAware)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeLocaleAware")

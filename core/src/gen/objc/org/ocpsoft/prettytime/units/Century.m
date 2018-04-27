@@ -10,7 +10,7 @@
 @implementation OrgOcpsoftPrettytimeUnitsCentury
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgOcpsoftPrettytimeUnitsCentury_init(self);
   return self;
 }

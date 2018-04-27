@@ -21,7 +21,7 @@ J2OBJC_STATIC_FIELD_CONSTANT(OrgOcpsoftPrettytimeUnitsTimeUnitComparator, serial
 @implementation OrgOcpsoftPrettytimeUnitsTimeUnitComparator
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgOcpsoftPrettytimeUnitsTimeUnitComparator_init(self);
   return self;
 }

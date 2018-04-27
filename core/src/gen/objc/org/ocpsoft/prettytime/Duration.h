@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgOcpsoftPrettytimeDuration
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgOcpsoftPrettytimeDuration_) && (INCLUDE_ALL_OrgOcpsoftPrettytimeDuration || defined(INCLUDE_OrgOcpsoftPrettytimeDuration))
 #define OrgOcpsoftPrettytimeDuration_
 
@@ -64,4 +69,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeDuration)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeDuration")

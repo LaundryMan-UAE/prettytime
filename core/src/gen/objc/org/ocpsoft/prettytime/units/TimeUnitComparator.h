@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgOcpsoftPrettytimeUnitsTimeUnitComparator
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgOcpsoftPrettytimeUnitsTimeUnitComparator_) && (INCLUDE_ALL_OrgOcpsoftPrettytimeUnitsTimeUnitComparator || defined(INCLUDE_OrgOcpsoftPrettytimeUnitsTimeUnitComparator))
 #define OrgOcpsoftPrettytimeUnitsTimeUnitComparator_
 
@@ -38,7 +43,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (jint)compareWithId:(id<OrgOcpsoftPrettytimeTimeUnit>)left
                withId:(id<OrgOcpsoftPrettytimeTimeUnit>)right;
@@ -57,4 +62,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeUnitsTimeUnitComparator)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeUnitsTimeUnitComparator")

@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgOcpsoftPrettytimePrettyTime
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgOcpsoftPrettytimePrettyTime_) && (INCLUDE_ALL_OrgOcpsoftPrettytimePrettyTime || defined(INCLUDE_OrgOcpsoftPrettytimePrettyTime))
 #define OrgOcpsoftPrettytimePrettyTime_
 
@@ -47,7 +52,7 @@
 /*!
  @brief Default constructor
  */
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 /*!
  @brief Accept a <code>Date</code> timestamp to represent the point of reference for comparison.This may be changed by the
@@ -56,7 +61,7 @@
   See <code>PrettyTime.setReference(Date timestamp)</code>.
  @param reference
  */
-- (instancetype)initWithJavaUtilDate:(JavaUtilDate *)reference;
+- (instancetype __nonnull)initWithJavaUtilDate:(JavaUtilDate *)reference;
 
 /*!
  @brief Accept a <code>Date</code> timestamp to represent the point of reference for comparison.This may be changed by the
@@ -65,13 +70,13 @@
  <p>
   See <code>PrettyTime.setReference(Date timestamp)</code>.
  */
-- (instancetype)initWithJavaUtilDate:(JavaUtilDate *)reference
-                  withJavaUtilLocale:(JavaUtilLocale *)locale;
+- (instancetype __nonnull)initWithJavaUtilDate:(JavaUtilDate *)reference
+                            withJavaUtilLocale:(JavaUtilLocale *)locale;
 
 /*!
  @brief Construct a new instance using the given <code>Locale</code> instead of the system default.
  */
-- (instancetype)initWithJavaUtilLocale:(JavaUtilLocale *)locale;
+- (instancetype __nonnull)initWithJavaUtilLocale:(JavaUtilLocale *)locale;
 
 /*!
  @brief Calculate the approximate duration between the referenceDate and date
@@ -267,4 +272,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimePrettyTime)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgOcpsoftPrettytimePrettyTime")

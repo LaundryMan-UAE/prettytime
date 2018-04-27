@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgOcpsoftPrettytimeImplResourcesTimeFormat
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgOcpsoftPrettytimeImplResourcesTimeFormat_) && (INCLUDE_ALL_OrgOcpsoftPrettytimeImplResourcesTimeFormat || defined(INCLUDE_OrgOcpsoftPrettytimeImplResourcesTimeFormat))
 #define OrgOcpsoftPrettytimeImplResourcesTimeFormat_
 
@@ -40,7 +45,7 @@
 
 #pragma mark Public
 
-- (instancetype)initWithOrgOcpsoftPrettytimeImplResourcesTimeUnit:(OrgOcpsoftPrettytimeImplResourcesTimeUnit *)unit;
+- (instancetype __nonnull)initWithOrgOcpsoftPrettytimeImplResourcesTimeUnit:(OrgOcpsoftPrettytimeImplResourcesTimeUnit *)unit;
 
 - (NSString *)decorateWithOrgOcpsoftPrettytimeDuration:(id<OrgOcpsoftPrettytimeDuration>)duration
                                           withNSString:(NSString *)time;
@@ -56,7 +61,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -72,4 +77,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeImplResourcesTimeFormat)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeImplResourcesTimeFormat")

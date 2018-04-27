@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgOcpsoftPrettytimeUnitsJustNow
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgOcpsoftPrettytimeUnitsJustNow_) && (INCLUDE_ALL_OrgOcpsoftPrettytimeUnitsJustNow || defined(INCLUDE_OrgOcpsoftPrettytimeUnitsJustNow))
 #define OrgOcpsoftPrettytimeUnitsJustNow_
 
@@ -28,7 +33,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 #pragma mark Protected
 
@@ -48,4 +53,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeUnitsJustNow)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeUnitsJustNow")

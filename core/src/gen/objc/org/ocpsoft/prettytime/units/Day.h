@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgOcpsoftPrettytimeUnitsDay
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgOcpsoftPrettytimeUnitsDay_) && (INCLUDE_ALL_OrgOcpsoftPrettytimeUnitsDay || defined(INCLUDE_OrgOcpsoftPrettytimeUnitsDay))
 #define OrgOcpsoftPrettytimeUnitsDay_
 
@@ -28,7 +33,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 #pragma mark Protected
 
@@ -48,4 +53,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeUnitsDay)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeUnitsDay")

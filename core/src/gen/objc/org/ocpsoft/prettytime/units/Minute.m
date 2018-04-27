@@ -10,7 +10,7 @@
 @implementation OrgOcpsoftPrettytimeUnitsMinute
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   OrgOcpsoftPrettytimeUnitsMinute_init(self);
   return self;
 }

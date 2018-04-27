@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgOcpsoftPrettytimeI18nResources_zh_TW
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgOcpsoftPrettytimeI18nResources_zh_TW_) && (INCLUDE_ALL_OrgOcpsoftPrettytimeI18nResources_zh_TW || defined(INCLUDE_OrgOcpsoftPrettytimeI18nResources_zh_TW))
 #define OrgOcpsoftPrettytimeI18nResources_zh_TW_
 
@@ -29,7 +34,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 #pragma mark Protected
 
@@ -56,4 +61,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeI18nResources_zh_TW)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeI18nResources_zh_TW")

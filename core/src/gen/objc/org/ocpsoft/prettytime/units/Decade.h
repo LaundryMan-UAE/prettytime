@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_OrgOcpsoftPrettytimeUnitsDecade
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (OrgOcpsoftPrettytimeUnitsDecade_) && (INCLUDE_ALL_OrgOcpsoftPrettytimeUnitsDecade || defined(INCLUDE_OrgOcpsoftPrettytimeUnitsDecade))
 #define OrgOcpsoftPrettytimeUnitsDecade_
 
@@ -28,7 +33,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 #pragma mark Protected
 
@@ -48,4 +53,8 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgOcpsoftPrettytimeUnitsDecade)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_OrgOcpsoftPrettytimeUnitsDecade")
