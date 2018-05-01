@@ -6,7 +6,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = "Prettytime"
-  s.version          = '3.2.6.1'
+  s.version          = '3.2.6.1-J2ObjC2.1.1'
   s.author           = { "Marcus Smith" => "m_badenochsmith@yahoo.co.uk" }
   s.source           = { :git => "https://github.com/hambroperks/prettytime.git" }
   s.summary 	     = "Version 3.2.6-SNAPSHOT update translated via J2ObjC - check core"
