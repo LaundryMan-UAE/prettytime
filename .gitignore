@@ -16,3 +16,7 @@ Pods
 /.gradle/4.6/taskHistory/taskHistory.bin
 /.gradle/4.6/fileHashes/fileHashes.lock
 /.gradle/4.6/fileHashes/fileHashes.bin
+/core/.gradle/6.1.1
+/core/.gradle/buildOutputCleanup
+/core/.gradle/checksums
+/core/.gradle/vcs-1
