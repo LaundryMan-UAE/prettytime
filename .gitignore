@@ -20,3 +20,9 @@ Pods
 /core/.gradle/buildOutputCleanup
 /core/.gradle/checksums
 /core/.gradle/vcs-1
+/.gradle/6.1.1
+/.gradle/buildOutputCleanup/buildOutputCleanup.lock
+/.gradle/buildOutputCleanup/cache.properties
+/.gradle/buildOutputCleanup/outputFiles.bin
+/.gradle/checksums
+/.gradle/vcs-1
